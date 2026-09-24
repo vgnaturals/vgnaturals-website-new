@@ -1,0 +1,2 @@
+import {MetadataRoute} from 'next'; import {products} from '@/lib/site-data';
+export default function sitemap():MetadataRoute.Sitemap{const base='https://vgnaturals.com'; const routes=['/','/products','/products/lemongrass','/products/tulsi','/industries','/bulk-supply','/request-sample','/request-quote','/catalogue','/about','/blog','/contact']; return [...routes,...products.map(p=>p.href)].map(path=>({url:base+path,lastModified:new Date(),changeFrequency:'weekly',priority:path==='/'?1:path.includes('/products/')?.85:.7}));}
