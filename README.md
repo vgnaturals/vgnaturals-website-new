@@ -5,7 +5,7 @@ Next.js + TypeScript + Tailwind website starter for VG NATURALS PRIVATE LIMITED,
 ## Quick start
 
 ```bash
-npm install
+npm ci
 npm run dev
 npm run lint
 npm run build
@@ -13,10 +13,10 @@ npm run build
 
 ## GitHub and Vercel
 
-1. Create a new GitHub repository `vg-naturals-website`.
-2. Upload the **contents** of this folder to the repository root.
-3. Import the repository in Vercel (Next.js framework; defaults normally work).
-4. Add `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_WHATSAPP_NUMBER` environment variables; optionally add a verified Google Maps URL.
+1. Use the GitHub repository `vgnaturals/vgnaturals-website-new` and its `main` branch.
+2. Keep application files and `package.json` at the repository root.
+3. Import the repository in Vercel with Framework Preset **Next.js**, Root Directory **the repository root**, Install Command **`npm ci`**, Build Command **`npm run build`**, and the default Output Directory. Commit `package-lock.json` when updating dependencies so deployments use the tested versions.
+4. Optionally set `NEXT_PUBLIC_GOOGLE_MAPS_URL` to the verified Google Maps/GBP URL. The current source uses the approved website URL and WhatsApp number directly; `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_WHATSAPP_NUMBER` are not read by the application.
 5. Preview the deployment, verify all pages, then connect `vgnaturals.com` only after validation. Keep the old website/repository until the replacement is tested.
 6. Submit `https://vgnaturals.com/sitemap.xml` in Google Search Console after deployment.
 
