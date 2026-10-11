@@ -5,7 +5,7 @@ export const products: Product[] = [
     "name": "Lemongrass Essential Oil",
     "botanicalName": "Cymbopogon flexuosus",
     "category": "Essential Oils",
-    "image": "/catalogue-assets/image14.jpg",
+    "image": "/catalogue-assets/lemongrass-essential-oil-bottles.jpg",
     "status": "ready",
     "variants": [
       {
@@ -25,7 +25,7 @@ export const products: Product[] = [
     "name": "Lemongrass Hydrosol",
     "botanicalName": "Lemongrass",
     "category": "Hydrosols",
-    "image": "/catalogue-assets/image21.png",
+    "image": "/catalogue-assets/lemongrass-hydrosol-spray-bottle.png",
     "status": "ready",
     "variants": [
       {
@@ -65,7 +65,7 @@ export const products: Product[] = [
     "name": "Lemongrass Tea Bags",
     "botanicalName": "Lemongrass",
     "category": "Herbal Teas",
-    "image": "/catalogue-assets/image4.png",
+    "image": "/catalogue-assets/lemongrass-herbal-tea-bags.png",
     "status": "ready",
     "variants": [
       {
@@ -85,7 +85,7 @@ export const products: Product[] = [
     "name": "Tulsi Essential Oil",
     "botanicalName": "Ocimum sanctum",
     "category": "Essential Oils",
-    "image": "/catalogue-assets/image8.jpg",
+    "image": "/catalogue-assets/tulsi-essential-oil-ocimum-sanctum.jpg",
     "status": "ready",
     "variants": [
       {
@@ -105,7 +105,7 @@ export const products: Product[] = [
     "name": "Tulsi Hydrosol",
     "botanicalName": "Ocimum sanctum",
     "category": "Hydrosols",
-    "image": "/catalogue-assets/image16.png",
+    "image": "/catalogue-assets/tulsi-hydrosol-ocimum-sanctum.png",
     "status": "ready",
     "variants": [
       {
@@ -125,7 +125,7 @@ export const products: Product[] = [
     "name": "Tulsi Air Sanitizing Spray",
     "botanicalName": "Ocimum sanctum",
     "category": "Home Care",
-    "image": "/catalogue-assets/image13.png",
+    "image": "/catalogue-assets/tulsi-air-sanitizing-spray.png",
     "status": "ready",
     "variants": [
       {
@@ -145,7 +145,7 @@ export const products: Product[] = [
     "name": "Herbal Tulsi Tea Pouch",
     "botanicalName": "Ocimum sanctum",
     "category": "Herbal Teas",
-    "image": "/catalogue-assets/image20.jpg",
+    "image": "/catalogue-assets/herbal-tulsi-tea-pouch.jpg",
     "status": "ready",
     "variants": [
       {
@@ -165,7 +165,7 @@ export const products: Product[] = [
     "name": "Fresh Tulsi Leaves",
     "botanicalName": "Ocimum sanctum",
     "category": "Fresh Botanicals",
-    "image": "/catalogue-assets/image11.jpg",
+    "image": "/catalogue-assets/fresh-tulsi-leaves-ocimum-sanctum.jpg",
     "status": "fresh",
     "variants": [
       {
@@ -181,7 +181,7 @@ export const products: Product[] = [
     "name": "Basil Essential Oil",
     "botanicalName": "Ocimum basilicum",
     "category": "Essential Oils",
-    "image": "/catalogue-assets/image17.jpg",
+    "image": "/catalogue-assets/basil-essential-oil-ocimum-basilicum.jpg",
     "status": "ready",
     "variants": [
       {
@@ -201,7 +201,7 @@ export const products: Product[] = [
     "name": "Basil Hydrosol",
     "botanicalName": "Ocimum basilicum",
     "category": "Hydrosols",
-    "image": "/catalogue-assets/image18.png",
+    "image": "/catalogue-assets/lemongrass-natural-room-freshener-product.png",
     "status": "ready",
     "variants": [
       {
@@ -241,7 +241,7 @@ export const products: Product[] = [
     "name": "Fresh Basil Leaves",
     "botanicalName": "Ocimum basilicum",
     "category": "Fresh Botanicals",
-    "image": "/catalogue-assets/image23.jpg",
+    "image": "/catalogue-assets/fresh-basil-leaves-ocimum-basilicum.jpg",
     "status": "fresh",
     "variants": [
       {

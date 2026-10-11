@@ -4,12 +4,12 @@ import QuoteStrip from '@/components/QuoteStrip';
 import type { Metadata } from 'next';
 export const metadata: Metadata = { title: 'About VG Naturals | Botanical Products & Farm Gallery', description: 'Meet VG Naturals Private Limited in Lucknow and explore original farm photographs, botanical products and B2B supply enquiries.' };
 const farmPhotos = [
-  { image: 'image1.jpg', caption: 'Botanical planting rows' },
-  { image: 'image2.jpg', caption: 'A closer look at our botanicals' },
-  { image: 'image3.jpg', caption: 'Field care and cultivation' },
-  { image: 'image6.jpg', caption: 'Green growth in the field' },
-  { image: 'image9.jpg', caption: 'A wider view of the plantation' },
-  { image: 'image15.jpg', caption: 'Botanical cultivation across the farm' },
+  { image: 'botanical-farm-planting-rows.jpg', caption: 'Botanical planting rows' },
+  { image: 'botanical-plant-leaves-close-up.jpg', caption: 'A closer look at our botanicals' },
+  { image: 'botanical-farm-field-care.jpg', caption: 'Field care and cultivation' },
+  { image: 'botanical-farm-green-growth.jpg', caption: 'Green growth in the field' },
+  { image: 'botanical-farm-plantation-view.jpg', caption: 'A wider view of the plantation' },
+  { image: 'botanical-farm-cultivation-landscape.jpg', caption: 'Botanical cultivation across the farm' },
 ];
 export default function About() {
   return <><PageHero eyebrow="About Us" title="Our Botanical Roots" description="Meet VG Naturals Private Limited, Lucknow. Cultivation, botanical sourcing and product development shape our direction."/><section className="section container about-page">
@@ -22,7 +22,7 @@ export default function About() {
         <p>We welcome bulk enquiries for lemongrass, Tulsi (Ocimum sanctum) and Basil (Ocimum basilicum) products. Share your intended application, quantity and delivery location so our team can discuss availability and commercial requirements.</p>
         <Link href="/bulk-supply" className="btn mt-4">Discuss Bulk Supply</Link>
       </div>
-      <img src="/catalogue-assets/image12.jpg" alt="VG Naturals field photograph from the master product catalogue" className="rounded-xl w-full max-h-96 object-cover" />
+      <img src="/catalogue-assets/botanical-farm-field-landscape.jpg" alt="VG Naturals field photograph from the master product catalogue" className="rounded-xl w-full max-h-96 object-cover" />
     </div>
     <section className="mt-16" aria-labelledby="farm-gallery-title">
       <p className="eyebrow">Cultivation & botanicals</p><h2 id="farm-gallery-title" className="mt-2">Our Farm Gallery</h2>
