@@ -1,3 +1,18 @@
 "use client";
-import Link from 'next/link';import {useState} from 'react';import {useCart} from './CartProvider';
-export default function Header(){const [open,setOpen]=useState(false);const {items}=useCart();const links=[['/','Home'],['/products','Products'],['/categories','Categories'],['/industries','Industries'],['/bulk-supply','Bulk Supply'],['/coming-soon','Coming Soon'],['/about','About'],['/catalogue','Catalogue'],['/blog','Blog'],['/contact','Contact']];return <header className="bg-white border-b border-green-100 sticky top-0 z-40"><div className="container py-3 flex items-center justify-between gap-5"><Link href="/" className="flex items-center gap-3"><img src="/catalogue-assets/image5.png" alt="VG Naturals supplied logo" className="w-14 h-14 object-contain"/><span className="font-bold text-green-900 text-lg">VG Naturals<small className="block text-xs font-normal text-amber-700">Pure • Natural • Organic Care</small></span></Link><nav className="desktop-nav navlinks text-sm">{links.map(([url,label])=><Link key={url} href={url}>{label}</Link>)}</nav><div className="flex items-center gap-3"><Link href="/cart" className="font-semibold">Cart ({items.reduce((a,b)=>a+b.qty,0)})</Link><Link href="/bulk-supply" className="btn hidden sm:inline-flex">Request Quote</Link><button aria-label="Toggle menu" onClick={()=>setOpen(!open)} className="md:hidden text-xl">☰</button></div></div>{open&&<nav className="container py-3 grid grid-cols-2 gap-3 border-t md:hidden">{links.map(([url,label])=><Link key={url} href={url} onClick={()=>setOpen(false)}>{label}</Link>)}</nav>}</header>}
+import Link from 'next/link';
+import {useState} from 'react';
+import {useCart} from './CartProvider';
+const links=[['/','Home'],['/products','Products'],['/categories','Categories'],['/industries','Industries'],['/bulk-supply','Bulk Supply'],['/coming-soon','Coming Soon'],['/about','About Us'],['/catalogue','Catalogue'],['/blog','Blog'],['/contact','Contact']];
+export default function Header(){
+ const [open,setOpen]=useState(false);const {items}=useCart();
+ return <header className="site-header">
+  <div className="announcement">Lemongrass · Tulsi · Basil <span>Retail packs & B2B bulk enquiries</span></div>
+  <div className="container header-main">
+   <Link href="/" className="brand"><img src="/catalogue-assets/image5.png" alt="VG Naturals" width="64" height="64"/><span>VG Naturals<small>Pure • Natural • Organic Care</small></span></Link>
+   <form action="/products" className="header-search" role="search"><label htmlFor="header-search" className="sr-only">Search products</label><input id="header-search" name="search" placeholder="Search oils, hydrosols, teas…"/><button type="submit" aria-label="Search products">Search</button></form>
+   <div className="header-actions"><Link href="/cart" className="cart-link">Cart <span>{items.reduce((a,b)=>a+b.qty,0)}</span></Link><Link href="/bulk-supply" className="btn header-quote">Request Bulk Quote</Link><button className="menu-toggle" aria-label={open?'Close menu':'Open menu'} aria-expanded={open} aria-controls="mobile-menu" onClick={()=>setOpen(!open)}>{open?'Close':'Menu'}</button></div>
+  </div>
+  <nav className="desktop-menu container" aria-label="Main navigation">{links.map(([url,label])=><Link key={url} href={url}>{label}</Link>)}</nav>
+  {open&&<nav id="mobile-menu" className="mobile-menu container" aria-label="Mobile navigation">{links.map(([url,label])=><Link key={url} href={url} onClick={()=>setOpen(false)}>{label}</Link>)}<Link href="/bulk-supply" className="btn" onClick={()=>setOpen(false)}>Request Bulk Quote</Link></nav>}
+ </header>;
+}
