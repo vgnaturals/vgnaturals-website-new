@@ -1,1 +1,1 @@
-import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{return {rules:[{userAgent:'*',allow:'/',disallow:['/checkout','/cart']}],sitemap:'https://vgnaturals.com/sitemap.xml'}}
+import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{return {rules:[{userAgent:'*',allow:'/',disallow:['/checkout','/cart']}],sitemap:'https://www.vgnaturals.com/sitemap.xml'}}

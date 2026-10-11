@@ -54,7 +54,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     '@type': 'Product',
     name: p.name,
     description: summary,
-    image: p.image ? `https://vgnaturals.com${p.image}` : undefined,
+    image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
     brand: { '@type': 'Brand', name: 'VG Naturals' },
     offers: p.status === 'ready' ? p.variants.map(v => ({
       '@type': 'Offer',
@@ -62,7 +62,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       priceCurrency: 'INR',
       price: v.price,
       availability: 'https://schema.org/InStock',
-      url: `https://vgnaturals.com/products/${p.slug}`,
+      url: `https://www.vgnaturals.com/products/${p.slug}`,
     })) : undefined,
   };
 
