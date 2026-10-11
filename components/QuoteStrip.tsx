@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function QuoteStrip(){return <section className="container section"><div className="bulk-banner"><div><p className="eyebrow">Your next botanical requirement</p><h2>Let’s Find the Right Product for Your Business</h2><p>Share your product, quantity, application and delivery location for an availability check and quotation.</p></div><Link href="/bulk-supply" className="btn btn-gold">Request Bulk Quote</Link></div></section>}

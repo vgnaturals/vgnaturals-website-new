@@ -1,1 +1,9 @@
-import Link from 'next/link';import {categories} from '@/data/products';export default function Categories(){return <section className="section container"><h1>Product Categories</h1><div className="grid md:grid-cols-3 gap-5 mt-9">{categories.map(c=><Link key={c} href={'/categories/'+c.toLowerCase().replaceAll(' ','-')} className="card p-8"><h3>{c}</h3><p>Explore products →</p></Link>)}</div></section>}
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Botanical Product Categories", "description": "Explore essential oils, hydrosols, herbal teas, home care and fresh botanicals from VG Naturals, Lucknow.", "alternates": {"canonical": "/categories"}};
+import Link from 'next/link';
+import {categories,products} from '@/data/products';
+import PageHero from '@/components/PageHero';
+import QuoteStrip from '@/components/QuoteStrip';
+const images=['/catalogue-assets/image14.jpg','/catalogue-assets/image21.png','/catalogue-assets/image2.jpg','/images/basil-tea-bags.png','/images/lemongrass-natural-room-freshener.png','/catalogue-assets/image12.jpg'];
+const descriptions=['Botanical oils for retail packs and bulk sourcing.','Explore aromatic botanical waters and discuss your application.','Tulsi and Basil leaves, subject to availability confirmation.','Lemongrass, Tulsi and Basil tea formats.','Botanical room fresheners and spray products.','Discuss botanical cultivation and planting-material requirements.'];
+export default function Categories(){return <><PageHero eyebrow="Categories" title="Find Your Botanical Format" description="Browse our collections by product type, from essential oils and hydrosols to herbal teas and fresh leaves."/><section className="section container"><div className="editorial-grid">{categories.map((c,i)=><Link key={c} href={'/categories/'+c.toLowerCase().replaceAll(' ','-')} className="editorial-card"><img src={images[i]} alt={c} loading="lazy"/><div><p className="eyebrow">{products.filter(p=>p.category===c).length} listed products</p><h2>{c}</h2><p>{descriptions[i]}</p><span className="text-link">Explore Collection →</span></div></Link>)}</div></section><QuoteStrip/></>}

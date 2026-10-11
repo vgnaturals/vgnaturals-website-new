@@ -67,7 +67,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   };
 
   return (
-    <section className="section container">
+    <section className="section container product-detail-page">
       <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:underline">Home</Link> / <Link href="/products" className="hover:underline">Products</Link> / <span>{p.name}</span>
       </nav>
