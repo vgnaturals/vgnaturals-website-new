@@ -221,7 +221,7 @@ export const products: Product[] = [
     "name": "Basil Tea Bags",
     "botanicalName": "Ocimum basilicum",
     "category": "Herbal Teas",
-    "image": "/catalogue-assets/image22.png",
+    "image": "/images/basil-tea-bags.png",
     "status": "ready",
     "variants": [
       {
