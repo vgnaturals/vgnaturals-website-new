@@ -45,7 +45,7 @@ export const products: Product[] = [
     "name": "Lemongrass Natural Room Freshener",
     "botanicalName": "Lemongrass",
     "category": "Home Care",
-    "image": "/catalogue-assets/image19.jpg",
+    "image": "/images/lemongrass-natural-room-freshener.png",
     "status": "ready",
     "variants": [
       {
