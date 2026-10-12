@@ -29,7 +29,7 @@ export default function About() {
       <p className="mt-4 mb-7 max-w-3xl text-gray-700">Explore original farm photographs shared in the VG Naturals master product catalogue.</p>
       <div className="farm-gallery">
         {farmPhotos.map(photo => <figure key={photo.image} className="card">
-          <a href={`/catalogue-assets/${photo.image}`} target="_blank" rel="noreferrer" aria-label={`View full photograph: ${photo.caption}`}>
+          <a href={`/catalogue-assets/${photo.image}`} rel="noreferrer" aria-label={`View full photograph: ${photo.caption}`}>
             <img src={`/catalogue-assets/${photo.image}`} alt={`${photo.caption} — VG Naturals farm photograph`} loading="lazy" className="w-full h-64 object-cover" />
           </a><figcaption className="p-4 text-sm text-gray-700">{photo.caption}</figcaption>
         </figure>)}

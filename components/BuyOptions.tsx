@@ -28,7 +28,6 @@ export default function BuyOptions({ p }: { p: Product }) {
 
         <a
           href={whatsapp}
-          target="_blank"
           rel="noreferrer"
           className="btn"
         >
@@ -106,7 +105,6 @@ export default function BuyOptions({ p }: { p: Product }) {
       <p>
         <a
           href={whatsapp}
-          target="_blank"
           rel="noreferrer"
           className="text-green-800 underline"
         >

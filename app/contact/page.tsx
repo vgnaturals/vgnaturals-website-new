@@ -32,7 +32,7 @@ export default function Contact() {
             referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
-        <a href={mapsLink} className="btn" target="_blank" rel="noreferrer">Get Directions on Google Maps</a>
+        <a href={mapsLink} className="btn" rel="noreferrer">Get Directions on Google Maps</a>
       </div>
     </div>
   </section></>;
