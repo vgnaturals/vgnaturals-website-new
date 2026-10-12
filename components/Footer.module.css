@@ -1,0 +1,24 @@
+.footer{background:#122f25;color:#e4ebe5}
+.enquiry{background:#eef1e7;color:#214b36;border-top:1px solid #dce3d5;border-bottom:1px solid #dce3d5}
+.enquiryInner{max-width:1180px;margin:0 auto;padding:52px 24px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);align-items:center;gap:64px}
+.eyebrow{font-size:10px;line-height:1.7;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#61734f;margin:0 0 14px}
+.enquiry h2{font-family:Georgia,serif;font-size:clamp(28px,3.2vw,40px);font-weight:400;line-height:1.2;margin:0}
+.intro{font-size:14px;line-height:1.8;max-width:480px;margin:18px 0 0;color:#53604e}
+.enquiryActions{display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;justify-self:end}
+.primary,.secondary{display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:6px;min-height:50px;padding:14px 20px;font-size:13px;font-weight:600}
+.primary{background:#214b36;color:white;border:1px solid #214b36}.primary:hover{background:#163726}
+.secondary{border:1px solid #b7c4ad;color:#214b36}.secondary:hover{background:#e1e7d7}
+.enquiryActions p{font-size:12px;line-height:1.7;text-align:center;margin:4px 0 0}.enquiryActions p a{font-weight:700;white-space:nowrap}
+.inner{max-width:1180px;margin:0 auto;padding:52px 24px 22px}
+.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.65fr) minmax(0,.75fr) minmax(0,1.35fr);gap:36px;align-items:start}.grid>div,.grid>nav{min-width:0}
+.logo{display:inline-flex;padding:10px;background:#faf9f4;border-radius:8px}.logo img{width:88px;height:88px;object-fit:contain}
+.tagline{font-size:12px;line-height:1.7;color:#edcf87;margin:18px 0 10px}
+.description{font-size:13px;line-height:1.9;max-width:245px;color:#c3d1c7;margin:0}
+.socials{display:flex;gap:10px;margin-top:20px}.socials a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #446054;border-radius:50%}.socials a:hover{background:#254536}
+.grid h3{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#edcf87;line-height:1.6;margin:0 0 18px}
+.linkGroup ul{list-style:none;padding:0;margin:0}.linkGroup a{display:inline-flex;align-items:center;min-height:40px;font-size:13px;line-height:1.6;color:#d2ddd5}.linkGroup a:hover{color:#edcf87}
+.contactRow{display:flex;align-items:flex-start;gap:12px;font-size:13px;line-height:1.8;margin:0 0 18px;overflow-wrap:anywhere}.contactRow svg{flex-shrink:0;margin-top:5px;color:#edcf87}.contactRow span{min-width:0}.contactRow small{display:block;color:#aabeb0;font-size:10px;letter-spacing:.06em;margin-bottom:2px}.contactRow address{font-style:normal;color:#c3d1c7;font-size:12px;line-height:1.9}.contactRow:hover{color:#edcf87}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #375345;margin-top:36px;padding-top:20px;font-size:11px;color:#bccdc1}.bottom p{margin:0;line-height:1.8}.bottom nav{display:flex;flex-wrap:wrap;gap:4px 20px}.bottom a{display:inline-flex;align-items:center;min-height:36px}.bottom a:hover{color:#edcf87}
+.note{font-size:10px;color:#aabeb0;line-height:1.8;margin:10px 0 0}.footer a:focus-visible{outline:2px solid #b18b3c;outline-offset:4px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.brand{grid-column:1/-1;display:grid;grid-template-columns:108px 1fr;column-gap:22px}.logo{grid-row:1/4;align-self:start;justify-self:start}.tagline{margin-top:0}.description{max-width:400px}.socials{grid-column:2;margin-top:12px}.contact{grid-column:1/-1;border-top:1px solid #375345;padding-top:28px}.enquiryInner{gap:32px}.bottom{align-items:flex-start;flex-direction:column;gap:8px}}
+@media(max-width:600px){.enquiryInner{grid-template-columns:1fr;padding:36px 22px;gap:26px}.enquiryActions{max-width:none;justify-self:stretch}.enquiry h2{font-size:29px}.inner{padding:36px 22px 22px}.grid{column-gap:24px;row-gap:30px}.brand{display:block}.logo img{width:72px;height:72px}.tagline{margin-top:16px}.description{max-width:310px}.socials{margin-top:16px}.grid h3{margin-bottom:12px}.linkGroup a{min-height:44px}.bottom{margin-top:20px;padding-top:18px}.bottom nav{gap:0 18px}.note{margin-top:12px}}
