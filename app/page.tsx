@@ -21,4 +21,23 @@ export default function Home(){return <>
  <section className="section collection-section"><div className="container"><div className="section-heading"><p className="eyebrow">Choose your product</p><h2>Lemongrass, Tulsi & Basil Products</h2><p>Browse retail packs, check fresh availability or register interest in upcoming products.</p></div><ProductCollections products={products}/></div></section>
  <section className="section container"><div className="section-heading"><p className="eyebrow">Three botanical ranges</p><h2>Explore Lemongrass, Tulsi & Basil</h2></div><div className="plant-grid">{plants.map(p=><article key={p.name} className="plant-tile"><img src={p.image} alt={`VG Naturals ${p.name} products`} loading="lazy"/><div><h3>{p.name==='Lemongrass'?'Lemongrass Essential Oil, Hydrosol & Tea':p.name==='Tulsi'?'Tulsi Products — Ocimum sanctum':'Basil Products — Ocimum basilicum'}</h3><p>{p.identity}</p><Link href={'/products?search='+p.search}>Explore {p.name} →</Link></div></article>)}</div></section>
  <section className="section farm-story"><div className="container farm-story-grid"><img src="/catalogue-assets/botanical-farm-field-landscape.jpg" alt="Original VG Naturals farm photograph from the company catalogue" loading="lazy"/><div><p className="eyebrow">Our botanical roots</p><h2>From Cultivation to Botanical Products</h2><p>Our direction connects cultivation, sourcing, processing, product development and supply. Discover the farm photographs behind our botanical business and meet VG Naturals, Lucknow.</p><Link href="/about" className="btn btn-outline">Explore Our Farm & Story</Link></div></div></section>
+ <section className="section" aria-labelledby="google-reviews-heading">
+  <div className="container">
+   <div className="grid gap-8 rounded-2xl border border-[#dfe6d8] bg-white p-6 sm:p-10 md:grid-cols-2 md:items-center">
+    <div>
+     <p className="eyebrow">Customer feedback</p>
+     <h2 id="google-reviews-heading" className="mt-3 font-serif font-normal">Find us on Google Reviews</h2>
+     <p className="mt-4 max-w-xl text-sm leading-7 text-[#5a6854]">Explore customer feedback on our Google Business Profile. Already tried our products or worked with our team? We welcome your honest experience.</p>
+     <a href="https://maps.app.goo.gl/DKijZJYgtTrcKpzG9" target="_blank" rel="noopener noreferrer" className="btn mt-6">View reviews on Google <span className="ml-2" aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a>
+    </div>
+    <div className="rounded-xl bg-[#f2f4ec] p-6 sm:p-8">
+     <svg aria-hidden="true" className="mb-4 h-9 w-9 text-[#214b36]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M8 10h8M8 14h5M7 20l-4 1 1-4V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H7Z"/></svg>
+     <h3 className="text-xl">Your experience matters</h3>
+     <p className="mt-3 text-sm leading-7 text-[#5a6854]">Tell others about the products you tried, your sourcing experience or the support you received.</p>
+     <a href="https://maps.app.goo.gl/DKijZJYgtTrcKpzG9" target="_blank" rel="noopener noreferrer" className="btn btn-outline mt-5">Share your experience <span className="ml-2" aria-hidden="true">↗</span><span className="sr-only"> on Google Maps (opens in a new tab)</span></a>
+     <p className="mt-3 text-xs leading-5 text-[#5a6854]">Open our Google listing, choose Reviews, then Write a review.</p>
+    </div>
+   </div>
+  </div>
+ </section>
  </>}
