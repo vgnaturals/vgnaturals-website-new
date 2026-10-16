@@ -1,1 +1,3 @@
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Refund Policy", "description": "Read the VG Naturals refund policy and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/refund-policy"}};
 export default function Page(){return <section className="section container"><h1>Refund Policy</h1><p className="my-6 max-w-3xl leading-7">Refund eligibility, timelines and processes must be approved and configured before online payments are enabled.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}

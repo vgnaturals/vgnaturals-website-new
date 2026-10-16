@@ -1,3 +1,10 @@
+import type {Metadata} from 'next';
 import {categories,products} from '@/data/products';import {notFound} from 'next/navigation';import ProductCard from '@/components/ProductCard';import PageHero from '@/components/PageHero';import QuoteStrip from '@/components/QuoteStrip';
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
+ const {slug}=await params; const category=categories.find(c=>c.toLowerCase().replaceAll(' ','-')===slug); if(!category)notFound();
+ const title=`${category} Supplier in India`;
+ const description=`Explore VG Naturals ${category.toLowerCase()} from Lucknow. Compare listed products, check availability and discuss samples or bulk supply for your business.`;
+ return {title,description,alternates:{canonical:`/categories/${slug}`},openGraph:{title,description,url:`/categories/${slug}`,images:[{url:'/images/vg-naturals-banner.png',alt:'VG Naturals product range'}]}};
+}
 export function generateStaticParams(){return categories.map(c=>({slug:c.toLowerCase().replaceAll(' ','-')}))}
 export default async function Category({params}:{params:Promise<{slug:string}>}){const slug=(await params).slug;const cat=categories.find(c=>c.toLowerCase().replaceAll(' ','-')===slug);if(!cat)notFound();const filtered=products.filter(p=>p.category===cat);return <><PageHero eyebrow="Categories" title={cat} description={'Explore VG Naturals '+cat.toLowerCase()+'. Review available packs or share your bulk sourcing requirement with our team.'}/><section className="section container"><div className="collection-summary"><h2>{cat} Collection</h2><p>{filtered.length} listed products</p></div><div className="grid-products catalogue-grid">{filtered.map(p=><ProductCard key={p.slug} product={p}/>)}</div>{!filtered.length&&<p className="empty-state">Please enquire about products and availability in this collection.</p>}</section><QuoteStrip/></>}

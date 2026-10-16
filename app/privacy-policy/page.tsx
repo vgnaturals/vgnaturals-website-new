@@ -1,1 +1,3 @@
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Privacy Policy", "description": "Read the VG Naturals privacy policy and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/privacy-policy"}};
 export default function Page(){return <section className="section container"><h1>Privacy Policy</h1><p className="my-6 max-w-3xl leading-7">This website may process information you choose to provide when contacting VG Naturals. Enquiries opened through WhatsApp are handled by WhatsApp and are subject to its terms. This policy requires legal review before a production launch.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}

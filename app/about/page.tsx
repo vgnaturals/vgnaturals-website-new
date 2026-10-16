@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import QuoteStrip from '@/components/QuoteStrip';
 import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'About VG Naturals | Botanical Products & Farm Gallery', description: 'Meet VG Naturals Private Limited in Lucknow and explore original farm photographs, botanical products and B2B supply enquiries.' };
+export const metadata: Metadata = { alternates:{canonical:'/about'}, title: 'About VG Naturals | Botanical Products & Farm Gallery', description: 'Meet VG Naturals Private Limited in Lucknow and explore original farm photographs, botanical products and B2B supply enquiries.' };
 const farmPhotos = [
   { image: 'botanical-farm-planting-rows.jpg', caption: 'Botanical planting rows' },
   { image: 'botanical-plant-leaves-close-up.jpg', caption: 'A closer look at our botanicals' },

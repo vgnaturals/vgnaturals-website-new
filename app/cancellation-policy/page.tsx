@@ -1,1 +1,3 @@
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Cancellation Policy", "description": "Read the VG Naturals cancellation policy and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/cancellation-policy"}};
 export default function Page(){return <section className="section container"><h1>Cancellation Policy</h1><p className="my-6 max-w-3xl leading-7">Cancellation terms require company approval before ecommerce payment activation.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}

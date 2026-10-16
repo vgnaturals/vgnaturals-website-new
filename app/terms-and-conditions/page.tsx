@@ -1,1 +1,3 @@
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Terms and Conditions", "description": "Read the VG Naturals terms and conditions and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/terms-and-conditions"}};
 export default function Page(){return <section className="section container"><h1>Terms & Conditions</h1><p className="my-6 max-w-3xl leading-7">Product prices, availability and commercial terms are subject to confirmation. Online payments are disabled until merchant configuration is completed. Review these terms with legal counsel before launch.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}

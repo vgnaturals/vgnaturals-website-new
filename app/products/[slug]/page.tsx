@@ -52,6 +52,9 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `https://www.vgnaturals.com/products/${p.slug}#product`,
+    url: `https://www.vgnaturals.com/products/${p.slug}`,
+    category: p.category,
     name: p.name,
     description: summary,
     image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
@@ -59,6 +62,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     offers: p.status === 'ready' ? p.variants.map(v => ({
       '@type': 'Offer',
       name: `${p.name} — ${v.label}`,
+      seller: { '@id': 'https://www.vgnaturals.com/#organization' },
       priceCurrency: 'INR',
       price: v.price,
       availability: 'https://schema.org/InStock',
@@ -139,7 +143,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <h2 id="related-heading" className="mb-6">Related Products</h2>
         <div className="grid-products">{related.map(x => <ProductCard key={x.slug} product={x} />)}</div>
       </section>}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://www.vgnaturals.com/'},{'@type':'ListItem',position:2,name:'Products',item:'https://www.vgnaturals.com/products'},{'@type':'ListItem',position:3,name:p.name,item:`https://www.vgnaturals.com/products/${p.slug}`}]}]).replace(/</g, '\\u003c') }} />
     </section>
   );
 }

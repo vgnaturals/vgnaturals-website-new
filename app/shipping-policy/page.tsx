@@ -1,1 +1,3 @@
+import type {Metadata} from 'next';
+export const metadata:Metadata={"title": "Shipping Policy", "description": "Read the VG Naturals shipping policy and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/shipping-policy"}};
 export default function Page(){return <section className="section container"><h1>Shipping Policy</h1><p className="my-6 max-w-3xl leading-7">Shipping charges, delivery locations and timelines are not yet configured. Confirm shipping terms directly with VG Naturals before placing an order.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}
