@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {ArrowUpRight, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
+import {Facebook, Instagram, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
 import styles from './Footer.module.css';
 const explore = [['/products','All products'],['/categories','Categories'],['/about','About us'],['/blog','Blog']];
 const business = [['/bulk-supply','Bulk supply'],['/industries','Industries'],['/catalogue','Catalogue'],['/coming-soon','Coming soon'],['/contact','Contact us']];
@@ -7,16 +7,6 @@ const policies = [['/privacy-policy','Privacy'],['/terms-and-conditions','Terms'
 const whatsapp = 'https://wa.me/919044210088?text='+encodeURIComponent('Hello VG Naturals, I would like to discuss a product requirement.');
 export default function Footer(){
  return <footer className={styles.footer}>
-  <section className={styles.enquiry} aria-labelledby="footer-enquiry-heading">
-   <div className={styles.enquiryInner}>
-    <div><p className={styles.eyebrow}>For manufacturers, formulators & distributors</p><h2 id="footer-enquiry-heading">Let’s discuss your<br/>botanical requirement.</h2><p className={styles.intro}>Share the product, quantity and delivery city. We’ll help you with availability, samples and a bulk quotation.</p></div>
-    <div className={styles.enquiryActions}>
-     <Link href="/bulk-supply" className={styles.primary}>Request Bulk Quote <ArrowUpRight size={18} aria-hidden="true"/></Link>
-     <Link href="/catalogue" className={styles.secondary}>Explore Product Catalogue <ArrowUpRight size={18} aria-hidden="true"/></Link>
-     <p>Prefer to talk? <a href="tel:+919044210088">+91 90442 10088</a></p>
-    </div>
-   </div>
-  </section>
   <div className={styles.inner}><div className={styles.grid}>
    <div className={styles.brand}>
     <Link href="/" className={styles.logo} aria-label="VG Naturals home"><img src="/catalogue-assets/vg-naturals-leaf-gold-logo.png" alt="VG Naturals" width={88} height={88} loading="lazy"/></Link>
