@@ -85,6 +85,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
           {p.botanicalName && <p className="italic text-gray-600 mb-6">{p.botanicalName}</p>}
           <p className="leading-7 mb-7">{summary}</p>
           <BuyOptions p={p} />
+          {p.variants.length > 0 && <p className="mt-4 text-sm text-gray-600">Packaging and courier charges are not included.</p>}
           <div className="mt-8 p-5 bg-[#f1f4ed] rounded-lg">
             <h2 className="text-xl">B2B enquiries</h2>
             <p className="mt-2 text-sm leading-6">{content?.buyingNote || 'Share your required quantity, application and delivery location for a quotation.'}</p>

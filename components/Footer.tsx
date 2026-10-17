@@ -36,7 +36,7 @@ export default function Footer(){
    </div>
   </div>
   <div className={styles.bottom}><p>© {new Date().getFullYear()} VG Naturals Private Limited.</p><nav aria-label="Footer policies">{policies.map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</nav></div>
-  <p className={styles.note}>Product availability and commercial terms are subject to confirmation.</p>
+  <p className={styles.note}>Packaging and courier charges are not included. Product availability and commercial terms are subject to confirmation.</p>
   </div>
  </footer>;
 }

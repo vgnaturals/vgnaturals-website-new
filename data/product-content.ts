@@ -150,11 +150,11 @@ export const productContent: Record<string, ProductContent> = {
     ]
   },
   'fresh-tulsi-leaves': {
-    summary: 'Fresh Tulsi leaves (Ocimum sanctum), 500 g for ₹300. Contact VG Naturals, Lucknow, to confirm harvest availability and bulk botanical supply.',
+    summary: 'Fresh Tulsi leaves (Ocimum sanctum), 500 g for ₹150. Contact VG Naturals, Lucknow, to confirm harvest availability and bulk botanical supply.',
     seoTitle: 'Fresh Tulsi Leaves (Ocimum sanctum) | Bulk Enquiries',
     form: 'Fresh botanical leaves',
     description: [
-      'VG Naturals Fresh Tulsi Leaves are listed as Ocimum sanctum for buyers seeking fresh Holy Basil botanical material. The approved pack is 500 g at ₹300, with supply subject to an availability check. Fresh leaves are a different format from dried Tulsi tea, hydrosol and essential oil.',
+      'VG Naturals Fresh Tulsi Leaves are listed as Ocimum sanctum for buyers seeking fresh Holy Basil botanical material. The approved pack is 500 g at ₹150, with supply subject to an availability check. Fresh leaves are a different format from dried Tulsi tea, hydrosol and essential oil.',
       'Beverage developers, herbal tea businesses, cafés and fresh botanical buyers can discuss their intended application and required quantity with VG Naturals. Because the material is fresh, harvest availability, packing and delivery arrangements need to be agreed before an order is confirmed. Include your destination and required delivery date when enquiring about fresh Tulsi leaves in bulk.'
     ],
     applications: ['Fresh botanical sourcing', 'Herbal beverage and tea-development enquiries', 'Café and commercial ingredient requirements subject to suitability'],
@@ -218,11 +218,11 @@ export const productContent: Record<string, ProductContent> = {
     ]
   },
   'fresh-basil-leaves': {
-    summary: 'Fresh Basil leaves (Ocimum basilicum), 500 g for ₹300. Enquire with VG Naturals, Lucknow, about current availability and wholesale botanical supply.',
+    summary: 'Fresh Basil leaves (Ocimum basilicum), 500 g for ₹150. Enquire with VG Naturals, Lucknow, about current availability and wholesale botanical supply.',
     seoTitle: 'Fresh Basil Leaves (Ocimum basilicum) | Wholesale',
     form: 'Fresh botanical leaves',
     description: [
-      'VG Naturals Fresh Basil Leaves are listed as Ocimum basilicum, commonly known as Sweet Basil. They provide a fresh-leaf format for buyers discussing culinary, beverage and botanical sourcing requirements. The approved retail pack is 500 g at ₹300 and requires availability confirmation.',
+      'VG Naturals Fresh Basil Leaves are listed as Ocimum basilicum, commonly known as Sweet Basil. They provide a fresh-leaf format for buyers discussing culinary, beverage and botanical sourcing requirements. The approved retail pack is 500 g at ₹150 and requires availability confirmation.',
       'Restaurants, cafés, ingredient buyers and fresh botanical wholesalers can contact our Lucknow team with their required weight and delivery schedule. Fresh Basil leaves are perishable, so harvest availability, packing and transport arrangements should be agreed before purchase. This listing is separate from dried Basil Tea Bags, Basil Hydrosol and Basil Essential Oil.'
     ],
     applications: ['Fresh culinary and botanical ingredient enquiries', 'Restaurant and café sourcing requirements', 'Wholesale fresh-leaf procurement subject to availability'],
@@ -312,7 +312,7 @@ export function getProductFaqs(p: Product, content: ProductContent) {
       question: `What pack sizes and prices are listed for ${p.name}?`,
       answer: p.status === 'coming-soon'
         ? 'Pack sizes and prices are not confirmed yet. Enquire to register interest; this product is not available for checkout.'
-        : `${packs}.${p.status === 'fresh' ? ' Fresh availability and delivery must be confirmed before ordering.' : ' These are the listed retail pack prices.'} Shipping and any applicable taxes are confirmed before order completion.`
+        : `${packs}.${p.status === 'fresh' ? ' Fresh availability and delivery must be confirmed before ordering.' : ' These are the listed retail pack prices.'} Packaging and courier charges are not included. Additional charges and any applicable taxes are confirmed before order completion.`
     },
     {
       question: `How do I request a bulk quotation for ${p.name}?`,

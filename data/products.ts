@@ -10,11 +10,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Lemongrass Essential Oil from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -30,11 +30,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Lemongrass Hydrosol from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -50,11 +50,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Lemongrass Natural Room Freshener from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -70,11 +70,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "10 pouches",
-        "price": 300
+        "price": 150
       },
       {
         "label": "20 pouches",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Lemongrass Tea Bags from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -90,11 +90,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Tulsi Essential Oil from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -110,11 +110,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Tulsi Hydrosol from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -130,11 +130,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Tulsi Air Sanitizing Spray from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -150,11 +150,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "10 pouches",
-        "price": 300
+        "price": 150
       },
       {
         "label": "20 pouches",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Herbal Tulsi Tea Pouch from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -170,7 +170,7 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "500 g",
-        "price": 300
+        "price": 150
       }
     ],
     "description": "Fresh Tulsi Leaves from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -186,11 +186,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Basil Essential Oil from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -206,11 +206,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "50 ml",
-        "price": 300
+        "price": 150
       },
       {
         "label": "100 ml",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Basil Hydrosol from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -226,11 +226,11 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "10 pouches",
-        "price": 300
+        "price": 150
       },
       {
         "label": "20 pouches",
-        "price": 450
+        "price": 225
       }
     ],
     "description": "Basil Tea Bags from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
@@ -246,7 +246,7 @@ export const products: Product[] = [
     "variants": [
       {
         "label": "500 g",
-        "price": 300
+        "price": 150
       }
     ],
     "description": "Fresh Basil Leaves from VG Naturals. Explore available retail packs and request information for botanical ingredient sourcing or bulk requirements.",
