@@ -6,8 +6,8 @@ const mapsLink = 'https://maps.app.goo.gl/DKijZJYgtTrcKpzG9';
 const mapsEmbed = 'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d9015.217470051934!2d80.91231350993469!3d26.753462173795672!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1791693801113!5m2!1sen!2sin';
 
 export default function Contact() {
-  return <><PageHero eyebrow="Contact" title="Let’s Talk Botanicals" description="For product questions, retail packs and B2B sourcing enquiries, connect with the VG Naturals team in Lucknow."/><section className="section container contact-page">
-    <div className="contact-actions"><a href="tel:+919044210088"><span>Call our team</span><strong>+91 90442 10088</strong></a><a href="https://wa.me/919044210088"><span>Start a conversation</span><strong>WhatsApp Us →</strong></a><Link href="/bulk-supply"><span>Business sourcing</span><strong>Request Bulk Quote →</strong></Link></div>
+  return <><PageHero eyebrow="Contact" title="Essential Oil Supplier in Lucknow" description="For product questions, retail packs and B2B sourcing enquiries, connect with the VG Naturals team in Lucknow."/><section className="section container contact-page">
+    <p className="mb-6 leading-7">Looking for lemongrass oil in Lucknow? <Link href="/products/lemongrass-essential-oil" className="underline font-semibold">View Lemongrass Essential Oil packs and bulk enquiry details</Link>. We also supply Tulsi and Basil essential oils and hydrosols. Please call to confirm stock and arrangements before visiting our Aurangabad Jagir address.</p><div className="contact-actions"><a href="tel:+919044210088"><span>Call our team</span><strong>+91 90442 10088</strong></a><a href="https://wa.me/919044210088"><span>Start a conversation</span><strong>WhatsApp Us →</strong></a><Link href="/bulk-supply"><span>Business sourcing</span><strong>Request Bulk Quote →</strong></Link></div>
     <div className="contact-layout">
       <div className="card p-7">
         <h2>VG NATURALS PRIVATE LIMITED</h2>

@@ -15,7 +15,7 @@ export type ProductContent = {
 export const productContent: Record<string, ProductContent> = {
   'lemongrass-essential-oil': {
     summary: 'Lemongrass essential oil (Cymbopogon flexuosus) from VG Naturals, Lucknow. Explore 50 ml and 100 ml packs or enquire about bulk supply in India.',
-    seoTitle: 'Lemongrass Essential Oil | Retail & Bulk Enquiries',
+    seoTitle: 'Lemongrass Oil Supplier in Lucknow | Retail & Bulk',
     form: 'Aromatic essential oil',
     description: [
       'VG Naturals Lemongrass Essential Oil brings the fresh, lemon-citrus aromatic character of Cymbopogon flexuosus to botanical ingredient sourcing. It is a concentrated aromatic oil for buyers exploring fragrance, soap, personal-care and home-fragrance formulations. Choose the listed retail pack for your requirements or contact our team to discuss a larger quantity.',

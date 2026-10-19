@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import BuyOptions from '@/components/BuyOptions';
 import ProductCard from '@/components/ProductCard';
+import LocalSourcing from '@/components/LocalSourcing';
 
 export function generateStaticParams() {
   return products.map(p => ({ slug: p.slug }));
@@ -14,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = content?.seoTitle || p.name;
-  const description = content?.summary || p.description;
+  const title = p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} Supplier in Lucknow`;
+  const description = p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -100,6 +101,8 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         {content && <a href="#applications" className="underline">Applications & buying guidance</a>}
         {faqs.length > 0 && <a href="#faqs" className="underline">FAQs</a>}
       </nav>
+
+      <LocalSourcing product={p} />
 
       <section id="description" aria-labelledby="description-heading" className="mt-12 scroll-mt-40 max-w-4xl">
         <p className="eyebrow">About this product</p>
