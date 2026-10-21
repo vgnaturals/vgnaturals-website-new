@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import BuyOptions from '@/components/BuyOptions';
 import ProductCard from '@/components/ProductCard';
 import LocalSourcing from '@/components/LocalSourcing';
+import { rangeForProduct } from '@/data/botanical-ranges';
 
 export function generateStaticParams() {
   return products.map(p => ({ slug: p.slug }));
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} Supplier in Lucknow`;
-  const description = p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const title = p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
+  const description = p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -36,6 +37,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const content = productContent[p.slug];
   const faqs = content ? getProductFaqs(p, content) : [];
   const summary = content?.summary || p.description;
+  const range = rangeForProduct(p.slug);
   const related = products.filter(x => x.category === p.category && x.slug !== p.slug).slice(0, 3);
   const availability = p.status === 'ready' ? 'Retail packs listed' : p.status === 'fresh' ? 'Fresh — availability confirmation required' : 'Coming Soon — enquiries only';
   const quoteUrl = `/bulk-supply?product=${encodeURIComponent(p.name)}`;
@@ -56,6 +58,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     '@id': `https://www.vgnaturals.com/products/${p.slug}#product`,
     url: `https://www.vgnaturals.com/products/${p.slug}`,
     category: p.category,
+    additionalProperty: p.botanicalName ? [{ '@type': 'PropertyValue', name: 'Listed botanical identity', value: p.botanicalName }] : undefined,
     name: p.name,
     description: summary,
     image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
@@ -66,7 +69,6 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       seller: { '@id': 'https://www.vgnaturals.com/#organization' },
       priceCurrency: 'INR',
       price: v.price,
-      availability: 'https://schema.org/InStock',
       url: `https://www.vgnaturals.com/products/${p.slug}`,
     })) : undefined,
   };
@@ -103,6 +105,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       </nav>
 
       <LocalSourcing product={p} />
+      {range && <p className="mt-6 leading-7">Explore the <Link className="underline text-green-900 font-semibold" href={'/botanicals/'+range.slug}>full {range.name} range and India-wide sourcing questions</Link>. Share your delivery PIN code to confirm feasibility and freight.</p>}
 
       <section id="description" aria-labelledby="description-heading" className="mt-12 scroll-mt-40 max-w-4xl">
         <p className="eyebrow">About this product</p>
