@@ -25,6 +25,7 @@ export default function LocalSourcing({ product: p }: { product: Product }) {
     <p className="mt-3 leading-7">Check our Lucknow location on Google Maps to see the distance from you. Please call before travelling to confirm {upcoming ? 'product status' : 'stock'} and whether a visit or collection can be arranged. For courier enquiries, share your delivery PIN code so our team can confirm feasibility, charges and dispatch timing.</p>
     <p className="mt-3 leading-7">{guidance[p.category] || 'Share your intended use, quantity and delivery location. Ask our team to confirm product specifications and availability before ordering.'}</p>
     <div className="mt-5 flex flex-wrap gap-4"><a className="btn" href="tel:+919044210088">Call +91 90442 10088</a><a className="btn" href="https://maps.app.goo.gl/DKijZJYgtTrcKpzG9">View Lucknow location</a><Link className="btn" href={quoteUrl}>{upcoming ? 'Register Product Interest' : 'Request Product Quote'}</Link></div>
+    <p className="mt-5 leading-7"><Link className="underline" href="/sourcing-guide">Compare listed packs and prepare your bulk enquiry</Link>.</p>
     <p className="mt-5 leading-7"><Link className="underline" href="/contact">Contact our Lucknow team</Link>{p.category === 'Essential Oils' && <> or read our <Link className="underline" href="/blog/essential-oil-bulk-buying">essential oil buying checklist</Link></>}{p.category === 'Hydrosols' && <> or read our <Link className="underline" href="/blog/what-is-a-hydrosol">hydrosol sourcing guide</Link></>}.</p>
   </section>;
 }
