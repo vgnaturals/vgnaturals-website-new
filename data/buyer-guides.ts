@@ -1,5 +1,69 @@
 export type BuyerGuide={title:string;summary:string;sections:{heading:string;text:string}[];links:{href:string;label:string}[]};
 export const buyerGuides:Record<string,BuyerGuide>={
+"lemongrass-oil-hydrosol-tea-buying-guide":{
+  "title": "Lemongrass Oil, Hydrosol or Tea: Which Product Should You Buy?",
+  "summary": "Compare VG Naturals lemongrass essential oil, hydrosol, tea bags and room freshener, with practical buying questions for retail and bulk enquiries in India.",
+  "sections": [
+    {
+      "heading": "Which lemongrass product matches your requirement?",
+      "text": "Start with the product form rather than the word lemongrass alone. VG Naturals lists four separate products: essential oil, hydrosol, tea bags and natural room freshener. A buyer developing a formulation needs different information from a cafe buying tea bags or a retailer sourcing a finished room-fragrance product. The comparison below links to the current packs and listed prices."
+    },
+    {
+      "heading": "What should I check before buying lemongrass essential oil?",
+      "text": "Our listed Lemongrass Essential Oil has the botanical identity Cymbopogon flexuosus. For fragrance, soap or personal-care ingredient sourcing, share your intended application and ask for the available product specifications, composition and batch information. A supplier name, scent description or an online 'best oil' list does not replace evaluation against your own requirements. Confirm any purity, grade or certification requirement before ordering; do not assume it from a product name."
+    },
+    {
+      "heading": "Should I choose lemongrass hydrosol or essential oil?",
+      "text": "Choose the format your application requires. The essential oil and water-based hydrosol are distinct products and are not interchangeable in a formulation. For hydrosol, ask specifically about composition, preservation status, shelf life, storage and the technical information available. For either format, request an evaluation pack before discussing a larger quantity if you have not yet assessed the product."
+    },
+    {
+      "heading": "Where can I buy lemongrass tea bags in India?",
+      "text": "VG Naturals lists Lemongrass Tea Bags for retail-pack and bulk enquiries through its website. Follow the product link below for current pouch quantities and prices. Cafes, hospitality businesses, retailers and distributors should specify the number of packs, delivery PIN code and required date. Check the supplied ingredients, preparation directions, storage instructions and date information. Do not treat an essential oil, hydrosol or room freshener as a substitute for the labelled tea product."
+    },
+    {
+      "heading": "What if I searched for organic lemongrass tea?",
+      "text": "An organic search query does not establish that a listed product is certified organic. If certification is part of your purchasing requirement, ask VG Naturals to confirm the status of the exact product and provide the relevant documentation if available before ordering. Compare the actual ingredients, pack size and commercial terms as well as any certification requirement."
+    },
+    {
+      "heading": "Can I use lemongrass oil in a diffuser or choose room freshener?",
+      "text": "For diffuser enquiries, confirm compatibility with the device instructions and the supplied product directions before purchase. For a finished room-fragrance product, review the Lemongrass Natural Room Freshener listing and its label directions. Product names do not establish insect-repellent or disinfectant performance. Ask for product-specific information rather than assuming that all lemongrass products have the same uses."
+    },
+    {
+      "heading": "Where can I buy lemongrass oil near me?",
+      "text": "VG Naturals is based in Aurangabad Jagir, Lucknow, Uttar Pradesh. Check the Contact page for the address and Google Maps directions, and call +91 90442 10088 before visiting to confirm stock and whether collection can be arranged. For enquiries from elsewhere in India, share your city and PIN code so delivery feasibility, charges and dispatch timing can be confirmed. We do not claim a local branch in every city."
+    },
+    {
+      "heading": "How do I compare bulk lemongrass quotations?",
+      "text": "Compare the same product form, botanical specification, quantity and unit across quotations. Ask for the bulk rate, MOQ, packaging, applicable taxes, courier charges, available documentation and dispatch terms. Listed retail prices are not wholesale quotations. Send this brief: product and botanical name; intended use; quantity and unit; packaging preference; required documents; delivery PIN code; required date. Availability and the final payable amount must be confirmed with the team."
+    }
+  ],
+  "links": [
+    {
+      "href": "/products/lemongrass-essential-oil",
+      "label": "Lemongrass Essential Oil"
+    },
+    {
+      "href": "/products/lemongrass-hydrosol",
+      "label": "Lemongrass Hydrosol"
+    },
+    {
+      "href": "/products/lemongrass-tea-bags",
+      "label": "Lemongrass Tea Bags"
+    },
+    {
+      "href": "/products/lemongrass-natural-room-freshener",
+      "label": "Lemongrass Natural Room Freshener"
+    },
+    {
+      "href": "/botanicals/lemongrass",
+      "label": "Full Lemongrass Collection"
+    },
+    {
+      "href": "/contact",
+      "label": "Lucknow Contact and Map"
+    }
+  ]
+},
  'tulsi-vs-basil':{
  title:'Tulsi vs Basil: Botanical Names and Product Types',
  summary:'Choose between VG Naturals Tulsi (Ocimum sanctum) and Basil (Ocimum basilicum) products using the botanical identity, product form and intended application.',

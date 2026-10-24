@@ -27,5 +27,6 @@ export default function LocalSourcing({ product: p }: { product: Product }) {
     <div className="mt-5 flex flex-wrap gap-4"><a className="btn" href="tel:+919044210088">Call +91 90442 10088</a><a className="btn" href="https://maps.app.goo.gl/DKijZJYgtTrcKpzG9">View Lucknow location</a><Link className="btn" href={quoteUrl}>{upcoming ? 'Register Product Interest' : 'Request Product Quote'}</Link></div>
     <p className="mt-5 leading-7"><Link className="underline" href="/sourcing-guide">Compare listed packs and prepare your bulk enquiry</Link>.</p>
     <p className="mt-5 leading-7"><Link className="underline" href="/contact">Contact our Lucknow team</Link>{p.category === 'Essential Oils' && <> or read our <Link className="underline" href="/blog/essential-oil-bulk-buying">essential oil buying checklist</Link></>}{p.category === 'Hydrosols' && <> or read our <Link className="underline" href="/blog/what-is-a-hydrosol">hydrosol sourcing guide</Link></>}.</p>
+    {p.slug.startsWith('lemongrass-') && <p className="mt-5 leading-7">Not sure which format to choose? <Link className="underline" href="/blog/lemongrass-oil-hydrosol-tea-buying-guide">Compare lemongrass oil, hydrosol, tea bags and room freshener</Link>.</p>}
   </section>;
 }
