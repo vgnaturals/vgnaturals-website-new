@@ -28,5 +28,6 @@ export default function LocalSourcing({ product: p }: { product: Product }) {
     <p className="mt-5 leading-7"><Link className="underline" href="/sourcing-guide">Compare listed packs and prepare your bulk enquiry</Link>.</p>
     <p className="mt-5 leading-7"><Link className="underline" href="/contact">Contact our Lucknow team</Link>{p.category === 'Essential Oils' && <> or read our <Link className="underline" href="/blog/essential-oil-bulk-buying">essential oil buying checklist</Link></>}{p.category === 'Hydrosols' && <> or read our <Link className="underline" href="/blog/what-is-a-hydrosol">hydrosol sourcing guide</Link></>}.</p>
     {p.slug.startsWith('lemongrass-') && <p className="mt-5 leading-7">Not sure which format to choose? <Link className="underline" href="/blog/lemongrass-oil-hydrosol-tea-buying-guide">Compare lemongrass oil, hydrosol, tea bags and room freshener</Link>.</p>}
+    {p.slug.includes('tulsi') && <p className="mt-5 leading-7"><Link className="underline" href="/botanicals/tulsi#tulsi-packs">Compare Tulsi oil, hydrosol, tea and fresh-leaf prices and buying requirements</Link>.</p>}
   </section>;
 }

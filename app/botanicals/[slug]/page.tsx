@@ -5,11 +5,12 @@ import { botanicalRanges, getBotanicalRange } from '@/data/botanical-ranges';
 import { products } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 import PageHero from '@/components/PageHero';
+import TulsiBuyingDetails from '@/components/TulsiBuyingDetails';
 
 export function generateStaticParams() { return botanicalRanges.map(r => ({ slug: r.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const r = getBotanicalRange((await params).slug); if (!r) notFound();
-  const title = `${r.name} Products in India | Retail & Bulk Enquiries`;
+  const title = r.slug === 'tulsi' ? 'Tulsi (Ocimum sanctum) | Oil, Tea & Leaves in India' : `${r.name} Products in India | Retail & Bulk Enquiries`;
   const description = `${r.name} (${r.botanical}) products from VG Naturals, Lucknow. Compare listed packs and enquire about bulk supply and delivery to your Indian PIN code.`;
   return { title, description, alternates: { canonical: `/botanicals/${r.slug}` }, openGraph: { title, description, url: `/botanicals/${r.slug}`, type: 'website' } };
 }
@@ -26,6 +27,7 @@ export default async function BotanicalRange({ params }: { params: Promise<{ slu
       <nav aria-label="Breadcrumb" className="text-sm mb-6"><Link href="/">Home</Link> / <Link href="/products">Products</Link> / <span>{r.name}</span></nav>
       <h2>{r.name}: botanical identity and product forms</h2><p className="mt-4 mb-8 max-w-4xl leading-7">{r.identity}</p>
       <div className="grid-products">{range.map(p=><ProductCard key={p.slug} product={p}/>)}</div>
+      {r.slug === 'tulsi' && <TulsiBuyingDetails />}
       <section className="mt-12 card p-6 sm:p-8" aria-labelledby="india-enquiry">
         <h2 id="india-enquiry">{r.name} sourcing enquiries from across India</h2>
         <p className="mt-4 leading-7">VG NATURALS PRIVATE LIMITED is based in Lucknow, Uttar Pradesh. We welcome enquiries from buyers across India. Share your city and PIN code so the team can confirm courier feasibility, packaging charges, freight and dispatch timing. An enquiry does not guarantee stock or service to every destination.</p>
