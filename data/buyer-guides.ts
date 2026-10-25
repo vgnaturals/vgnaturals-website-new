@@ -1,4 +1,4 @@
-export type BuyerGuide={title:string;summary:string;sections:{heading:string;text:string}[];links:{href:string;label:string}[]};
+export type BuyerGuide={title:string;summary:string;sections:{heading:string;text:string}[];links:{href:string;label:string}[];updated?:string;sources?:{href:string;label:string}[]};
 export const buyerGuides:Record<string,BuyerGuide>={
 "lemongrass-oil-hydrosol-tea-buying-guide":{
   "title": "Lemongrass Oil, Hydrosol or Tea: Which Product Should You Buy?",
@@ -93,4 +93,142 @@ export const buyerGuides:Record<string,BuyerGuide>={
  {heading:'Evaluate the finished formulation separately',text:'An ingredient purchase does not establish the suitability or stability of a finished product. Formulators should evaluate compatibility and the preservation requirements of their own formulation. We do not present hydrosols as medicines or make universal direct-use or ingestion claims. Discuss your intended application before ordering.'},
  {heading:'Prepare your bulk enquiry',text:'Include the hydrosol name, quantity and unit, intended application, preferred packaging, technical information required and delivery PIN code. If you are still evaluating, state which sample pack you need. Availability, MOQ, bulk prices and logistics are discussed for each requirement.'}],
  links:[{href:'/products/lemongrass-hydrosol',label:'Lemongrass Hydrosol'},{href:'/products/tulsi-hydrosol',label:'Tulsi Hydrosol'},{href:'/products/basil-hydrosol',label:'Basil Hydrosol'},{href:'/categories/hydrosols',label:'All Hydrosols'}]}
+};
+
+// Buyer questions selected from the user-supplied research exports, 25 October 2026.
+buyerGuides["lemongrass-oil-hydrosol-tea-buying-guide"].sections.push(...[{"heading": "What is the lemongrass oil price per kg or per litre?", "text": "Bulk rates are quoted separately from the listed retail packs. Send the required weight or volume, specification, pack type and delivery PIN code. Do not multiply a small-pack price to assume a wholesale rate, or treat 1 kg as 1 litre; ask for the unit and any conversion basis in the quotation."}, {"heading": "What are the practical uses of lemongrass essential oil?", "text": "Buyers enquire about its citrus aroma for fragrance, soap, personal-care and home-fragrance development. Suitability depends on the finished formulation and supplied specification. For a ready-to-use room product, compare our separately listed Lemongrass Natural Room Freshener."}, {"heading": "Is a GC-MS report or COA available for lemongrass oil?", "text": "Tell us which documents your purchasing team requires: a batch COA, GC-MS composition report, safety data sheet or other specification. Availability must be confirmed for the offered batch before purchase. This listing does not promise that every document is available."}]);
+buyerGuides["lemongrass-oil-hydrosol-tea-buying-guide"].updated = '2026-10-25';
+buyerGuides["tulsi-vs-basil"].sections.push(...[{"heading": "Are basil and pudina the same?", "text": "No. Sweet basil is Ocimum basilicum; pudina refers to mint, in the genus Mentha. Specify the botanical name when ordering so mint is not substituted for basil."}, {"heading": "What is basil called in India, and is it Tulsi?", "text": "Use Sweet Basil or Ocimum basilicum for this VG Naturals listing. Tulsi is a separate range listed as Ocimum sanctum, also known botanically as Ocimum tenuiflorum. Regional common names can be ambiguous; confirm the species rather than ordering by a translated name alone."}]);
+buyerGuides["tulsi-vs-basil"].updated = '2026-10-25';
+buyerGuides["tulsi-essential-oil-price-bulk-buying-guide"] = {
+  "title": "Tulsi Essential Oil Price & Bulk Buying Guide in India",
+  "summary": "Compare Tulsi essential oil retail packs and bulk quotation requirements, distinguish cooking oils and blends, and prepare a sourcing brief for VG Naturals in Lucknow.",
+  "updated": "2026-10-25",
+  "sections": [
+    {
+      "heading": "Which Tulsi oil are you buying?",
+      "text": "VG Naturals lists Tulsi Essential Oil as Ocimum sanctum. Start with that botanical identity and the essential-oil format. A search for Tulsi oil price can also return cooking oils, hair-oil blends and other branded products. Their prices are not like-for-like comparisons with this ingredient."
+    },
+    {
+      "heading": "What is the Tulsi essential oil price for 1 kg or 15 kg?",
+      "text": "Request a current bulk quotation for the exact quantity and unit. The website lists retail packs; it does not publish a daily commodity rate or a guaranteed 1 kg or 15 kg rate. Include the botanical identity, intended use, documentation needs and delivery PIN code."
+    },
+    {
+      "heading": "Is Tulsi essential oil the same as Tulsi-branded cooking oil?",
+      "text": "No. This VG Naturals product is Tulsi Essential Oil, listed as Ocimum sanctum. Cooking oils sold under a Tulsi brand name, infused hair oils and multi-herb blends are different products. Compare the product form and botanical specification before comparing prices."
+    },
+    {
+      "heading": "Which Tulsi oil specifications should a bulk buyer request?",
+      "text": "Confirm botanical identity, extraction method, batch composition, packaging, storage instructions and available technical documents. Tell us any constituent limits or certification requirements before ordering; no fixed composition or certification is implied by the product name."
+    },
+    {
+      "heading": "Can cosmetic and fragrance businesses enquire about Tulsi oil?",
+      "text": "Yes. Send a formulation brief, quantity, intended application and destination. Ingredient evaluation and finished-product suitability are separate checks; the product is not offered here as a treatment for diabetes, infection or other medical conditions."
+    },
+    {
+      "heading": "How do I compare price per kg with price per litre?",
+      "text": "Keep weight and volume separate when requesting quotations. Ask the supplier to state the priced unit, net quantity, packaging and any density basis used for conversion. Compare the final quotation, including applicable taxes and freight, for the same product specification and quantity."
+    },
+    {
+      "heading": "How can I order an evaluation pack before bulk procurement?",
+      "text": "Use the product link below to see the current retail pack sizes and prices. Packaging and courier charges are additional. Evaluate the supplied material against your requirements before discussing a repeat or larger order; sample purchase does not reserve future stock or fix future bulk pricing."
+    },
+    {
+      "heading": "Can buyers outside Lucknow request supply?",
+      "text": "Yes. VG Naturals welcomes enquiries across India from its Lucknow base. Send product name, quantity and unit, application, required documents, packaging preference, delivery city and PIN code, and required date. The team confirms delivery feasibility, MOQ, stock and dispatch terms in the quotation."
+    }
+  ],
+  "links": [
+    {
+      "href": "/products/tulsi-essential-oil",
+      "label": "Tulsi oil: current packs and prices"
+    },
+    {
+      "href": "/botanicals/tulsi",
+      "label": "Compare all Tulsi products"
+    },
+    {
+      "href": "/blog/tulsi-vs-basil",
+      "label": "Tulsi versus Basil"
+    },
+    {
+      "href": "/bulk-supply?product=Tulsi%20Essential%20Oil",
+      "label": "Request a Tulsi oil bulk quotation"
+    }
+  ]
+};
+buyerGuides["fresh-basil-leaves-buying-storage-guide"] = {
+  "title": "Fresh Basil Leaves in India: Identity, Storage & Bulk Buying",
+  "summary": "Understand sweet basil versus Tulsi and pudina, choose the right leaf format, and plan restaurant or wholesale fresh basil enquiries with VG Naturals.",
+  "updated": "2026-10-25",
+  "sections": [
+    {
+      "heading": "Are basil and pudina the same?",
+      "text": "No. Sweet basil is Ocimum basilicum; pudina refers to mint, in the genus Mentha. Specify the botanical name when ordering so mint is not substituted for basil."
+    },
+    {
+      "heading": "What is basil called in India, and is it Tulsi?",
+      "text": "Use Sweet Basil or Ocimum basilicum for this VG Naturals listing. Tulsi is a separate range listed as Ocimum sanctum, also known botanically as Ocimum tenuiflorum. Regional common names can be ambiguous; confirm the species rather than ordering by a translated name alone."
+    },
+    {
+      "heading": "How should fresh basil be stored after delivery?",
+      "text": "Follow the handling instructions for the supplied pack and use the leaves promptly. Basil is sensitive to chilling, so its storage needs differ from many other herbs. For commercial orders, agree packaging, transit time and receiving conditions before dispatch; we do not promise a fixed shelf life without the relevant product information."
+    },
+    {
+      "heading": "Which types of basil leaves does VG Naturals list?",
+      "text": "Our fresh-leaf catalogue identifies Sweet Basil as Ocimum basilicum. It does not promise a specific Thai, Genovese, purple or other cultivar. If leaf appearance, flavour profile or cultivar matters for your menu or formulation, include it in the enquiry and confirm the offered material before ordering."
+    },
+    {
+      "heading": "Should I buy fresh leaves, basil tea bags or basil oil?",
+      "text": "For fresh-leaf requirements, select Fresh Basil Leaves and confirm intended use. Basil Tea Bags are a separate dried herbal product; Basil Essential Oil is a concentrated ingredient and Basil Hydrosol is a water-based product. These formats are not interchangeable. Use the current listings below to compare formats and prices."
+    },
+    {
+      "heading": "Can restaurants and wholesalers arrange recurring basil supply?",
+      "text": "Share your weekly requirement, delivery days, receiving hours, leaf-quality expectations and delivery PIN code. Agree harvest availability, acceptable transit time, packaging and handling before a recurring schedule is confirmed. The listed 500 g pack is not a guarantee of immediate stock or service to every destination."
+    },
+    {
+      "heading": "Can basil be grown in pots or indoors?",
+      "text": "Basil can be grown in containers with adequate light and suitable growing conditions. The RHS growing guide below explains container cultivation. This is general plant information: the VG Naturals fresh-leaf listing is for harvested leaves, not a live plant or a nursery-pot offer."
+    }
+  ],
+  "links": [
+    {
+      "href": "/products/fresh-basil-leaves",
+      "label": "Fresh Basil Leaves: availability enquiry"
+    },
+    {
+      "href": "/botanicals/basil",
+      "label": "Compare Basil products"
+    },
+    {
+      "href": "/blog/tulsi-vs-basil",
+      "label": "Compare Tulsi and Basil"
+    },
+    {
+      "href": "/bulk-supply?product=Fresh%20Basil%20Leaves",
+      "label": "Restaurant and wholesale leaf enquiries"
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://www.rhs.org.uk/plants/11649/ocimum-basilicum/details",
+      "label": "RHS: Sweet Basil botanical identity"
+    },
+    {
+      "href": "https://www.rhs.org.uk/plants/86595/ocimum-tenuiflorum/details",
+      "label": "RHS: Holy Basil and Ocimum sanctum synonym"
+    },
+    {
+      "href": "https://www.rhs.org.uk/herbs/mint/grow-your-own",
+      "label": "RHS: Mint species"
+    },
+    {
+      "href": "https://postharvest.ucdavis.edu/ar/produce-facts-sheets/herbs-fresh-culinary",
+      "label": "UC Davis: Fresh culinary herbs and chilling sensitivity"
+    },
+    {
+      "href": "https://www.rhs.org.uk/herbs/basil/grow-your-own",
+      "label": "RHS: Growing basil in containers"
+    }
+  ]
 };

@@ -1,3 +1,4 @@
+import { searchBuyerQuestions } from './search-buyer-questions';
 import type { Product } from './products';
 
 export type ProductContent = {
@@ -308,6 +309,7 @@ export function getProductFaqs(p: Product, content: ProductContent) {
   const packs = p.variants.map(v => `${v.label} for ₹${v.price}`).join(' or ');
   return [
     ...content.faqs,
+    ...(searchBuyerQuestions[p.slug] || []),
     {
       question: `What pack sizes and prices are listed for ${p.name}?`,
       answer: p.status === 'coming-soon'

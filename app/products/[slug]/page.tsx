@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { searchBuyerQuestions } from '@/data/search-buyer-questions';
 import { products, getProduct } from '@/data/products';
 import { productContent, getProductFaqs } from '@/data/product-content';
 import { notFound } from 'next/navigation';
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
+  const title = searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
   const description = p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
@@ -146,6 +147,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <p className="mt-6">Need more product information? <Link href={quoteUrl} className="font-semibold text-green-900 underline">Ask the VG Naturals team</Link>.</p>
       </section>}
 
+      {searchBuyerQuestions[p.slug] && <aside className="card p-6 mt-10"><h2 className="text-2xl">More answers for buyers</h2><Link className="inline-block underline text-green-900 mt-3" href={p.slug==='lemongrass-essential-oil'?'/blog/lemongrass-oil-hydrosol-tea-buying-guide':p.slug==='tulsi-essential-oil'?'/blog/tulsi-essential-oil-price-bulk-buying-guide':p.slug==='fresh-basil-leaves'?'/blog/fresh-basil-leaves-buying-storage-guide':'/blog/tulsi-vs-basil'}>Read the {p.name} sourcing guide</Link></aside>}
       {related.length > 0 && <section className="mt-14" aria-labelledby="related-heading">
         <h2 id="related-heading" className="mb-6">Related Products</h2>
         <div className="grid-products">{related.map(x => <ProductCard key={x.slug} product={x} />)}</div>
