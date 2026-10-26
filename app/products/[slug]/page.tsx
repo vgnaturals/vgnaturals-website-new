@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) notFound();
   const content = productContent[p.slug];
   const title = searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
-  const description = p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const description = p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,

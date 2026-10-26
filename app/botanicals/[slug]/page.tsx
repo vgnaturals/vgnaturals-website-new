@@ -28,6 +28,7 @@ export default async function BotanicalRange({ params }: { params: Promise<{ slu
       <h2>{r.name}: botanical identity and product forms</h2><p className="mt-4 mb-8 max-w-4xl leading-7">{r.identity}</p>
       <div className="grid-products">{range.map(p=><ProductCard key={p.slug} product={p}/>)}</div>
       {r.slug === 'tulsi' && <TulsiBuyingDetails />}
+      {r.slug === 'basil' && <aside className="card p-6 mt-8"><h2 className="text-2xl">Fresh Basil leaves for kitchens and bulk buyers</h2><p className="mt-3 leading-7">Looking for fresh sweet basil for pesto, pasta or pizza preparations? Compare the current leaf pack with our separate oil, hydrosol and tea listings. For restaurant or wholesale supply, share the required weight, delivery frequency and PIN code; harvest and delivery need confirmation.</p><Link className="inline-block mt-4 underline text-green-900" href="/blog/fresh-basil-leaves-buying-storage-guide">Fresh Basil leaves: uses, prices, storage and buying questions</Link></aside>}
       <section className="mt-12 card p-6 sm:p-8" aria-labelledby="india-enquiry">
         <h2 id="india-enquiry">{r.name} sourcing enquiries from across India</h2>
         <p className="mt-4 leading-7">VG NATURALS PRIVATE LIMITED is based in Lucknow, Uttar Pradesh. We welcome enquiries from buyers across India. Share your city and PIN code so the team can confirm courier feasibility, packaging charges, freight and dispatch timing. An enquiry does not guarantee stock or service to every destination.</p>

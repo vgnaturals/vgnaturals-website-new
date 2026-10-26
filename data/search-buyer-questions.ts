@@ -51,6 +51,30 @@ export const searchBuyerQuestions: Record<string, {question:string;answer:string
     {
       "question": "How should fresh basil be stored after delivery?",
       "answer": "Follow the handling instructions for the supplied pack and use the leaves promptly. Basil is sensitive to chilling, so its storage needs differ from many other herbs. For commercial orders, agree packaging, transit time and receiving conditions before dispatch; we do not promise a fixed shelf life without the relevant product information."
+    },
+    {
+      "question": "What are fresh basil leaves used for in cooking?",
+      "answer": "Sweet basil is a culinary herb used in pesto and tomato-based dishes, including pasta and pizza preparations. Restaurants should specify the menu use and leaf-quality requirements when enquiring. Confirm the supplied leaves are suitable for your intended use; essential oil and hydrosol are separate products."
+    },
+    {
+      "question": "Can I replace sweet basil with Tulsi in a recipe?",
+      "answer": "Sweet basil and Tulsi are different botanicals with different flavour profiles. If a recipe or purchase specification asks for Ocimum basilicum, do not substitute Ocimum sanctum without evaluating the result. Neither is universally better; choose the herb the recipe or application requires."
+    },
+    {
+      "question": "Where can I buy fresh basil leaves online or near Lucknow?",
+      "answer": "Enquire with VG Naturals in Lucknow through the availability button or bulk form. Send the quantity, required date and delivery PIN code. Confirm harvest availability, delivery feasibility and charges before paying or travelling for collection. A website enquiry does not guarantee same-day delivery."
+    },
+    {
+      "question": "What is the fresh basil leaves price per kg?",
+      "answer": "The current listing shows our retail pack size and price. For 1 kg, larger orders or recurring restaurant supply, request a quotation stating total weight, delivery schedule and PIN code. A wholesale rate is confirmed separately; packaging and courier charges are extra."
+    },
+    {
+      "question": "Are fresh basil leaves, dried basil and basil seeds the same product?",
+      "answer": "No. Fresh leaves, dried leaves and seeds are different purchasing requirements. This listing is for fresh Ocimum basilicum leaves. Basil Tea Bags are listed separately; they should not be assumed to be loose dried culinary seasoning. This page does not offer basil seeds, leaf powder or potted plants."
+    },
+    {
+      "question": "Basil leaves kya hote hain? Kya ye Tulsi hai?",
+      "answer": "Is listing mein Basil leaves ka matlab Sweet Basil, yani Ocimum basilicum ke taaze patte hain. VG Naturals ki Tulsi range Ocimum sanctum hai. Order karte waqt botanical name aur fresh-leaf format batayein, taaki sahi product confirm ho sake."
     }
   ],
   "basil-essential-oil": [

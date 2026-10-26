@@ -158,9 +158,9 @@ buyerGuides["tulsi-essential-oil-price-bulk-buying-guide"] = {
   ]
 };
 buyerGuides["fresh-basil-leaves-buying-storage-guide"] = {
-  "title": "Fresh Basil Leaves in India: Identity, Storage & Bulk Buying",
-  "summary": "Understand sweet basil versus Tulsi and pudina, choose the right leaf format, and plan restaurant or wholesale fresh basil enquiries with VG Naturals.",
-  "updated": "2026-10-25",
+  "title": "Fresh Basil Leaves: Uses, Price & Bulk Buying in India",
+  "summary": "Buy fresh sweet basil leaves with confidence: compare Tulsi, check culinary uses, retail and bulk pricing, storage and delivery enquiries from Lucknow.",
+  "updated": "2026-10-26",
   "sections": [
     {
       "heading": "Are basil and pudina the same?",
@@ -189,6 +189,30 @@ buyerGuides["fresh-basil-leaves-buying-storage-guide"] = {
     {
       "heading": "Can basil be grown in pots or indoors?",
       "text": "Basil can be grown in containers with adequate light and suitable growing conditions. The RHS growing guide below explains container cultivation. This is general plant information: the VG Naturals fresh-leaf listing is for harvested leaves, not a live plant or a nursery-pot offer."
+    },
+    {
+      "heading": "What are fresh basil leaves used for in cooking?",
+      "text": "Sweet basil is a culinary herb used in pesto and tomato-based dishes, including pasta and pizza preparations. Restaurants should specify the menu use and leaf-quality requirements when enquiring. Confirm the supplied leaves are suitable for your intended use; essential oil and hydrosol are separate products."
+    },
+    {
+      "heading": "Can I replace sweet basil with Tulsi in a recipe?",
+      "text": "Sweet basil and Tulsi are different botanicals with different flavour profiles. If a recipe or purchase specification asks for Ocimum basilicum, do not substitute Ocimum sanctum without evaluating the result. Neither is universally better; choose the herb the recipe or application requires."
+    },
+    {
+      "heading": "Where can I buy fresh basil leaves online or near Lucknow?",
+      "text": "Enquire with VG Naturals in Lucknow through the availability button or bulk form. Send the quantity, required date and delivery PIN code. Confirm harvest availability, delivery feasibility and charges before paying or travelling for collection. A website enquiry does not guarantee same-day delivery."
+    },
+    {
+      "heading": "What is the fresh basil leaves price per kg?",
+      "text": "The current listing shows our retail pack size and price. For 1 kg, larger orders or recurring restaurant supply, request a quotation stating total weight, delivery schedule and PIN code. A wholesale rate is confirmed separately; packaging and courier charges are extra."
+    },
+    {
+      "heading": "Are fresh basil leaves, dried basil and basil seeds the same product?",
+      "text": "No. Fresh leaves, dried leaves and seeds are different purchasing requirements. This listing is for fresh Ocimum basilicum leaves. Basil Tea Bags are listed separately; they should not be assumed to be loose dried culinary seasoning. This page does not offer basil seeds, leaf powder or potted plants."
+    },
+    {
+      "heading": "Basil leaves kya hote hain? Kya ye Tulsi hai?",
+      "text": "Is listing mein Basil leaves ka matlab Sweet Basil, yani Ocimum basilicum ke taaze patte hain. VG Naturals ki Tulsi range Ocimum sanctum hai. Order karte waqt botanical name aur fresh-leaf format batayein, taaki sahi product confirm ho sake."
     }
   ],
   "links": [
@@ -229,6 +253,10 @@ buyerGuides["fresh-basil-leaves-buying-storage-guide"] = {
     {
       "href": "https://www.rhs.org.uk/herbs/basil/grow-your-own",
       "label": "RHS: Growing basil in containers"
+    },
+    {
+      "href": "https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/op/Ocimum",
+      "label": "University of Oxford: Sweet Basil as a culinary herb"
     }
   ]
 };
