@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) notFound();
   const content = productContent[p.slug];
   const title = searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
-  const description = p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const description = p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -147,7 +147,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <p className="mt-6">Need more product information? <Link href={quoteUrl} className="font-semibold text-green-900 underline">Ask the VG Naturals team</Link>.</p>
       </section>}
 
-      {searchBuyerQuestions[p.slug] && <aside className="card p-6 mt-10"><h2 className="text-2xl">More answers for buyers</h2><Link className="inline-block underline text-green-900 mt-3" href={p.slug==='lemongrass-essential-oil'?'/blog/lemongrass-oil-hydrosol-tea-buying-guide':p.slug==='tulsi-essential-oil'?'/blog/tulsi-essential-oil-price-bulk-buying-guide':p.slug==='fresh-basil-leaves'?'/blog/fresh-basil-leaves-buying-storage-guide':'/blog/tulsi-vs-basil'}>Read the {p.name} sourcing guide</Link></aside>}
+      {searchBuyerQuestions[p.slug] && <aside className="card p-6 mt-10"><h2 className="text-2xl">More answers for buyers</h2><Link className="inline-block underline text-green-900 mt-3" href={p.slug==='lemongrass-essential-oil'?'/blog/lemongrass-oil-hydrosol-tea-buying-guide':p.slug==='tulsi-essential-oil'?'/blog/tulsi-essential-oil-price-bulk-buying-guide':p.slug==='fresh-tulsi-leaves'?'/blog/fresh-tulsi-leaves-buying-guide':p.slug==='fresh-basil-leaves'?'/blog/fresh-basil-leaves-buying-storage-guide':'/blog/tulsi-vs-basil'}>Read the {p.name} sourcing guide</Link></aside>}
       {related.length > 0 && <section className="mt-14" aria-labelledby="related-heading">
         <h2 id="related-heading" className="mb-6">Related Products</h2>
         <div className="grid-products">{related.map(x => <ProductCard key={x.slug} product={x} />)}</div>

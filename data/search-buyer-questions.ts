@@ -86,5 +86,31 @@ export const searchBuyerQuestions: Record<string, {question:string;answer:string
       "question": "Can basil essential oil replace fresh basil in food?",
       "answer": "This essential-oil listing does not establish food-grade suitability or culinary dosing. For fresh culinary-leaf requirements, enquire about Fresh Basil Leaves separately and confirm suitability for your intended use."
     }
+  ],
+  "fresh-tulsi-leaves": [
+    {
+      "question": "Where can I buy fresh Tulsi leaves online?",
+      "answer": "You can enquire about fresh Tulsi leaves with VG Naturals in Lucknow. Select Check Availability on the product page and send your quantity, delivery PIN code and required date. The team confirms harvest availability, packaging, freight and dispatch timing before the order is agreed."
+    },
+    {
+      "question": "Can I get instant or same-day delivery of Tulsi leaves?",
+      "answer": "Instant or same-day delivery is not promised. Fresh-leaf supply depends on the harvest and delivery route. Ask the team to confirm a delivery plan for your PIN code before paying or travelling to collect an order."
+    },
+    {
+      "question": "What is Holy Basil, and what is its botanical name?",
+      "answer": "Holy Basil is commonly called Tulsi. VG Naturals lists its Tulsi leaves as Ocimum sanctum, a botanical synonym of Ocimum tenuiflorum in the Lamiaceae family. Sweet Basil, Ocimum basilicum, has a separate product listing."
+    },
+    {
+      "question": "What is the price of fresh Tulsi leaves per kg?",
+      "answer": "See the current 500 g pack price on this page. For 1 kg, larger quantities or recurring supply, request a separate quotation with the total weight and delivery schedule. Packaging and courier charges are extra. A retail pack price does not establish a wholesale rate."
+    },
+    {
+      "question": "Should I buy fresh Tulsi leaves or a Tulsi tea pouch?",
+      "answer": "Fresh leaves suit buyers seeking fresh botanical material, subject to the intended application and supplied specification. For a packaged herbal beverage, see Herbal Tulsi Tea Pouch and follow its ingredient declaration and preparation directions. Fresh leaves, dried tea, hydrosol and essential oil are separate product forms."
+    },
+    {
+      "question": "Does this listing include a live Tulsi plant or seeds?",
+      "answer": "No. This listing is for harvested fresh Tulsi leaves. It does not include a rooted plant, pot or seeds. Specify the product form when enquiring so a fresh-leaf request is not confused with planting material."
+    }
   ]
 };

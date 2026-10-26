@@ -260,3 +260,83 @@ buyerGuides["fresh-basil-leaves-buying-storage-guide"] = {
     }
   ]
 };
+
+buyerGuides["fresh-tulsi-leaves-buying-guide"] = {
+  "title": "Fresh Tulsi Leaves: Online Buying, Price & Bulk Supply",
+  "summary": "Source fresh Tulsi leaves from VG Naturals, Lucknow. Compare Holy Basil identity, fresh leaves and tea, listed packs, bulk quotations and delivery requirements.",
+  "updated": "2026-10-26",
+  "sections": [
+    {
+      "heading": "Where can I buy fresh Tulsi leaves online?",
+      "text": "You can enquire about fresh Tulsi leaves with VG Naturals in Lucknow. Select Check Availability on the product page and send your quantity, delivery PIN code and required date. The team confirms harvest availability, packaging, freight and dispatch timing before the order is agreed."
+    },
+    {
+      "heading": "Can I get instant or same-day delivery of Tulsi leaves?",
+      "text": "Instant or same-day delivery is not promised. Fresh-leaf supply depends on the harvest and delivery route. Ask the team to confirm a delivery plan for your PIN code before paying or travelling to collect an order."
+    },
+    {
+      "heading": "What is Holy Basil, and what is its botanical name?",
+      "text": "Holy Basil is commonly called Tulsi. VG Naturals lists its Tulsi leaves as Ocimum sanctum, a botanical synonym of Ocimum tenuiflorum in the Lamiaceae family. Sweet Basil, Ocimum basilicum, has a separate product listing."
+    },
+    {
+      "heading": "What is the price of fresh Tulsi leaves per kg?",
+      "text": "See the current 500 g pack price on this page. For 1 kg, larger quantities or recurring supply, request a separate quotation with the total weight and delivery schedule. Packaging and courier charges are extra. A retail pack price does not establish a wholesale rate."
+    },
+    {
+      "heading": "Should I buy fresh Tulsi leaves or a Tulsi tea pouch?",
+      "text": "Fresh leaves suit buyers seeking fresh botanical material, subject to the intended application and supplied specification. For a packaged herbal beverage, see Herbal Tulsi Tea Pouch and follow its ingredient declaration and preparation directions. Fresh leaves, dried tea, hydrosol and essential oil are separate product forms."
+    },
+    {
+      "heading": "Does this listing include a live Tulsi plant or seeds?",
+      "text": "No. This listing is for harvested fresh Tulsi leaves. It does not include a rooted plant, pot or seeds. Specify the product form when enquiring so a fresh-leaf request is not confused with planting material."
+    },
+    {
+      "heading": "Where can I enquire about Tulsi leaves near Lucknow?",
+      "text": "VG Naturals is based in Aurangabad Jagir, Lucknow, Uttar Pradesh. Use the Contact page for the current address and directions, and call +91 90442 10088 to confirm availability and collection arrangements before visiting. Buyers elsewhere in India can send their city and PIN code for a delivery feasibility check."
+    },
+    {
+      "heading": "What should businesses specify for recurring fresh Tulsi supply?",
+      "text": "Herbal-product businesses, beverage developers and botanical buyers should specify the weight per delivery, delivery frequency, intended use, leaf-quality requirements, packaging and required documents. Agree harvest timing, receiving arrangements and handling instructions before dispatch. If your specification requires a particular variety, grade or certification, ask for confirmation for the actual supply; these are not established by the name Tulsi alone."
+    },
+    {
+      "heading": "तुलसी के ताजे पत्ते ऑनलाइन कैसे मंगाएं?",
+      "text": "VG Naturals से ताजे तुलसी के पत्तों की उपलब्धता पूछने के लिए मात्रा, उपयोग, डिलीवरी PIN कोड और जरूरी तारीख भेजें। टीम उपलब्धता, पैकिंग और डिलीवरी की पुष्टि करेगी। यह कटे हुए ताजे पत्तों की लिस्टिंग है, गमले वाले पौधे की नहीं।"
+    }
+  ],
+  "links": [
+    {
+      "href": "/products/fresh-tulsi-leaves",
+      "label": "Fresh Tulsi Leaves: listed pack and availability"
+    },
+    {
+      "href": "/products/herbal-tulsi-tea-pouch",
+      "label": "Herbal Tulsi Tea Pouch"
+    },
+    {
+      "href": "/botanicals/tulsi",
+      "label": "Explore the complete Tulsi range"
+    },
+    {
+      "href": "/blog/tulsi-vs-basil",
+      "label": "Tulsi vs Sweet Basil"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact and Lucknow directions"
+    },
+    {
+      "href": "/bulk-supply?product=Fresh%20Tulsi%20Leaves",
+      "label": "Request a fresh Tulsi bulk quotation"
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30252269-2",
+      "label": "Kew: Ocimum sanctum is a synonym of Ocimum tenuiflorum"
+    },
+    {
+      "href": "https://mpns.science.kew.org/mpns-portal/plantDetail?dbs=wcs&plantId=137105",
+      "label": "Kew: Holy Basil names and Lamiaceae family"
+    }
+  ]
+};

@@ -24,6 +24,7 @@ export default function TulsiBuyingDetails() {
     <section className="card p-6 sm:p-8 mt-8" aria-labelledby="fresh-tulsi-buying">
       <h3 id="fresh-tulsi-buying" className="text-xl font-semibold">Buying fresh Tulsi leaves online or in bulk</h3>
       <p className="mt-3 leading-7">For fresh-leaf enquiries, send the quantity in grams or kilograms, delivery city and PIN code, required date and intended use. Ask about harvest availability and suitable packaging before agreeing a dispatch. A listed 500 g pack does not guarantee immediate stock or delivery to every destination.</p>
+      <p className="mt-4"><Link className="underline text-green-900" href="/blog/fresh-tulsi-leaves-buying-guide">Fresh Tulsi leaves buying guide: Holy Basil identity, prices and delivery questions</Link></p>
       <Link className="btn mt-5" href="/bulk-supply?product=Fresh%20Tulsi%20Leaves">Enquire about fresh Tulsi leaves</Link>
     </section>
     <p className="mt-6 text-sm leading-6">Botanical-name references: <a className="underline" href="https://powo.science.kew.org/taxon/30252269-2">Kew: Ocimum sanctum and Ocimum tenuiflorum</a>; <a className="underline" href="https://www.nparks.gov.sg/florafaunaweb/flora/2/2/2275">NParks: Holy Basil</a>. These references explain plant names; they do not certify VG Naturals products.</p>
