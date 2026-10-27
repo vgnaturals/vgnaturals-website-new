@@ -12,6 +12,6 @@ export default async function Confirmation({searchParams}:{searchParams:Promise<
  {id?<div className="my-7 rounded-xl border border-[#d5dfcc] bg-[#f2f5ec] p-5"><p className="text-xs font-semibold uppercase tracking-wider">Your Order ID</p><p className="mt-3 break-all font-mono text-base font-bold select-all">{id}</p><p className="mt-3 text-sm font-semibold text-[#214b36]">Awaiting confirmation call</p></div>:<p className="my-7 text-sm leading-6">Your Order ID appears after you complete checkout. If you have already submitted a request, please contact us for assistance.</p>}
  <p className="text-sm leading-7 text-[#53604e]">Our team will confirm product availability, delivery charges and the final amount during the call. Your booking will be finalised after confirmation. No online payment has been collected.</p>
  <div className="mt-7 flex flex-wrap justify-center gap-3"><Link href="/products" className="btn">Continue browsing</Link><a href="tel:+919044210088" className="btn btn-outline">Call our team</a></div>
- <p className="mt-6 text-xs leading-6 text-[#53604e]">If you did not complete the submission verification, please <Link className="underline" href="/checkout">return to checkout</Link> to finish sending your request.</p>
+ <p className="mt-6 text-xs leading-6 text-[#53604e]">If your request could not be saved, please <Link className="underline" href="/checkout">return to checkout</Link> to finish sending your request.</p>
  </div></section>;
 }
