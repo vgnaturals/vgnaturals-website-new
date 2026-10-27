@@ -2,7 +2,7 @@
 import {useEffect,useRef,useState,type FormEvent} from 'react';
 import Link from 'next/link';
 import {useCart} from '@/components/CartProvider';
-import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,orderMessage,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
+import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
 
 const money=(n:number)=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
 const fields:{key:keyof Delivery;label:string;autoComplete:string;type?:string;wide?:boolean;placeholder?:string}[]=[
@@ -56,7 +56,19 @@ export default function Checkout(){
   }catch{setError('We could not generate your Order ID. Please retry, or call +91 90442 10088.')}
   finally{busyRef.current=false;setBusy(false)}
  }
- const message=reference?orderMessage(reference.id,delivery,items):'';
+ async function submitOrder(event:FormEvent<HTMLFormElement>){
+  event.preventDefault();if(!canSend||busyRef.current)return;
+  busyRef.current=true;setBusy(true);setError('');
+  try{
+   const response=await fetch('https://vg-naturals-business.roundmars256.chatgpt.site/api/website-leads',{
+    method:'POST',headers:{'Content-Type':'application/json'},credentials:'omit',signal:AbortSignal.timeout(25000),
+    body:JSON.stringify({requestId:reference!.id,type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:delivery.notes},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
+   });
+   const result=await response.json();
+   if(!response.ok||result.id!=='website-'+reference!.id)throw Error(result.error||'Could not save your order request. Please retry.');
+   window.location.assign('/order-confirmation?order='+encodeURIComponent(reference!.id));
+  }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry with the same Order ID; your request will not be duplicated.');busyRef.current=false;setBusy(false)}
+ }
  async function copyId(){
   if(!reference)return;
   try{await navigator.clipboard.writeText(reference.id);setNotice('Order ID copied.')}
@@ -90,22 +102,15 @@ export default function Checkout(){
       <button type="button" className="mt-2 min-h-11 text-sm font-semibold underline" onClick={copyId}>Copy Order ID</button>
       <p className="text-xs leading-5 text-[#53604e]">Not sent yet · Unpaid. Send below so our team receives your request.</p>
      </div>
-     <div className="flex justify-between gap-4 items-center"><h3>Delivery details</h3><button type="button" className="text-sm underline min-h-11" onClick={()=>{setReview(false);setNotice('')}}>Edit details</button></div>
+     <div className="flex justify-between gap-4 items-center"><h3>Delivery details</h3><button type="button" className="text-sm underline min-h-11" disabled={busy} onClick={()=>{setReview(false);setNotice('')}}>Edit details</button></div>
      <address className="not-italic text-sm leading-7 break-words"><strong>{delivery.name}</strong><br/>{delivery.phone}{delivery.email&&<><br/>{delivery.email}</>}{delivery.company&&<><br/>{delivery.company}</>}<br/>{delivery.address}<br/>{delivery.city}, {delivery.state} — {delivery.pin}<br/>India</address>
      {delivery.notes&&<p className="mt-3 text-sm leading-6 break-words">Note: {delivery.notes}</p>}
      <div className="mt-6 border-t border-[#e0e6d8] pt-6">
-      <form action="https://formsubmit.co/vgnaturalspvtltd@gmail.com" method="POST" className="mt-4" onSubmit={()=>setNotice('Complete the verification to send your request. You will then return to your order confirmation page.')}>
-       <input type="hidden" name="_next" value={'https://www.vgnaturals.com/order-confirmation?order='+encodeURIComponent(reference!.id)}/>
-       <input type="hidden" name="_subject" value={'VG Naturals order request — '+reference!.id}/><input type="hidden" name="_template" value="table"/>
-       <input type="hidden" name="order_id" value={reference!.id}/><input type="hidden" name="name" value={delivery.name}/>
-       {delivery.email&&<input type="hidden" name="email" value={delivery.email}/>}<input type="hidden" name="phone" value={delivery.phone}/>
-       <input type="hidden" name="order_request" value={message}/><input type="hidden" name="products_subtotal_INR" value={total}/>
-       <input type="hidden" name="request_type" value="Order request — pending team confirmation, unpaid"/>
-       <input type="hidden" name="source" value="https://www.vgnaturals.com/checkout"/>
-       <input type="hidden" name="contact_consent" value="Customer agreed to use their details for this order request"/>
+      <form onSubmit={submitOrder} className="mt-4">
        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true"/>
-       <button className="btn w-full" type="submit">Submit order request →</button>
-       <p className="mt-2 text-xs leading-5 text-[#53604e]">Your request is sent securely through FormSubmit. Complete its verification to return to your confirmation page. Our team will call you to confirm your order.</p>
+       {error&&<p role="alert" className="mb-4 text-sm text-red-700">{error}</p>}
+       <button className="btn w-full" type="submit" disabled={busy}>{busy?'Saving your order request…':'Submit order request →'}</button>
+       <p className="mt-2 text-xs leading-5 text-[#53604e]">Your request will be saved with VG Naturals. Our team will call you to confirm your order and delivery details.</p>
       </form>
      </div>
     </>}
