@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol | Uses, Prices & Bulk India' : searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
-  const description = p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, formulation uses, storage questions and bulk supply enquiries across India.' : p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const title = p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil) | Uses, Prices & Bulk India' : p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol | Uses, Prices & Bulk India' : searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
+  const description = p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, uses, storage FAQs and bulk enquiries across India.' : p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, formulation uses, storage questions and bulk supply enquiries across India.' : p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -115,6 +115,13 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       </section>
 
       {p.slug === 'lemongrass-hydrosol' && <p className="mt-5 text-sm leading-6 max-w-4xl">Background on hydrosol terminology: <a className="underline" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10669667/">published research on hydrolates and their composition</a>. This explains the product category; it is not a test report or certification for VG Naturals. For a format comparison, read our <Link className="underline" href="/blog/lemongrass-oil-hydrosol-tea-buying-guide">lemongrass oil, hydrosol and tea buying guide</Link>.</p>}
+
+
+      {p.slug === 'tulsi-hydrosol' && <aside className="mt-6 max-w-4xl text-sm leading-6">
+        <h2 className="text-xl">Tulsi identity and product formats</h2>
+        <p className="mt-3">Compare <Link className="underline" href="/products/tulsi-essential-oil">Tulsi Essential Oil</Link>, <Link className="underline" href="/products/basil-hydrosol">Sweet Basil Hydrosol</Link> and the <Link className="underline" href="/botanicals/tulsi">Tulsi range and pack prices</Link> before choosing an ingredient.</p>
+        <p className="mt-3">Botanical reference: <a className="underline" href="https://powo.science.kew.org/taxon/30252269-2">Kew: Ocimum sanctum and Ocimum tenuiflorum</a>. For general terminology, see <a className="underline" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10669667/">published research on hydrolates</a>. These sources explain identity and the product category; they are not tests or certifications of VG Naturals products.</p>
+      </aside>}
 
       <section id="details" aria-labelledby="details-heading" className="mt-12 scroll-mt-40">
         <h2 id="details-heading" className="mb-6">Product details</h2>

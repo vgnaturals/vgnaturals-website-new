@@ -142,22 +142,68 @@ export const productContent: Record<string, ProductContent> = {
     ]
   },
   'tulsi-hydrosol': {
-    summary: 'Tulsi hydrosol (Ocimum sanctum) in 50 ml and 100 ml packs. Enquire with VG Naturals for botanical water and B2B formulation requirements.',
-    seoTitle: 'Tulsi Hydrosol (Ocimum sanctum) | Botanical Water',
-    form: 'Water-based botanical hydrosol',
-    description: [
-      'VG Naturals Tulsi Hydrosol is a water-based botanical product identified as Ocimum sanctum. It is part of our Holy Basil range and is offered separately from Tulsi essential oil, tea and fresh leaves. This distinction helps buyers choose the botanical identity and product form their application requires.',
-      'The hydrosol can be discussed for suitable water-based cosmetic, personal-care and aromatic product concepts. Manufacturers considering Tulsi hydrosol for botanical mists, toners or sprays should review the product specification and evaluate the final formulation. VG Naturals accepts retail pack and bulk enquiries from formulators, distributors and botanical ingredient buyers in India.'
-    ],
-    applications: ['Botanical mist and toner formulation enquiries', 'Water-based personal-care product development', 'Aromatic spray and botanical ingredient sourcing'],
-    buyingNote: 'Confirm composition, storage instructions and formulation requirements with our team before selecting a bulk quantity.',
-    faqs: [
-      { question: 'What is the botanical identity of Tulsi hydrosol?', answer: 'This listing identifies Tulsi as Ocimum sanctum, also known as Holy Basil. Basil Hydrosol is a separate Ocimum basilicum product.' },
-      { question: 'Can I enquire about Tulsi hydrosol for a cosmetic formulation?', answer: 'Yes. Share the intended product type and technical requirements. Suitability and inclusion levels should be assessed for the complete formulation.' },
-      { question: 'How is Tulsi hydrosol different from Tulsi essential oil?', answer: 'Hydrosol is the water-based product format; essential oil is the concentrated aromatic oil format. They should be selected according to the formulation brief.' },
-      { question: 'Where are shelf life and storage requirements listed?', answer: 'Follow the supplied label and ask our team for the current product information. A specific shelf life is not confirmed on this page.' }
-    ]
-  },
+  "summary": "Tulsi Hydrosol (Holy Basil, Ocimum sanctum) is the water-based botanical product in the VG Naturals range. Compare 50 ml and 100 ml packs and enquire about formulation requirements and bulk sourcing from Lucknow across India.",
+  "seoTitle": "Tulsi Hydrosol (Holy Basil) | Uses, Prices & Bulk India",
+  "form": "Water-based botanical hydrosol",
+  "description": [
+    "VG Naturals Tulsi Hydrosol is listed as Ocimum sanctum, commonly known as Holy Basil. Kew recognises Ocimum sanctum as a synonym of Ocimum tenuiflorum. Buyers using either botanical name can specify Tulsi Hydrosol in their enquiry. Our Sweet Basil Hydrosol is a separate Ocimum basilicum product.",
+    "Hydrosols generally refer to the water-based condensate separated during aromatic-plant distillation. This format differs from concentrated essential oil and from leaves steeped in water. Ask for the production method and composition applicable to the supplied batch when comparing Tulsi water, floral water and hydrosol listings.",
+    "Cosmetic formulators and personal-care brands can enquire about Tulsi Hydrosol for water-based mist, toner and aromatic spray development. The formulation specification, preservation and intended application determine suitability. General information about the Tulsi plant does not establish skin benefits or treatment performance for this product.",
+    "Listed 50 ml and 100 ml packs support small-quantity evaluation. For commercial requirements, send your quantity and unit, intended use, packaging preference, delivery PIN code and required date to our Lucknow team. Bulk pricing, MOQ, stock, freight and delivery feasibility are confirmed in the quotation."
+  ],
+  "applications": [
+    "Botanical mist and toner formulation enquiries",
+    "Water-based personal-care development subject to specification review",
+    "Aromatic spray development and botanical ingredient procurement"
+  ],
+  "buyingNote": "Request composition, preservation status, storage instructions, shelf life and available batch documents before evaluating a sample. Include the required quantity, packaging and delivery PIN code for a bulk quotation.",
+  "faqs": [
+    {
+      "question": "What is Tulsi hydrosol used for?",
+      "answer": "Buyers can enquire about Tulsi Hydrosol as a water-based botanical ingredient for mist, toner, personal-care and aromatic spray development. Confirm the specification and assess the complete formulation for the intended application before commercial use."
+    },
+    {
+      "question": "Are Tulsi, Holy Basil and Ocimum tenuiflorum the same botanical identity?",
+      "answer": "This product is listed as Tulsi or Holy Basil, Ocimum sanctum. Kew treats Ocimum sanctum as a synonym of Ocimum tenuiflorum. Include the botanical name and product format in your purchase brief to avoid confusion with other basil products."
+    },
+    {
+      "question": "Is Tulsi hydrosol the same as Sweet Basil hydrosol?",
+      "answer": "No. VG Naturals lists Tulsi Hydrosol as Ocimum sanctum and Basil Hydrosol as Ocimum basilicum. The word basil alone can be ambiguous, so compare botanical identity, composition and intended use before choosing."
+    },
+    {
+      "question": "What skin benefits does Tulsi hydrosol offer?",
+      "answer": "This listing does not establish acne-treatment, skin-lightening or other clinical benefits. For a face mist or toner concept, request the supplied product specification and evaluate the finished formulation. Botanical origin alone does not confirm suitability for every skin type."
+    },
+    {
+      "question": "Can I use Tulsi hydrosol daily on my face?",
+      "answer": "A daily facial-use routine is not specified here. Follow the supplied label and confirm whether the particular product is intended for direct application or formulation use. Do not infer directions from Tulsi tea, supplements or another brand's hydrosol."
+    },
+    {
+      "question": "How is Tulsi hydrosol made?",
+      "answer": "Hydrosols generally come from cooling and collecting the water-based condensate during aromatic-plant distillation, separately from the essential oil. Steeping Tulsi leaves or adding essential oil to water is not the same process. Ask our team for the production specification of the offered batch."
+    },
+    {
+      "question": "How does Tulsi hydrosol differ from Tulsi essential oil?",
+      "answer": "Hydrosol is a water-based format, while essential oil is a concentrated aromatic oil. They have different formulation roles and cannot be substituted at the same quantity without reassessing the formula. VG Naturals lists them as separate products."
+    },
+    {
+      "question": "Can I drink Tulsi hydrosol or take it like Tulsi tea?",
+      "answer": "Food-grade or drinking suitability is not established for this listing. It does not provide an oral dose or morning-versus-night schedule. Herbal Tulsi Tea Pouch is a separate catalogue product; select the format intended for your use and follow its label."
+    },
+    {
+      "question": "What can I mix with Tulsi hydrosol?",
+      "answer": "For product development, share the other ingredients and intended application with your formulator and request the hydrosol specification. Compatibility, preservation and stability require assessment for the complete formula. This page does not provide supplement-combination advice."
+    },
+    {
+      "question": "How should Tulsi hydrosol be stored, and does it need preservatives?",
+      "answer": "Request the current label, preservation status, storage conditions, expiry information and guidance after opening. A universal shelf life or refrigeration requirement is not confirmed here. Do not assume a water-based botanical product is self-preserving."
+    },
+    {
+      "question": "What documents should a bulk Tulsi hydrosol buyer request?",
+      "answer": "Ask for the available composition information, pH specification, preservation details and relevant batch documents. Specify any COA, safety information or microbial-quality requirements in your enquiry. Document availability and compliance with your purchasing specification must be confirmed for the proposed supply."
+    }
+  ]
+},
   'tulsi-air-sanitizing-spray': {
     summary: 'Tulsi Air Sanitizing Spray from VG Naturals in 50 ml and 100 ml packs. Explore Tulsi room-fragrance and bulk air-care product enquiries.',
     seoTitle: 'Tulsi Air Sanitizing Spray | Room Fragrance Enquiries',
