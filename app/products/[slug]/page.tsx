@@ -64,9 +64,12 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     description: summary,
     image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
     brand: { '@type': 'Brand', name: 'VG Naturals' },
-    offers: p.status === 'ready' ? p.variants.map(v => ({
+    // Fresh packs have published prices; harvest and delivery still require confirmation.
+    // Do not invent an InStock value when availability is unknown.
+    offers: (p.status === 'ready' || p.status === 'fresh') && p.variants.length > 0 ? p.variants.map(v => ({
       '@type': 'Offer',
       name: `${p.name} — ${v.label}`,
+      ...(p.status === 'fresh' ? { description: 'Listed pack price. Harvest availability and delivery feasibility must be confirmed before ordering. Packaging and courier charges are additional.' } : {}),
       seller: { '@id': 'https://www.vgnaturals.com/#organization' },
       priceCurrency: 'INR',
       price: v.price,
