@@ -32,22 +32,64 @@ export const productContent: Record<string, ProductContent> = {
     ]
   },
   'lemongrass-hydrosol': {
-    summary: 'Lemongrass hydrosol in 50 ml and 100 ml packs from VG Naturals. Enquire about botanical water for formulation development and bulk supply in India.',
-    seoTitle: 'Lemongrass Hydrosol | Botanical Water & Bulk Enquiries',
-    form: 'Water-based botanical hydrosol',
-    description: [
-      'VG Naturals Lemongrass Hydrosol is a water-based botanical product for buyers seeking an aromatic water format. It complements our lemongrass essential oil range while serving a different formulation role. The listed 50 ml and 100 ml packs allow customers to select a small quantity before discussing larger commercial requirements.',
-      'Cosmetic manufacturers, personal-care brands and botanical product developers can enquire about lemongrass hydrosol for water-based mist, toner, hair-care or room-spray concepts. These are formulation enquiries: compatibility, preservation and finished-product performance need to be evaluated for the intended application. Share your end use with our Lucknow team when requesting bulk lemongrass hydrosol.'
-    ],
-    applications: ['Water-based botanical mist and toner development', 'Personal-care and hair-care formulation enquiries', 'Aromatic room-spray formulation concepts'],
-    buyingNote: 'Discuss composition, storage guidance and the specifications relevant to your water-based formulation before ordering a commercial quantity.',
-    faqs: [
-      { question: 'What is lemongrass hydrosol?', answer: 'It is the water-based botanical format in the VG Naturals lemongrass range. It differs from the separately listed concentrated essential oil.' },
-      { question: 'Can I use it to develop a face mist or hair-care product?', answer: 'You can enquire about it as a formulation ingredient. Confirm the product specification and evaluate the complete formulation before using it in a finished cosmetic product.' },
-      { question: 'Is the hydrosol interchangeable with essential oil?', answer: 'No. They have different physical properties and formulation roles. Order the product format specified for your application.' },
-      { question: 'Is a shelf life or preservative system specified here?', answer: 'These details are not confirmed on this listing. Ask our team for the applicable product information and follow the final label.' }
-    ]
-  },
+  "summary": "Lemongrass Hydrosol is the water-based botanical product in the VG Naturals range, available in listed 50 ml and 100 ml packs. Explore formulation enquiries, storage questions and bulk sourcing from Lucknow for buyers across India.",
+  "seoTitle": "Lemongrass Hydrosol | Uses, Packs & Bulk Enquiries",
+  "form": "Water-based botanical hydrosol",
+  "description": [
+    "VG Naturals Lemongrass Hydrosol is offered for buyers seeking an aromatic water format rather than concentrated essential oil. The listed 50 ml and 100 ml packs support small-quantity evaluation before a commercial enquiry. Current pack prices are shown on this page; bulk rates, minimum order quantities and delivery terms are confirmed separately.",
+    "In general, hydrosols are aqueous condensates collected during aromatic-plant distillation. They are distinct from the essential-oil phase and from water made by steeping leaves. Ask for the production method, composition and specification of the particular batch you intend to buy rather than treating a general description as proof of its characteristics.",
+    "Cosmetic manufacturers, personal-care brands and product developers can enquire about this product for water-based mist, toner, hair-care or room-spray formulation concepts. These are potential formulation applications, not confirmed skin, hair-growth or therapeutic benefits. Compatibility, preservation and finished-product performance need to be assessed for the intended application.",
+    "For India-wide bulk enquiries, send the required volume or weight, packaging preference, intended use, delivery PIN code and required date to our Lucknow team. Confirm delivery feasibility, packaging and courier charges, applicable taxes and dispatch timing before accepting a quotation. A website enquiry does not confirm stock or a delivery date."
+  ],
+  "applications": [
+    "Water-based mist and toner formulation enquiries, subject to specification review",
+    "Hair-care and personal-care product development, subject to formulation evaluation",
+    "Aromatic room-spray development with product-specific compatibility checks"
+  ],
+  "buyingNote": "Before evaluating a sample, request composition, preservation status, storage instructions, shelf life and available batch documents. For bulk quantities, specify the unit, packaging and delivery PIN code; document availability and supply terms require confirmation.",
+  "faqs": [
+    {
+      "question": "What is lemongrass hydrosol?",
+      "answer": "It is a water-based aromatic botanical product. Hydrosols generally refer to the aqueous condensate from aromatic-plant distillation. VG Naturals lists Lemongrass Hydrosol separately from Lemongrass Essential Oil; confirm the supplied product's composition and production specification before ordering."
+    },
+    {
+      "question": "Is lemongrass hydrosol the same as essential oil or infused water?",
+      "answer": "No. Hydrosol is the water-based distillation product; essential oil is a distinct concentrated aromatic product. Leaf-infused water is prepared by steeping plant material. These names do not describe interchangeable ingredients, and a hydrosol listing does not establish suitability as a beverage."
+    },
+    {
+      "question": "How should I use lemongrass hydrosol?",
+      "answer": "Start with the supplied label and the intended application. For formulation work, ask about composition, preservation, recommended handling and compatibility. This listing does not specify a universal dilution, application frequency or ready-to-use cosmetic routine."
+    },
+    {
+      "question": "Can lemongrass hydrosol be used for skin, face mist or toner formulations?",
+      "answer": "You can enquire about it as an ingredient for product development. Direct facial-use suitability and any claimed benefit must be supported by the particular product specification and finished-formulation assessment. A botanical name alone does not establish suitability for every skin type."
+    },
+    {
+      "question": "Can lemongrass hydrosol be used for hair-care products?",
+      "answer": "Hair-care formulators can request product information for evaluation in a water-based formulation. Confirm composition, preservation and compatibility before use. VG Naturals does not establish hair-growth, anti-dandruff or scalp-treatment benefits through this listing."
+    },
+    {
+      "question": "How is lemongrass hydrosol made?",
+      "answer": "In general, aromatic-plant distillation produces vapour that is cooled and condensed; the water-based condensate is collected separately from the essential oil. Simply adding essential oil to water or steeping leaves does not establish that the result is a hydrosol. Ask our team for the process and specifications applicable to the offered batch."
+    },
+    {
+      "question": "What is the shelf life, and does this hydrosol need refrigeration or preservatives?",
+      "answer": "A fixed shelf life, refrigeration requirement and preservative system are not confirmed here. Request the supplied product's storage conditions, preservation status, expiry information and guidance after opening. Do not assume that all hydrosols have identical storage needs or that a botanical water is automatically self-preserving."
+    },
+    {
+      "question": "Can I drink this lemongrass hydrosol or use it instead of tea?",
+      "answer": "This listing does not establish food-grade or drinking suitability. Do not treat hydrosol, essential oil and the separately listed Lemongrass Tea Bags as interchangeable products. Ask for the exact product's intended use and follow the supplied label."
+    },
+    {
+      "question": "What should I ask about composition, pH and batch documents?",
+      "answer": "Ask for the available composition information, pH specification, preservation status and relevant batch documentation. State which COA, safety information or microbial-quality requirements your procurement team needs. Availability must be confirmed for the proposed supply; no particular test result or certification is promised here."
+    },
+    {
+      "question": "Can I order lemongrass hydrosol in bulk in India?",
+      "answer": "VG Naturals welcomes bulk enquiries from formulators, manufacturers, distributors and other buyers across India. Share the quantity and unit, required packaging, application and delivery PIN code. Bulk prices and MOQ are quoted separately from retail packs, and delivery feasibility is confirmed for each destination."
+    }
+  ]
+},
   'lemongrass-natural-room-freshener': {
     summary: 'Lemongrass Natural Room Freshener from VG Naturals in 50 ml and 100 ml packs. Explore indoor fragrance and wholesale enquiries for your business.',
     seoTitle: 'Lemongrass Natural Room Freshener | Retail & Wholesale',

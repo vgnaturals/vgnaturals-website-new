@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
-  const description = p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const title = p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol | Uses, Prices & Bulk India' : searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
+  const description = p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, formulation uses, storage questions and bulk supply enquiries across India.' : p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -113,6 +113,8 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <h2 id="description-heading" className="mt-2">{p.name}: detailed description</h2>
         <div className="prose mt-5">{(content?.description || [p.description]).map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
       </section>
+
+      {p.slug === 'lemongrass-hydrosol' && <p className="mt-5 text-sm leading-6 max-w-4xl">Background on hydrosol terminology: <a className="underline" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10669667/">published research on hydrolates and their composition</a>. This explains the product category; it is not a test report or certification for VG Naturals. For a format comparison, read our <Link className="underline" href="/blog/lemongrass-oil-hydrosol-tea-buying-guide">lemongrass oil, hydrosol and tea buying guide</Link>.</p>}
 
       <section id="details" aria-labelledby="details-heading" className="mt-12 scroll-mt-40">
         <h2 id="details-heading" className="mb-6">Product details</h2>
