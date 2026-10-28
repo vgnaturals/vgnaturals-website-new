@@ -1,3 +1,53 @@
 import type {Metadata} from 'next';
-export const metadata:Metadata={"title": "Refund Policy", "description": "Read the VG Naturals refund policy and contact our Lucknow team for order-related questions.", "alternates": {"canonical": "/refund-policy"}};
-export default function Page(){return <section className="section container"><h1>Refund Policy</h1><p className="my-6 max-w-3xl leading-7">Refund eligibility, timelines and processes must be approved and configured before online payments are enabled.</p><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">Contact VG Naturals</a></section>}
+export const metadata:Metadata={"title": "Return, Replacement & Refund Policy", "description": "Read the VG Naturals return, replacement & refund policy, including retail, fresh botanical and bulk order terms.", "alternates": {"canonical": "/refund-policy"}};
+export default function Page(){return <article className="section container"><div className="mx-auto max-w-4xl"><p className="text-sm font-semibold uppercase tracking-wider text-green-700">VG Naturals Private Limited</p><h1 className="mt-3">Return, Replacement &amp; Refund Policy</h1><p className="mt-4 text-sm text-slate-600">Effective date: 28 October 2026 · Lucknow, Uttar Pradesh, India</p><div className="mt-8 leading-7 text-slate-700"><h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.1 Our Commitment</h2>
+<p className="my-4">VG Naturals aims to supply products that match the agreed product description, pack size and confirmed order.</p>
+<p className="my-4">We review complaints relating to damaged, leaking, defective, incorrectly supplied or missing products and provide an appropriate resolution.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.2 Eligible Unopened Retail Returns</h2>
+<p className="my-4"><strong>Goodwill return window: 7 calendar days from delivery.</strong></p>
+<p className="my-4">Eligible standard retail products may be considered for a change-of-mind return when all of the following conditions are met:</p>
+<ul className="my-4 list-disc space-y-2 pl-6"><li>The return request is submitted within the stated period.</li><li>The product is unused and factory-sealed.</li><li>Original protective packaging, labels and relevant documentation are retained.</li><li>The product is suitable for safe resale.</li><li>The return is authorized by VG Naturals.</li></ul>
+<p className="my-4">This voluntary change-of-mind facility does not apply to fresh botanicals, opened oils, opened hydrosols, opened sprays, opened tea products or customized goods.</p>
+<p className="my-4">The exclusion of voluntary returns does not remove statutory remedies for defective, damaged, incorrectly supplied or misrepresented products.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.3 Damaged, Leaking or Incorrect Products</h2>
+<p className="my-4">Customers should report visible damage, leakage, missing quantities or incorrect items promptly, preferably within 48 hours after delivery.</p>
+<p className="my-4">Please provide:</p>
+<ul className="my-4 list-disc space-y-2 pl-6"><li>Order number</li><li>Product name and pack size</li><li>Description of the concern</li><li>Photographs of the product or packaging, where available</li><li>Additional relevant evidence</li></ul>
+<p className="my-4">VG Naturals will review the issue and may offer, as appropriate:</p>
+<ul className="my-4 list-disc space-y-2 pl-6"><li>Replacement</li><li>Missing-item fulfilment</li><li>Refund</li><li>Other legally appropriate resolution</li></ul>
+<p className="my-4">Evidence will be assessed reasonably; customers will not be denied valid statutory remedies solely because they do not have an unboxing video or did not meet a preferred early reporting period.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.4 Opened and Sensitive Products</h2>
+<p className="my-4">Due to product integrity, hygiene and contamination considerations, opened essential oils, hydrosols, room sprays and herbal teas are not eligible for ordinary change-of-mind returns.</p>
+<p className="my-4">However, concerns involving a genuine product defect, incorrect supply or material non-conformity will still be reviewed.</p>
+<p className="my-4">A difference in personal fragrance preference alone does not automatically establish a product defect.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.5 Fresh Leaves and Perishable Products</h2>
+<p className="my-4">Fresh Tulsi and Basil leaves are perishable.</p>
+<p className="my-4">Routine returns for changes of preference after delivery are not accepted.</p>
+<p className="my-4">Where fresh goods arrive materially damaged, spoiled, incorrectly supplied or inconsistent with the agreed description, VG Naturals will investigate and provide an appropriate remedy.</p>
+<p className="my-4">Customers are encouraged to report visible freshness or transit issues as soon as reasonably possible after delivery, preferably within 24 hours.</p>
+<p className="my-4">This preferred reporting period does not override applicable statutory rights.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.6 B2B and Bulk Orders</h2>
+<p className="my-4">Returns for bulk, wholesale and customized B2B transactions are governed by the accepted quotation, product specifications and applicable contractual terms.</p>
+<p className="my-4">Customers should inspect shipments promptly and report discrepancies with supporting information.</p>
+<p className="my-4">Legitimate claims concerning incorrect supply, defective goods or contractual non-conformity will be reviewed.</p>
+<p className="my-4">Applicable legal rights and remedies remain unaffected.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.7 Return Shipping Charges</h2>
+<p className="my-4">For a verified VG Naturals error or qualifying defect, reasonable approved return or replacement shipping costs will be borne by VG Naturals.</p>
+<p className="my-4">For an approved voluntary change-of-mind return, the customer ordinarily bears return shipping costs, and the original shipping fee may be non-refundable where legally permissible.</p>
+<p className="my-4">We will confirm the return method and applicable charges before the customer sends the parcel.</p>
+<p className="my-4">Please do not send products to any address without receiving return instructions.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.8 Refund Process</h2>
+<p className="my-4">Once a refund is approved, VG Naturals will initiate the eligible refund through the original payment method wherever reasonably possible.</p>
+<p className="my-4"><strong>Processing target: 5–7 working days after approval.</strong></p>
+<p className="my-4">Payment providers and banks may require additional processing time.</p>
+<p className="my-4">The customer will receive information about the approved amount and applicable deductions, if any.</p>
+<p className="my-4">For qualifying seller error, defects or other legally protected claims, refunds and shipping remedies will comply with applicable law.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.9 Orders Not Yet Paid</h2>
+<p className="my-4">Submitting an order request on the VG Naturals website does not itself constitute payment.</p>
+<p className="my-4">For unpaid requests, no monetary refund is required.</p>
+<p className="my-4">Where an advance has been collected and a refund becomes payable, the refund will be processed under the applicable terms and law.</p>
+<h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">2.10 How to Request Support</h2>
+<p className="my-4">Email: vgnaturalspvtltd@gmail.com Phone/WhatsApp: +91 90442 10088</p>
+<p className="my-4">Include your order number and a brief description of the issue.</p>
+<p className="my-4">VG Naturals will acknowledge consumer grievances within 48 hours and work toward resolution within the applicable statutory period.</p>
+<p className="my-4">A complaint reference will be provided for tracking.</p><h2 className="mt-10 mb-4 text-xl font-semibold text-green-950">General conditions</h2><ul className="my-4 list-disc space-y-2 pl-6"><li>Product prices and delivery charges must be disclosed before payment is requested.</li><li>Final order confirmation is subject to stock and delivery feasibility.</li><li>Any applicable statutory consumer remedies take precedence over conflicting policy restrictions.</li><li>Products must be transported in accordance with relevant safety, courier and legal requirements.</li><li>Customer data submitted for order fulfilment will be handled in accordance with the VG Naturals Privacy Policy.</li><li>Company-specific grievance-officer details and a confirmed return address will be published once verified.</li></ul></div><aside className="mt-10 rounded-2xl bg-green-50 p-6"><h2 className="text-xl font-semibold">Need help with your order?</h2><p className="mt-3">Please include your order number when contacting us.</p><p className="mt-3 break-words"><a className="underline text-green-800" href="mailto:vgnaturalspvtltd@gmail.com">vgnaturalspvtltd@gmail.com</a></p><p className="mt-2"><a className="underline text-green-800" href="tel:+919044210088">+91 90442 10088</a></p></aside><nav aria-label="Related policies" className="mt-8 flex flex-wrap gap-5 text-sm text-green-800 underline"><a href="/shipping-policy">Shipping &amp; delivery</a><a href="/refund-policy">Returns &amp; refunds</a><a href="/cancellation-policy">Cancellations</a><a href="/privacy-policy">Privacy policy</a></nav></div></article>}
