@@ -53,7 +53,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     ['Bulk pricing and MOQ', p.status === 'coming-soon' ? 'To be confirmed when available' : 'Confirmed on enquiry'],
     ['Supplier location', 'Lucknow, Uttar Pradesh, India'],
   ];
-  const schema = {
+  const schema = p.status === 'ready' && p.variants.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'Product',
     '@id': `https://www.vgnaturals.com/products/${p.slug}#product`,
@@ -64,18 +64,18 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     description: summary,
     image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
     brand: { '@type': 'Brand', name: 'VG Naturals' },
-    // Fresh packs have published prices; harvest and delivery still require confirmation.
-    // Do not invent an InStock value when availability is unknown.
-    offers: (p.status === 'ready' || p.status === 'fresh') && p.variants.length > 0 ? p.variants.map(v => ({
+    // Only active, orderable retail packs qualify for merchant Offer markup.
+    // Fresh/coming-soon items require confirmation and must not advertise a merchant offer.
+    offers: p.variants.map(v => ({
       '@type': 'Offer',
       name: `${p.name} — ${v.label}`,
-      ...(p.status === 'fresh' ? { description: 'Listed pack price. Harvest availability and delivery feasibility must be confirmed before ordering. Packaging and courier charges are additional.' } : {}),
+      availability: 'https://schema.org/InStock',
       seller: { '@id': 'https://www.vgnaturals.com/#organization' },
       priceCurrency: 'INR',
       price: v.price,
       url: `https://www.vgnaturals.com/products/${p.slug}`,
-    })) : undefined,
-  };
+    })),
+  } : null;
 
   return (
     <section className="section container product-detail-page">
@@ -164,7 +164,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <h2 id="related-heading" className="mb-6">Related Products</h2>
         <div className="grid-products">{related.map(x => <ProductCard key={x.slug} product={x} />)}</div>
       </section>}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://www.vgnaturals.com/'},{'@type':'ListItem',position:2,name:'Products',item:'https://www.vgnaturals.com/products'},{'@type':'ListItem',position:3,name:p.name,item:`https://www.vgnaturals.com/products/${p.slug}`}]}]).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([...(schema ? [schema] : []), {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://www.vgnaturals.com/'},{'@type':'ListItem',position:2,name:'Products',item:'https://www.vgnaturals.com/products'},{'@type':'ListItem',position:3,name:p.name,item:`https://www.vgnaturals.com/products/${p.slug}`}]}]).replace(/</g, '\\u003c') }} />
     </section>
   );
 }
