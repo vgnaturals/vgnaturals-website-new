@@ -1,4 +1,4 @@
-export type BuyerGuide={title:string;summary:string;sections:{heading:string;text:string}[];links:{href:string;label:string}[];updated?:string;sources?:{href:string;label:string}[]};
+export type BuyerGuide={title:string;summary:string;sections:{heading:string;text:string}[];links:{href:string;label:string}[];updated?:string;published?:string;sources?:{href:string;label:string}[]};
 export const buyerGuides:Record<string,BuyerGuide>={
 "lemongrass-oil-hydrosol-tea-buying-guide":{
   "title": "Lemongrass Oil, Hydrosol or Tea: Which Product Should You Buy?",
@@ -337,6 +337,90 @@ buyerGuides["fresh-tulsi-leaves-buying-guide"] = {
     {
       "href": "https://mpns.science.kew.org/mpns-portal/plantDetail?dbs=wcs&plantId=137105",
       "label": "Kew: Holy Basil names and Lamiaceae family"
+    }
+  ]
+};
+
+// Published procurement guidance; commercial claims remain enquiry-based.
+buyerGuides["essential-oils-hydrosols-cosmetic-soap-manufacturers-india"]={
+  "title": "Essential Oils & Hydrosols for Cosmetic and Soap Manufacturers in India",
+  "summary": "A practical B2B sourcing guide to Lemongrass, Tulsi and Basil: select the product form, evaluate samples and prepare a comparable bulk quotation with VG Naturals, Lucknow.",
+  "updated": "2026-10-29",
+  "published": "2026-10-29",
+  "sections": [
+    {
+      "heading": "Which essential oils and hydrosols can manufacturers enquire about?",
+      "text": "VG Naturals lists Lemongrass, Tulsi and Basil essential oils and hydrosols for sourcing enquiries from cosmetic, soap and personal-care businesses. Our listed botanical identities are Cymbopogon flexuosus for Lemongrass, Ocimum sanctum for Tulsi and Ocimum basilicum for Basil. Start with the exact botanical identity and product form, then share the specification your formulation needs. Availability, suitability, bulk quantity and technical documents are confirmed for the particular enquiry; the product name alone is not approval for use in a finished cosmetic."
+    },
+    {
+      "heading": "Essential oil or hydrosol: which should go into the sourcing brief?",
+      "text": "Treat essential oil and hydrosol as separate purchasing requirements. Hydrosols are water-based botanical products; they are not equivalent quantities of essential oil and should not be substituted by price or volume alone. If your formulator specifies an essential oil, request that oil and its required composition information. If the brief specifies a hydrosol, request the exact composition, preservation status, storage information and available quality data. Do not compare a 1 litre hydrosol quotation with a 1 kg essential-oil quotation as though they describe the same ingredient."
+    },
+    {
+      "heading": "What should soap and personal-care brands include in an enquiry?",
+      "text": "State the finished-product category, whether you are evaluating an ingredient or buying an existing finished product, and the quantity needed for the current stage. For example: a soap development team can ask about a Lemongrass Essential Oil evaluation pack, while a formulator working to a hydrosol-based brief can enquire about Lemongrass Hydrosol. These are enquiry examples, not formulation recommendations. Tell us your required botanical identity, composition limits, document requirements and target delivery date so the team can establish whether the available material matches your brief."
+    },
+    {
+      "heading": "How do I evaluate a sample before a bulk order?",
+      "text": "Use the same written brief for your sample request and eventual bulk enquiry. Record the sample product name, batch identification if supplied, receipt date, pack size and your evaluation result. Have your formulation or quality team assess the sample against the intended application and its acceptance criteria. Ask whether the proposed bulk material is from the evaluated batch; if it is a different batch, agree how it will be checked before purchase. A pleasant aroma or a successful first trial does not by itself establish that every future batch will meet your specification."
+    },
+    {
+      "heading": "Which documents should a buyer ask for?",
+      "text": "Tell the supplier which records your purchasing or quality team requires. Common requests include a product specification, Certificate of Analysis (COA), Safety Data Sheet (SDS), composition information, batch identification and storage guidance. Ask which documents are available for the exact product and batch, and what each document actually covers. VG Naturals confirms document availability on enquiry; this guide does not promise that every listed product has every document. If a certification, grade or analytical report is essential to your purchase, confirm it before sample approval or payment."
+    },
+    {
+      "heading": "How should I compare bulk price and MOQ?",
+      "text": "Compare quotations only after aligning botanical identity, product form, specification, quantity and unit. Request the minimum order quantity (MOQ), net material quantity, packaging size, price basis, applicable taxes, freight, payment terms and estimated dispatch timing. Listed website pack prices are not wholesale quotations. Packaging and courier charges are additional to the listed pack prices. If one supplier quotes per kilogram and another per litre, ask them to quote your required unit rather than assuming that the amounts are equivalent. Compare the final payable amount alongside your quality requirements."
+    },
+    {
+      "heading": "What changes between a sample, pilot purchase and repeat order?",
+      "text": "For an evaluation sample, prioritise identity and the information needed to decide whether to proceed. For a pilot purchase, confirm the quantity, packaging and batch proposed for the trial. Before a repeat order, refer to the approved specification and earlier order reference, then reconfirm current availability, batch details, quantity, price and delivery schedule. Share a realistic expected monthly requirement, but keep the quantity being ordered now separate from a forecast. A forecast helps the sourcing discussion; it does not reserve stock or create a confirmed supply contract."
+    },
+    {
+      "heading": "Can a private-label brand source ingredients from VG Naturals?",
+      "text": "Private-label brands and their contract manufacturers can enquire about the listed ingredient range. Identify which company will receive and evaluate the material, the exact product specification and the delivery location. If you need a finished formulation, custom packaging or labels, describe that as a separate requirement. Ingredient supply does not automatically include formulation development, filling, private-label manufacturing or compliance services. The team will confirm which parts of your request can be supported before issuing commercial terms."
+    },
+    {
+      "heading": "Where is VG Naturals, and can buyers outside Lucknow enquire?",
+      "text": "VG NATURALS PRIVATE LIMITED is based in Lucknow, Uttar Pradesh, India. Buyers across India can share their delivery city and PIN code for a supply and freight enquiry. Delivery feasibility, dispatch timing and charges must be confirmed for the destination and product. For a visit or collection in Lucknow, use the Contact page for the address and directions and call +91 90442 10088 first. We do not list offices or local warehouses in other cities, and an enquiry is not a delivery guarantee."
+    },
+    {
+      "heading": "What should I send to get a useful first quotation?",
+      "text": "Send this brief: company and contact name; product and botanical identity; essential oil or hydrosol; intended application; current quantity and unit; sample or bulk requirement; packaging preference; documents needed; delivery PIN code; and required date. Mention any specification that is mandatory rather than optional. Use the product-specific enquiry links below or the Bulk Supply form. Our team can then discuss availability and the information needed for a quotation. Confirm the final terms with the team before treating an enquiry as an accepted order."
+    }
+  ],
+  "links": [
+    {
+      "href": "/products/lemongrass-essential-oil",
+      "label": "Lemongrass Essential Oil"
+    },
+    {
+      "href": "/products/lemongrass-hydrosol",
+      "label": "Lemongrass Hydrosol"
+    },
+    {
+      "href": "/products/tulsi-essential-oil",
+      "label": "Tulsi Essential Oil"
+    },
+    {
+      "href": "/products/tulsi-hydrosol",
+      "label": "Tulsi Hydrosol"
+    },
+    {
+      "href": "/products/basil-essential-oil",
+      "label": "Basil Essential Oil"
+    },
+    {
+      "href": "/products/basil-hydrosol",
+      "label": "Basil Hydrosol"
+    },
+    {
+      "href": "/bulk-supply",
+      "label": "Request a bulk quotation"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact our Lucknow team"
     }
   ]
 };
