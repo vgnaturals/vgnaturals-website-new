@@ -424,3 +424,57 @@ buyerGuides["essential-oils-hydrosols-cosmetic-soap-manufacturers-india"]={
     }
   ]
 };
+
+// 31 October 2026: product-specific B2B and Lucknow sourcing guides.
+// Published dates belong to new guides only; existing guides retain their real dates.
+buyerGuides["lemongrass-hydrosol-bulk-supply-cosmetic-formulators"] = {
+  title: "Lemongrass Hydrosol Bulk Supply: Cosmetic Buyer Checklist",
+  summary: "Buying Lemongrass Hydrosol (Cymbopogon flexuosus) in India? Check formulation requirements, preservation, batch details, sample evaluation, MOQ and delivery before requesting a quote.",
+  published: "2026-10-31",
+  updated: "2026-10-31",
+  sections: [
+    {heading:"What is lemongrass hydrosol, and how is it different from lemongrass oil?",text:"Lemongrass hydrosol is a water-based aromatic product associated with plant distillation. Lemongrass essential oil is a different, concentrated product form. VG Naturals lists both under the botanical identity Cymbopogon flexuosus. For a cosmetic, soap or home-care procurement brief, write the exact product form instead of requesting only 'lemongrass extract'. Do not substitute equal volumes of hydrosol and essential oil in a formulation."},
+    {heading:"Which specification should a cosmetic formulator request?",text:"Start with the plant identity, product description, production method, ingredient information and the specification your formulation requires. Ask about appearance, aroma, batch identification, preservation status, microbial quality information if available, storage and shelf-life guidance. A product page or a pleasant aroma does not establish conformity with your finished-product requirements. The buyer's quality team should define acceptance criteria and check the actual material offered."},
+    {heading:"Does lemongrass hydrosol contain a preservative?",text:"Do not assume that every hydrosol is preservative-free or already preserved. Ask the supplier to confirm the exact ingredients and preservation status of the offered product and to provide available product-specific documentation. Water-based ingredients can require particular storage, handling and microbial controls. A formulator remains responsible for evaluating the preservation and stability of the finished cosmetic or personal-care product."},
+    {heading:"Can I request a 50 ml or 100 ml evaluation pack?",text:"VG Naturals lists Lemongrass Hydrosol in 50 ml and 100 ml packs. Check the product page for the latest displayed pack price, then confirm stock, dispatch and applicable packaging or courier charges. If you are evaluating for manufacturing, explain the application and ask which documents can accompany the sample. A sample can support preliminary assessment but does not guarantee that a future bulk lot comes from the same batch."},
+    {heading:"What should I check before ordering 1 litre, 5 litres or bulk quantity?",text:"For any volume, request the current MOQ, available packaging, price per stated unit, batch details, freight, applicable taxes and dispatch schedule. Compare quotes only when the botanical identity, product form, specification and quotation unit match. Small-pack retail prices are not wholesale rates. A 1 litre price request does not guarantee that a 1 litre bulk pack is available; the supplier must confirm available pack sizes and terms."},
+    {heading:"What quality documents should I request?",text:"A buyer may require a product specification, Certificate of Analysis (COA), Safety Data Sheet (SDS), batch information or analytical details. State which records your process specifically requires and ask whether they exist for the product and lot under discussion. Do not assume a GC-MS test, organic certification, food grade or particular regulatory approval from the name 'hydrosol'. Document availability and any claimed status must be verified before purchase."},
+    {heading:"Can manufacturers outside Lucknow order lemongrass hydrosol?",text:"VG NATURALS PRIVATE LIMITED is based in Lucknow, Uttar Pradesh, and welcomes B2B enquiries from other Indian locations. Tell the team your delivery PIN code, required volume, expected delivery date and any special handling needs. The team must confirm stock, whether delivery is possible, dispatch timing and charges. VG Naturals does not claim to operate branches or warehouses in every destination city."},
+    {heading:"How do I send a complete hydrosol quotation request?",text:"Use this short brief: Company and buyer contact; product: Lemongrass Hydrosol (Cymbopogon flexuosus); intended application; sample or bulk requirement; quantity and unit; acceptance criteria and documents required; preferred packaging; destination city and PIN code; required date; one-time or repeat purchase. Share the brief through the Bulk Supply page or contact the team directly. The final specification, quote and availability require confirmation before an order is accepted."}
+  ],
+  links: [
+    {href:"/products/lemongrass-hydrosol",label:"Lemongrass Hydrosol: listed packs"},
+    {href:"/products/lemongrass-essential-oil",label:"Compare Lemongrass Essential Oil"},
+    {href:"/blog/what-is-a-hydrosol",label:"Hydrosol guide for formulators"},
+    {href:"/blog/essential-oils-hydrosols-cosmetic-soap-manufacturers-india",label:"Cosmetic and soap manufacturer sourcing"},
+    {href:"/bulk-supply",label:"Request a hydrosol bulk quote"},
+    {href:"/contact",label:"Lucknow contact and directions"}
+  ]
+};
+
+buyerGuides["essential-oil-supplier-lucknow-bulk-buyers"] = {
+  title: "Essential Oil Supplier in Lucknow: B2B Buying Guide",
+  summary: "Looking for an essential oil supplier in Lucknow? Compare Lemongrass, Tulsi and Basil oils, sample packs, botanical identity, bulk quotation terms and delivery across India.",
+  published: "2026-10-31",
+  updated: "2026-10-31",
+  sections: [
+    {heading:"Which essential oils can I enquire about in Lucknow?",text:"VG NATURALS PRIVATE LIMITED is based in Lucknow, Uttar Pradesh, and lists Lemongrass Essential Oil (Cymbopogon flexuosus), Tulsi Essential Oil (Ocimum sanctum) and Basil Essential Oil (Ocimum basilicum). Buyers should choose the botanical identity as well as the commercial name. Tulsi and sweet basil are not the same species. Confirm the available pack, specification, batch and delivery terms for the particular oil you need."},
+    {heading:"Is VG Naturals a retail shop, a manufacturer or a bulk supplier?",text:"VG Naturals presents its botanical range for retail-pack purchasing and B2B sourcing enquiries. Its business work spans cultivation and botanical processing; the exact batch's production method, availability and supporting documents should be discussed with the team. Do not infer that every product, manufacturing service or certification is available at all times. For contract manufacturing or private-label requirements, describe the service separately and request explicit confirmation."},
+    {heading:"Can I buy a sample before ordering essential oils in bulk?",text:"The listed essential-oil evaluation packs are 50 ml and 100 ml. At the time of this guide, the listed prices are ₹150 and ₹225 respectively; always use the current product page to check pricing. Packaging or courier charges may be additional. Buyers developing cosmetics, soaps, perfumes or fragrance products should specify the application and agree the required acceptance checks rather than assuming that every oil is suitable for every use."},
+    {heading:"What should I ask for in a wholesale essential-oil quotation?",text:"Share the botanical name, exact oil, application, quantity, unit, packaging preference and required delivery date. Ask for MOQ, batch and specification information, applicable taxes, freight, payment terms, dispatch estimate and documents available. A quote per kilogram and one per litre should not be compared as equal quantities without a stated density basis. Website pack prices are separate from negotiated B2B quotations."},
+    {heading:"What documents matter when comparing essential oil suppliers?",text:"Specify the technical documents your buyer or quality team requires, such as a specification, COA, SDS or composition report. Ask if any GC-MS or other analysis applies to the exact supplied batch. Confirm any organic, export, cosmetics or food-related certification requirements explicitly. This guide does not claim that all VG Naturals products carry every document or certification; commercial suitability must be checked before placing a purchase order."},
+    {heading:"Where in Lucknow is VG Naturals located?",text:"VG Naturals lists its business address in Aurangabad Jagir, Lucknow, Uttar Pradesh. Open the Contact page for the current address and map. Call +91 90442 10088 before planning a visit, pickup or material inspection so the team can confirm whether the required product and an appointment are available. This address should not be interpreted as a promise of walk-in retail inventory."},
+    {heading:"Do you supply buyers in Delhi, Mumbai, Bengaluru or other Indian cities?",text:"Businesses outside Lucknow can submit enquiries. Actual stock, courier coverage, freight, dispatch times and feasibility vary by destination and product. Send the city and PIN code instead of assuming same-day shipping or a physical branch in another city. For recurring B2B orders, discuss monthly quantity forecasts separately from the quantity being purchased immediately."},
+    {heading:"How should a purchase manager compare local suppliers?",text:"Compare the offered botanical species, product form, batch specification, document availability, sample outcome, MOQ, net quantity, packaging, taxes and delivered cost. Check the supplier's published contact details and ask for a written quotation. An unverified '100% pure', 'organic', therapeutic or lowest-price headline is not evidence that a batch meets your specification. Build your decision around the actual material and commercial terms."},
+    {heading:"How can I request a quote from VG Naturals?",text:"Send: business name; buyer name and callback number; required oil and botanical name; intended use; quantity and unit; required documents; packaging preference; delivery PIN code; target date. Select the relevant product below or use the Bulk Supply form. The team can then confirm availability and a proposed quotation, subject to product-specific commercial terms."}
+  ],
+  links: [
+    {href:"/categories/essential-oils",label:"Compare essential oils"},
+    {href:"/products/lemongrass-essential-oil",label:"Lemongrass Essential Oil"},
+    {href:"/products/tulsi-essential-oil",label:"Tulsi Essential Oil"},
+    {href:"/products/basil-essential-oil",label:"Basil Essential Oil"},
+    {href:"/blog/essential-oil-bulk-buying",label:"Bulk essential oil procurement questions"},
+    {href:"/bulk-supply",label:"Enquire about wholesale supply"},
+    {href:"/contact",label:"VG Naturals Lucknow address and contact"}
+  ]
+};
