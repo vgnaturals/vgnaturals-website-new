@@ -10,7 +10,7 @@ export default function Footer(){
   <div className={styles.inner}><div className={styles.grid}>
    <div className={styles.brand}>
     <Link href="/" className={styles.logo} aria-label="VG Naturals home"><img src="/catalogue-assets/vg-naturals-leaf-gold-logo.png" alt="VG Naturals" width={88} height={88} loading="lazy"/></Link>
-    <p className={styles.tagline}>Pure • Natural • Organic Care</p><p className={styles.description}>Essential oils, hydrosols and botanical products from Lucknow, India.</p>
+    <p className={styles.tagline}>Pure • Natural • Organic Care</p><p className={styles.description}><strong>From Our Farm to Your Product.</strong> We cultivate selected botanicals and connect farming with extraction, distillation and development of essential oils, hydrosols and natural products in Lucknow, India.</p>
     <div className={styles.socials}>
      <a href="https://www.instagram.com/vgnaturalspvtltd/" aria-label="VG Naturals on Instagram"><Instagram size={19} aria-hidden="true"/></a>
      <a href="https://www.facebook.com/profile.php?id=61593880927070" aria-label="VG Naturals on Facebook"><Facebook size={19} aria-hidden="true"/></a>
