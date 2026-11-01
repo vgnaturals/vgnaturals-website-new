@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     "slug": "lemongrass-hydrosol",
     "name": "Lemongrass Hydrosol",
-    "botanicalName": "Lemongrass",
+    "botanicalName": "Cymbopogon flexuosus",
     "category": "Hydrosols",
     "image": "/catalogue-assets/lemongrass-hydrosol-spray-bottle.png",
     "status": "ready",
@@ -43,7 +43,7 @@ export const products: Product[] = [
   {
     "slug": "lemongrass-natural-room-freshener",
     "name": "Lemongrass Natural Room Freshener",
-    "botanicalName": "Lemongrass",
+    "botanicalName": "Cymbopogon flexuosus",
     "category": "Home Care",
     "image": "/images/lemongrass-natural-room-freshener.png",
     "status": "ready",
@@ -63,7 +63,7 @@ export const products: Product[] = [
   {
     "slug": "lemongrass-tea-bags",
     "name": "Lemongrass Tea Bags",
-    "botanicalName": "Lemongrass",
+    "botanicalName": "Cymbopogon flexuosus",
     "category": "Herbal Teas",
     "image": "/catalogue-assets/lemongrass-herbal-tea-bags.png",
     "status": "ready",
