@@ -4,7 +4,7 @@ import PageHero from '@/components/PageHero';
 
 export const metadata:Metadata={
   title:'Contact VG Naturals | Essential Oil & Hydrosol Supplier in Lucknow',
-  description:'Contact VG Naturals Private Limited in Lucknow for Lemongrass, Tulsi and Basil essential oils, hydrosols and botanical bulk supply. Call, WhatsApp or request a sourcing quotation.',
+  description:'Visit or contact farm-linked VG Naturals in Lucknow. Ask about our Lemongrass and Tulsi cultivation, botanical extraction, oils, hydrosols and bulk supply.',
   alternates:{canonical:'/contact'},
   openGraph:{title:'Contact VG Naturals — Lucknow | B2B Botanical Sourcing',description:'Reach VG Naturals for botanical ingredient samples, product information and bulk quotations from Lucknow.',url:'/contact',type:'website'}
 };
@@ -30,9 +30,9 @@ export default function Contact(){
         <div>
           <p className="eyebrow">Our business</p>
           <h2 className="mt-3">VG NATURALS PRIVATE LIMITED</h2>
-          <p className="mt-4 leading-8">VG Naturals supplies essential oils, hydrosols, herbal teas and selected fresh botanicals. We welcome enquiries from manufacturers, cosmetic formulators, soap makers, private-label brands, distributors and other business buyers. For a useful quotation, share the exact product, quantity and application.</p>
+          <p className="mt-4 leading-8">VG Naturals grows selected botanicals, including Lemongrass and Tulsi, and works with extraction, distillation and development of essential oils, hydrosols and related products. Our farm-linked range also includes herbal teas and fresh botanical formats. We welcome manufacturers, formulators, soap makers, private-label brands, distributors and other business buyers. Share the exact product, quantity and application for a useful quotation.</p>
           <address className="mt-5 not-italic leading-7">{businessAddress}</address>
-          <p className="mt-3 text-sm leading-6">Our listed address is in Lucknow. Please contact the team before visiting or arranging collection; an online enquiry does not guarantee walk-in inventory.</p>
+          <p className="mt-3 text-sm leading-6">Business buyers and visitors are welcome at our Lucknow location during working hours. Please call ahead to arrange a product discussion or collection; product availability and any farm or processing-site visit must be confirmed separately.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a className="btn" href="tel:+919044210088">Call +91 90442 10088</a>
             <a className="btn btn-outline" href="https://wa.me/919044210088?text=Hello%20VG%20Naturals%2C%20I%20want%20to%20enquire%20about%20bulk%20essential%20oils%20or%20hydrosols.">WhatsApp our team</a>
@@ -54,7 +54,7 @@ export default function Contact(){
           </ul>
         </aside>
       </div>
-      <section className="mt-12" aria-labelledby="sourcing-questions">
+      <section className="card p-6 sm:p-8 mt-12" aria-labelledby="contact-farm-process"><p className="eyebrow">From our farm to your product</p><h2 id="contact-farm-process">Explore Our Botanical Journey</h2><p className="mt-3 leading-7">From selected crop cultivation to botanical extraction, distillation and product development, our work connects agriculture with manufacturer sourcing requirements. Explore original photographs and learn what to confirm for each ingredient.</p><Link className="underline inline-block mt-4" href="/about">See our farm and cultivation story</Link></section><section className="mt-12" aria-labelledby="sourcing-questions">
         <h2 id="sourcing-questions">Questions buyers ask before contacting us</h2>
         <div className="grid gap-5 md:grid-cols-3 mt-5">{buyerQuestions.map(item=><article className="card p-6" key={item.q}><h3 className="text-xl">{item.q}</h3><p className="mt-3 leading-7">{item.a}</p></article>)}</div>
       </section>
