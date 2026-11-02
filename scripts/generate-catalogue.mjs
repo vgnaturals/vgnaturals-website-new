@@ -67,6 +67,16 @@ const svgAssets=[
  ["vg-naturals-b2b-bulk-supply-contact.svg",finalSVG()]
 ];
 for(const [name,content] of svgAssets)fs.writeFileSync(path.join(dir,name),content,"utf8");
+const sharp=(await import("sharp")).default;
+for(const [name,content] of svgAssets){
+ const oldPng=name.replace(/\.svg$/,".png");
+ const dest=path.join(dir,oldPng);
+ await sharp(Buffer.from(content,"utf8"),{density:96}).resize(1055,1491).png({compressionLevel:9}).toFile(dest+".tmp.png");
+ fs.renameSync(dest+".tmp.png",dest);
+ const png=fs.readFileSync(dest);
+ if(png.length<10000||png.subarray(0,8).toString("hex")!=="89504e470d0a1a0a")throw Error("Generated PNG invalid: "+oldPng);
+}
+
 const ascii=s=>String(s).normalize("NFKD").replace(/[^\x20-\x7e]/g," ").replace(/\s+/g," ").trim();
 const pEsc=s=>ascii(s).replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");
 const objects=[null];
@@ -172,4 +182,4 @@ for(const g of groups){const svg=svgAssets.find(e=>e[0]===g.out)[1];for(const p 
 if(pageIds.length!==5||!pdfText.startsWith("%PDF-1.4")||!pdfText.endsWith("%%EOF\n"))throw Error("PDF structure check failed");
 const manifest={generatedOn:"2026-11-02",source:"data/products.ts",currency:"INR",pageCount:5,productCount:included.length,consistent:true,notes:["Ready items: current listed retail packs","Fresh items: availability confirmation required","Bulk quotes: on enquiry","Packaging and courier additional; applicable GST as confirmed"],products:included.map(p=>({slug:p.slug,name:p.name,status:p.status,botanicalName:p.botanicalName,variants:p.variants}))};
 fs.writeFileSync(path.join(dir,"catalogue-price-manifest.json"),JSON.stringify(manifest,null,2)+"\n");
-console.log("VG Naturals catalogue PASS: "+pageIds.length+" PDF pages, "+svgAssets.length+" SVG images, "+included.length+" products; "+pdf.length+" PDF bytes; prices from data/products.ts");
+console.log("VG Naturals catalogue PASS: "+pageIds.length+" PDF pages, "+svgAssets.length+" SVG + PNG image pairs, "+included.length+" products; "+pdf.length+" PDF bytes; prices from data/products.ts");
