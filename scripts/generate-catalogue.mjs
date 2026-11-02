@@ -12,7 +12,7 @@ const source=fs.readFileSync(path.join(root,"data/products.ts"),"utf8");
 const marker="export const products: Product[] = [";
 const start=source.indexOf(marker);
 if(start<0)throw Error("Missing products array");
-const end=source.indexOf("\n];",start);
+const end=source.indexOf("\n] as Product[];",start);
 if(end<0)throw Error("Missing products array terminator");
 const products=JSON.parse(source.slice(start+marker.length-1,end+2));
 const groups=[
