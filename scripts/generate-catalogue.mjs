@@ -135,10 +135,9 @@ for(const g of groups){
   p.text(56,y-52,v,12,true);
   if(item.status==="fresh")p.text(405,y-52,"CHECK AVAILABILITY",8,true,"0.56 0.32 0.08");
  });
- const noteY=620-rows.length*107-15;
- p.text(43,noteY,"Fresh leaves: confirm harvest and delivery availability.",10);
- p.text(43,noteY-18,"Packaging and courier additional; applicable taxes as confirmed.",10);
- p.text(43,noteY-36,"Bulk MOQ, specifications and quotations on enquiry.",10);
+ const noteY=rows.length===5?96:620-rows.length*107-15;
+ p.text(43,noteY,"Fresh leaves: confirm availability before ordering.",9);
+ p.text(43,noteY-17,"Packaging, courier and taxes (if applicable) are extra; bulk prices on enquiry.",9);
  pushPage(p,g.key);
 }
 {
