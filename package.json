@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "prebuild": "node scripts/generate-catalogue.mjs",
+    "catalogue": "node scripts/generate-catalogue.mjs"
   },
   "dependencies": {
     "next": "^15.5.0",
