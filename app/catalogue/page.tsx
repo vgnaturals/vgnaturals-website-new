@@ -24,7 +24,7 @@ const groupNames=[
   {title:'Sweet Basil',id:'basil',botanical:'Ocimum basilicum'}
 ];
 const groups=groupNames.map(g=>({...g,items:products.filter(p=>(p.status==='ready'||p.status==='fresh')&&(
- p.slug.startsWith(g.id+'-')||(g.id==='tulsi'&&p.slug==='herbal-tulsi-tea-pouch')
+ p.slug.startsWith(g.id+'-')||(g.id==='tulsi'&&['herbal-tulsi-tea-pouch','fresh-tulsi-leaves'].includes(p.slug))||(g.id==='basil'&&p.slug==='fresh-basil-leaves')
 ))}));
 const inr=(price:number)=>'₹'+price.toLocaleString('en-IN');
 
