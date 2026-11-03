@@ -9,7 +9,7 @@ export function validateDelivery(value:Delivery):Partial<Record<keyof Delivery,s
  for(const key of ['name','address','city','state'] as const) if(!d[key]) errors[key]='Please complete this field.';
  if(!/^(?:\+91|91)?[6-9]\d{9}$/.test(d.phone)) errors.phone='Enter a valid 10-digit Indian mobile number (optional +91).';
  if(!/^[1-9]\d{5}$/.test(d.pin)) errors.pin='Enter a valid 6-digit Indian PIN code.';
- if(d.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errors.email='Enter a valid email address or leave it blank.';
+ if(!d.email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errors.email='Enter a valid email address for online submission.';
  return errors;
 }
 export function validItems(items:OrderItem[]):boolean {
@@ -18,6 +18,17 @@ export function validItems(items:OrderItem[]):boolean {
 export function orderContent(delivery:Delivery,items:OrderItem[]):string {
  return JSON.stringify({delivery:normalizeDelivery(delivery),items:items.map(({slug,variant,qty,price})=>({slug,variant,qty,price})).sort((a,b)=>(a.slug+a.variant).localeCompare(b.slug+b.variant))});
 }
+/** Derive a stable 36-character API reference from the displayed Order ID.
+ * The CRM intake accepts lowercase UUID-style identifiers, not VGN- prefixed IDs.
+ * Keep the original Order ID for the customer and attach it to CRM notes.
+ */
+export function crmRequestIdFromOrderId(orderId:string):string {
+ const match=/^VGN-(\\d{8})-([A-F0-9]{24})$/.exec(orderId);
+ if(!match)throw Error('Invalid order reference. Please refresh checkout.');
+ const hex=(match[1]+match[2]).toLowerCase();
+ return [hex.slice(0,8),hex.slice(8,12),hex.slice(12,16),hex.slice(16,20),hex.slice(20)].join('-');
+}
+
 export function newOrderId():string {
  const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).replace(/-/g,'');
  const random=Array.from(crypto.getRandomValues(new Uint8Array(12)),b=>b.toString(16).padStart(2,'0')).join('').toUpperCase();
