@@ -50,7 +50,7 @@ test('redirect destinations correspond to real pages or configured dynamic slugs
       assert.ok(fs.existsSync('app/products/[slug]/page.tsx'));
     } else if (destination.startsWith('/botanicals/')) {
       const slug = destination.split('/')[2];
-      assert.ok(botanicalSource.includes("slug:'" + slug + "'") || botanicalSource.includes('slug: "' + slug + '"'), 'missing botanical '+slug);
+      assert.ok(new RegExp("slug:\\s*['\\\"]" + slug + "['\\\"]").test(botanicalSource), 'missing botanical '+slug);
     } else if (destination.startsWith('/blog/')) {
       const slug = destination.split('/')[2];
       assert.ok(guideSource.includes(slug), 'missing buyer guide '+slug);
