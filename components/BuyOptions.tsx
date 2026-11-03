@@ -5,11 +5,13 @@ import { useState } from "react";
 import type { Product } from "@/data/products";
 import { useCart } from "./CartProvider";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function BuyOptions({ p }: { p: Product }) {
   const [i, setI] = useState(0);
   const [added, setAdded] = useState(false);
   const { add } = useCart();
+  const router = useRouter();
 
   const whatsapp =
     "https://wa.me/919044210088?text=" +
@@ -78,29 +80,55 @@ export default function BuyOptions({ p }: { p: Product }) {
         ₹{selectedVariant.price}
       </p>
 
-      <button
-        type="button"
-        className="btn"
-        onClick={() => {
-          add({
-            slug: p.slug,
-            name: p.name,
-            variant: selectedVariant.label,
-            price: selectedVariant.price,
-            image: p.image,
-          });
-          setAdded(true);
-        }}
-      >
-        Add to Cart
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            add({
+              slug: p.slug,
+              name: p.name,
+              variant: selectedVariant.label,
+              price: selectedVariant.price,
+              image: p.image,
+            });
+            setAdded(true);
+          }}
+        >
+          Add to Cart
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline"
+          onClick={() => {
+            add({
+              slug: p.slug,
+              name: p.name,
+              variant: selectedVariant.label,
+              price: selectedVariant.price,
+              image: p.image,
+            });
+            router.push("/checkout");
+          }}
+        >
+          Buy Now
+        </button>
+        <Link
+          href={"/bulk-supply?product=" + encodeURIComponent(p.name)}
+          className="btn btn-outline"
+        >
+          Bulk Enquiry
+        </Link>
+      </div>
 
-      <Link
-        href="/cart"
-        className="btn btn-outline ml-2"
-      >
-        {added ? "View Cart" : "Cart"}
-      </Link>
+      {added && (
+        <p role="status" className="text-sm text-green-900">
+          Added to your cart.{" "}
+          <Link href="/cart" className="underline font-semibold">
+            View Cart
+          </Link>
+        </p>
+      )}
 
       <p>
         <a
