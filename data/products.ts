@@ -201,7 +201,7 @@ export const products: Product[] = [
     "name": "Basil Hydrosol",
     "botanicalName": "Ocimum basilicum",
     "category": "Hydrosols",
-    "image": "/catalogue-assets/lemongrass-natural-room-freshener-product.png",
+    "image": "/catalogue-assets/basil-hydrosol-ocimum-basilicum.png",
     "status": "ready",
     "variants": [
       {

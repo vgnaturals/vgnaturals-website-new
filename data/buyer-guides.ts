@@ -478,3 +478,28 @@ buyerGuides["essential-oil-supplier-lucknow-bulk-buyers"] = {
     {href:"/contact",label:"VG Naturals Lucknow address and contact"}
   ]
 };
+
+buyerGuides['herbal-tea-wholesale-cafes-hotels-retailers-india'] = {
+ title:'Herbal Tea Bags Wholesale for Cafés, Hotels & Retailers in India',
+ summary:'Compare Lemongrass, Tulsi and Basil herbal tea packs from VG Naturals, Lucknow. A practical sourcing checklist for cafés, hospitality buyers, retailers and distributors.',
+ published:'2026-11-03',
+ updated:'2026-11-03',
+ sections:[
+ {heading:'Which herbal tea products are in the VG Naturals catalogue?',text:'VG Naturals lists three ready herbal-tea products: Lemongrass Tea Bags (Cymbopogon flexuosus), Herbal Tulsi Tea Pouch (Ocimum sanctum) and Basil Tea Bags (Ocimum basilicum). These are distinct catalogue entries. Confirm the ingredient composition and pack format for the particular item; the common name alone is not a full purchasing specification.'},
+ {heading:'What is the listed price for 10 and 20 pouches?',text:'Each listed herbal-tea product has a 10-pouch pack at ₹150 and a 20-pouch pack at ₹225. Packaging and courier charges are additional. These are the published small-pack prices, not a promise of a wholesale rate, private-label pack or fixed per-serving cost. Check the current product page and request a separate commercial quote for larger quantities.'},
+ {heading:'How should a café or hotel plan an herbal-tea purchase?',text:'First identify the tea your menu requires, expected number of servings, preferred pack presentation and approximate reorder frequency. A café may prioritize consistent brewing format and storage information; a hotel may also need delivery scheduling and room-service presentation. Send the proposed quantity, destination city and PIN code to discuss feasibility. A recurring schedule is subject to confirmation.'},
+ {heading:'What should retailers and distributors check before buying?',text:'Review the proposed retail pack and product name, ingredients, labelling, shelf-life and storage information, price basis and expected dispatch quantity. Ask which batch documents and applicable food-safety details are available. Do not assume that private labelling, certifications or particular packaging can be provided unless the team confirms the specific requirement.'},
+ {heading:'Are Tulsi tea and Basil tea the same?',text:'No. VG Naturals lists Tulsi as Ocimum sanctum and Sweet Basil as Ocimum basilicum. The products should not be substituted simply because both botanical names are in the Ocimum genus. State the botanical identity and tea format in your procurement brief, and confirm the delivered product specification before use or resale.'},
+ {heading:'Is herbal tea the same as essential oil or hydrosol?',text:'No. Herbal tea pouches, essential oils and hydrosols are different product forms and should not be treated as interchangeable. Do not assume that essential oils or hydrosols are edible or appropriate for a beverage. Select the listed tea product for a tea-sourcing enquiry and follow the product-specific label and handling directions.'},
+ {heading:'What should be included in a wholesale quotation request?',text:'Send the product name and botanical identity, intended channel (café, hotel, retail or distribution), quantity and unit, preferred pack format, packaging or labelling requirements, mandatory documents, delivery PIN code, required date and whether this is a one-time or recurring order. Our Lucknow team can then confirm availability, MOQ, quotation terms, applicable taxes, shipping and timelines.'},
+ {heading:'Can VG Naturals supply herbal tea buyers outside Lucknow?',text:'VG Naturals is based in Lucknow, Uttar Pradesh, and welcomes enquiries from businesses in other Indian cities. Supply, shipping cost, transit time, product availability and any recurring delivery arrangement must be checked for the exact order and destination. An enquiry is not a confirmed dispatch or delivery promise.'}
+ ],
+ links:[
+ {href:'/categories/herbal-teas',label:'Explore all herbal teas'},
+ {href:'/products/lemongrass-tea-bags',label:'Lemongrass Tea Bags'},
+ {href:'/products/herbal-tulsi-tea-pouch',label:'Herbal Tulsi Tea Pouch'},
+ {href:'/products/basil-tea-bags',label:'Basil Tea Bags'},
+ {href:'/blog/tulsi-vs-basil',label:'Understand Tulsi versus Basil'},
+ {href:'/bulk-supply',label:'Request a wholesale quotation'}
+ ]
+};

@@ -14,5 +14,13 @@ export const categoryGuides:Record<string,{title:string;intro:string;questions:{
  {question:'Which hydrosol should I request?',answer:'Choose Lemongrass Hydrosol, Tulsi Hydrosol (Ocimum sanctum) or Basil Hydrosol (Ocimum basilicum). Include the exact product name in your enquiry. A hydrosol and the corresponding essential oil are different product forms and should not be substituted without formulation evaluation.'},
  {question:'Can I compare the available sample packs?',answer:'Each listed hydrosol has 50 ml and 100 ml evaluation packs priced at ₹150 and ₹225 respectively. These are small-pack prices; a bulk quotation is discussed separately after reviewing quantity, packaging and delivery requirements.'},
  {question:'What information matters for a hydrosol formulation?',answer:'Ask about product-specific ingredients, preservation status, storage instructions, shelf life and available technical information before purchasing. Confirm compatibility and the preservation of your finished formulation through your own evaluation. No universal shelf life or preservation claim applies to all hydrosols.'}],
- guide:'/blog/what-is-a-hydrosol'}
+ guide:'/blog/what-is-a-hydrosol'},
+ 'herbal-teas':{
+ title:'Herbal Tea Bags for Cafés, Hotels, Retailers and Bulk Buyers',
+ intro:'Explore VG Naturals Lemongrass Tea Bags, Herbal Tulsi Tea Pouch and Basil Tea Bags from Lucknow. Compare botanical identity, listed packs and buyer requirements before discussing wholesale, hospitality or recurring supply. Bulk quantities, stock, specifications, labels and commercial terms are confirmed separately.',
+ questions:[
+ {question:'Which herbal teas are listed by VG Naturals?',answer:'Our ready range lists Lemongrass Tea Bags (Cymbopogon flexuosus), Herbal Tulsi Tea Pouch (Ocimum sanctum) and Basil Tea Bags (Ocimum basilicum). Tulsi and sweet Basil are not interchangeable. Confirm the exact product, composition and format required for your café, hotel, shop or distribution channel.'},
+ {question:'Can I order herbal teas in wholesale quantities?',answer:'Businesses may enquire about bulk or recurring requirements. Listed 10-pouch and 20-pouch packs are priced at ₹150 and ₹225 respectively; these are published pack prices, not guaranteed wholesale or per-cup rates. Share your intended quantity, packaging, destination PIN code and required delivery date for a quotation.'},
+ {question:'What should food-service and retail buyers verify?',answer:'Confirm the supplied product ingredients, label information, pack format, storage directions, shelf life, applicable food-safety documentation and available batch details before purchasing. Do not assume a specific certification, custom label, blend or shelf life without written confirmation.'}],
+ guide:'/blog/herbal-tea-wholesale-cafes-hotels-retailers-india'}
 };
