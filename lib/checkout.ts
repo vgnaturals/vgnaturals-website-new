@@ -23,7 +23,7 @@ export function orderContent(delivery:Delivery,items:OrderItem[]):string {
  * Keep the original Order ID for the customer and attach it to CRM notes.
  */
 export function crmRequestIdFromOrderId(orderId:string):string {
- const match=/^VGN-(\\d{8})-([A-F0-9]{24})$/.exec(orderId);
+ const match=/^VGN-(\d{8})-([A-F0-9]{24})$/.exec(orderId);
  if(!match)throw Error('Invalid order reference. Please refresh checkout.');
  const hex=(match[1]+match[2]).toLowerCase();
  return [hex.slice(0,8),hex.slice(8,12),hex.slice(12,16),hex.slice(16,20),hex.slice(20)].join('-');
