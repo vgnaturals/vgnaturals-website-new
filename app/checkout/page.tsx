@@ -2,7 +2,7 @@
 import {useEffect,useRef,useState,type FormEvent} from 'react';
 import Link from 'next/link';
 import {useCart} from '@/components/CartProvider';
-import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
+import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,crmRequestIdFromOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
 
 const money=(n:number)=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
 const fields:{key:keyof Delivery;label:string;autoComplete:string;type?:string;wide?:boolean;placeholder?:string}[]=[
@@ -12,7 +12,7 @@ const fields:{key:keyof Delivery;label:string;autoComplete:string;type?:string;w
  {key:'pin',label:'PIN code',autoComplete:'postal-code',placeholder:'6-digit PIN code'},
  {key:'city',label:'City / town',autoComplete:'address-level2'},
  {key:'state',label:'State / union territory',autoComplete:'address-level1'},
- {key:'email',label:'Email (optional)',autoComplete:'email',type:'email'}
+ {key:'email',label:'Email',autoComplete:'email',type:'email'}
 ];
 const storageKey='vg-checkout-reference-v1';
 export default function Checkout(){
@@ -62,10 +62,10 @@ export default function Checkout(){
   try{
    const response=await fetch('https://vg-naturals-business.roundmars256.chatgpt.site/api/website-leads',{
     method:'POST',headers:{'Content-Type':'application/json'},credentials:'omit',signal:AbortSignal.timeout(25000),
-    body:JSON.stringify({requestId:reference!.id,type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:delivery.notes},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
+    body:JSON.stringify({requestId:crmRequestIdFromOrderId(reference!.id),type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:['Customer-facing Order ID: '+reference!.id,delivery.notes].filter(Boolean).join('\\n')},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
    });
    const result=await response.json();
-   if(!response.ok||result.id!=='website-'+reference!.id)throw Error(result.error||'Could not save your order request. Please retry.');
+   if(!response.ok||result.id!=='website-'+crmRequestIdFromOrderId(reference!.id))throw Error(result.error||'Could not save your order request. Please retry.');
    window.location.assign('/order-confirmation?order='+encodeURIComponent(reference!.id));
   }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry with the same Order ID; your request will not be duplicated.');busyRef.current=false;setBusy(false)}
  }
@@ -81,10 +81,10 @@ export default function Checkout(){
   {!mounted?<p role="status">Loading your cart…</p>:!items.length?<div className="card p-7"><h2 className="text-2xl">Your cart is empty</h2><p className="my-4">Add a product to start your order.</p><Link href="/products" className="btn">Browse products</Link></div>:<div className="grid gap-7 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] items-start">
    <div className="card p-5 sm:p-8 min-w-0">
     {!canSend?<>
-     <h2 className="text-2xl font-serif font-normal">Where should we deliver?</h2><p className="mt-2 mb-6 text-sm leading-6 text-[#53604e]">Enter an Indian delivery address. Fields marked * are required.</p>
+     <h2 className="text-2xl font-serif font-normal">Where should we deliver?</h2><p className="mt-2 mb-6 text-sm leading-6 text-[#53604e]">Enter an Indian delivery address and email. Fields marked * are required.</p>
      <form onSubmit={confirmDetails} className="grid gap-5 sm:grid-cols-2">
-      {fields.map(({key,label,autoComplete,type,wide,placeholder})=><label key={key} htmlFor={'delivery-'+key} className={'text-sm font-semibold '+(wide?'sm:col-span-2':'')}>{label}{key!=='email'?' *':''}
-       <input id={'delivery-'+key} name={key} type={type||'text'} autoComplete={autoComplete} placeholder={placeholder} required={key!=='email'} maxLength={key==='address'?400:key==='pin'?6:key==='phone'?20:160} inputMode={key==='pin'?'numeric':undefined} aria-invalid={!!errors[key]} aria-describedby={errors[key]?key+'-error':undefined} className="field mt-2 font-normal" value={delivery[key]} onChange={e=>{setDelivery(d=>({...d,[key]:e.target.value}));setErrors(old=>({...old,[key]:undefined}))}}/>
+      {fields.map(({key,label,autoComplete,type,wide,placeholder})=><label key={key} htmlFor={'delivery-'+key} className={'text-sm font-semibold '+(wide?'sm:col-span-2':'')}>{label} *
+       <input id={'delivery-'+key} name={key} type={type||'text'} autoComplete={autoComplete} placeholder={placeholder} required maxLength={key==='address'?400:key==='pin'?6:key==='phone'?20:160} inputMode={key==='pin'?'numeric':undefined} aria-invalid={!!errors[key]} aria-describedby={errors[key]?key+'-error':undefined} className="field mt-2 font-normal" value={delivery[key]} onChange={e=>{setDelivery(d=>({...d,[key]:e.target.value}));setErrors(old=>({...old,[key]:undefined}))}}/>
        {errors[key]&&<span id={key+'-error'} className="mt-2 block text-red-700 text-xs">{errors[key]}</span>}
       </label>)}
       <details className="sm:col-span-2 rounded-xl border border-[#dfe5d8] p-4"><summary className="cursor-pointer text-sm font-semibold py-1">Company details or delivery note (optional)</summary>
