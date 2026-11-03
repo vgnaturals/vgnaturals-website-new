@@ -62,7 +62,7 @@ export default function Checkout(){
   try{
    const response=await fetch('https://vg-naturals-business.roundmars256.chatgpt.site/api/website-leads',{
     method:'POST',headers:{'Content-Type':'application/json'},credentials:'omit',signal:AbortSignal.timeout(25000),
-    body:JSON.stringify({requestId:crmRequestIdFromOrderId(reference!.id),type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:['Customer-facing Order ID: '+reference!.id,delivery.notes].filter(Boolean).join('\\n')},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
+    body:JSON.stringify({requestId:crmRequestIdFromOrderId(reference!.id),type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:['Customer-facing Order ID: '+reference!.id,delivery.notes].filter(Boolean).join('\n')},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
    });
    const result=await response.json();
    if(!response.ok||result.id!=='website-'+crmRequestIdFromOrderId(reference!.id))throw Error(result.error||'Could not save your order request. Please retry.');
