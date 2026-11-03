@@ -40,14 +40,15 @@ test('comparison and procurement links lead to existing products and buyer guide
 });
 
 test('Product offers still derive from actual variants; unknown inventory and policies are not invented', () => {
-  assert.ok(page.includes('offers: (p.status ==='));
-  assert.ok(page.includes('p.variants.map(v => ({'));
-  assert.ok(page.includes("priceCurrency: 'INR'"));
-  assert.ok(page.includes('price: v.price'));
-  assert.ok(page.includes("name: 'Product form', value: content.form"));
-  assert.ok(!page.includes('shippingDetails:'));
-  assert.ok(!page.includes('hasMerchantReturnPolicy:'));
-  assert.ok(!page.includes("'https://schema.org/InStock'"));
+  const schema = fs.readFileSync('lib/product-structured-data.ts','utf8');
+  assert.ok(page.includes("productPageStructuredData(p, summary, content?.form)"));
+  assert.ok(schema.includes('offers: p.variants.map(v => ({'));
+  assert.ok(schema.includes("priceCurrency: 'INR'"));
+  assert.ok(schema.includes('price: v.price'));
+  assert.ok(schema.includes("name: 'Product form', value: form"));
+  assert.ok(!schema.includes('shippingDetails:'));
+  assert.ok(!schema.includes('hasMerchantReturnPolicy:'));
+  assert.ok(!schema.includes("'https://schema.org/InStock'"));
   assert.ok(buyer.includes('their availability must'));
 });
 

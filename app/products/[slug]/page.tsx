@@ -8,6 +8,7 @@ import BuyOptions from '@/components/BuyOptions';
 import ProductCard from '@/components/ProductCard';
 import LocalSourcing from '@/components/LocalSourcing';
 import LemongrassBuyerChecklist from '@/components/LemongrassBuyerChecklist';
+import { productPageStructuredData } from '@/lib/product-structured-data';
 import { rangeForProduct } from '@/data/botanical-ranges';
 
 export function generateStaticParams() {
@@ -54,32 +55,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     ['Bulk pricing and MOQ', p.status === 'coming-soon' ? 'To be confirmed when available' : 'Confirmed on enquiry'],
     ['Supplier location', 'Lucknow, Uttar Pradesh, India'],
   ];
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    '@id': `https://www.vgnaturals.com/products/${p.slug}#product`,
-    url: `https://www.vgnaturals.com/products/${p.slug}`,
-    category: p.category,
-    additionalProperty: [
-      ...(p.botanicalName ? [{ '@type': 'PropertyValue', name: 'Listed botanical identity', value: p.botanicalName }] : []),
-      ...(content?.form ? [{ '@type': 'PropertyValue', name: 'Product form', value: content.form }] : []),
-    ],
-    name: p.name,
-    description: summary,
-    image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
-    brand: { '@type': 'Brand', name: 'VG Naturals' },
-    // Fresh packs have published prices; harvest and delivery still require confirmation.
-    // Do not invent an InStock value when availability is unknown.
-    offers: (p.status === 'ready' || p.status === 'fresh') && p.variants.length > 0 ? p.variants.map(v => ({
-      '@type': 'Offer',
-      name: `${p.name} — ${v.label}`,
-      ...(p.status === 'fresh' ? { description: 'Listed pack price. Harvest availability and delivery feasibility must be confirmed before ordering. Packaging and courier charges are additional.' } : {}),
-      seller: { '@id': 'https://www.vgnaturals.com/#organization' },
-      priceCurrency: 'INR',
-      price: v.price,
-      url: `https://www.vgnaturals.com/products/${p.slug}`,
-    })) : undefined,
-  };
+  const schema = productPageStructuredData(p, summary, content?.form);
 
   return (
     <section className="section container product-detail-page">
