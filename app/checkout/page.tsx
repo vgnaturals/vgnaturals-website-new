@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useRef,useState,type FormEvent} from 'react';
 import Link from 'next/link';
+import { recordCrmLeadSaved } from '@/lib/lead-analytics';
 import {useCart} from '@/components/CartProvider';
 import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,crmRequestIdFromOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
 
@@ -66,6 +67,7 @@ export default function Checkout(){
    });
    const result=await response.json();
    if(!response.ok||result.id!=='website-'+crmRequestIdFromOrderId(reference!.id))throw Error(result.error||'Could not save your order request. Please retry.');
+   recordCrmLeadSaved('order',result.id);
    window.location.assign('/order-confirmation?order='+encodeURIComponent(reference!.id));
   }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry with the same Order ID; your request will not be duplicated.');busyRef.current=false;setBusy(false)}
  }
