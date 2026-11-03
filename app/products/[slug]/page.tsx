@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import BuyOptions from '@/components/BuyOptions';
 import ProductCard from '@/components/ProductCard';
 import LocalSourcing from '@/components/LocalSourcing';
+import LemongrassBuyerChecklist from '@/components/LemongrassBuyerChecklist';
 import { rangeForProduct } from '@/data/botanical-ranges';
 
 export function generateStaticParams() {
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getProduct((await params).slug);
   if (!p) notFound();
   const content = productContent[p.slug];
-  const title = p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil) | Uses, Prices & Bulk India' : p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol | Uses, Prices & Bulk India' : searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
-  const description = p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, uses, storage FAQs and bulk enquiries across India.' : p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, formulation uses, storage questions and bulk supply enquiries across India.' : p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
+  const title = p.slug === 'lemongrass-essential-oil' ? 'Lemongrass Essential Oil | Bulk Supplier India' : p.slug === 'lemongrass-hydrosol' ? 'Lemongrass Hydrosol | Packs & Bulk Supply India' : p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil) | Uses, Prices & Bulk India' : searchBuyerQuestions[p.slug] ? `${p.name} Price & Bulk Supply in India` : p.status === 'coming-soon' ? `${p.name} in Lucknow | Coming Soon` : `${p.name} | Retail & Bulk Enquiries in India`;
+  const description = p.slug === 'lemongrass-essential-oil' ? 'Lemongrass Essential Oil (Cymbopogon flexuosus) in 50 ml and 100 ml packs from VG Naturals, Lucknow. Compare specifications and enquire about bulk supply across India.' : p.slug === 'tulsi-hydrosol' ? 'Tulsi Hydrosol (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Compare 50 ml and 100 ml packs, uses, storage FAQs and bulk enquiries across India.' : p.slug === 'lemongrass-hydrosol' ? 'Buy Lemongrass Hydrosol in 50 ml and 100 ml packs from VG Naturals, Lucknow. For cosmetic formulators: ask about preservation, batch specifications and bulk supply.' : p.slug === 'fresh-tulsi-leaves' ? 'Fresh Tulsi leaves (Holy Basil, Ocimum sanctum) from VG Naturals, Lucknow. Check pack prices, bulk quotes and harvest availability for your delivery PIN code.' : p.slug === 'fresh-basil-leaves' ? 'Fresh sweet basil leaves (Ocimum basilicum) from VG Naturals, Lucknow. Check listed pack prices, restaurant bulk quotes and delivery availability by PIN code.' : p.status === 'coming-soon' ? `${p.name} from VG Naturals, Lucknow: coming soon. Register interest; availability, specifications and pricing will be confirmed before orders.` : `${p.name}${p.botanicalName ? ` (${p.botanicalName})` : ''} from VG Naturals, Lucknow. India-wide enquiries. ${p.status === 'fresh' ? 'Confirm harvest availability and delivery.' : 'Explore listed packs and bulk enquiries.'}`;
   return {
     title,
     description,
@@ -59,7 +60,10 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     '@id': `https://www.vgnaturals.com/products/${p.slug}#product`,
     url: `https://www.vgnaturals.com/products/${p.slug}`,
     category: p.category,
-    additionalProperty: p.botanicalName ? [{ '@type': 'PropertyValue', name: 'Listed botanical identity', value: p.botanicalName }] : undefined,
+    additionalProperty: [
+      ...(p.botanicalName ? [{ '@type': 'PropertyValue', name: 'Listed botanical identity', value: p.botanicalName }] : []),
+      ...(content?.form ? [{ '@type': 'PropertyValue', name: 'Product form', value: content.form }] : []),
+    ],
     name: p.name,
     description: summary,
     image: p.image ? `https://www.vgnaturals.com${p.image}` : undefined,
@@ -105,11 +109,13 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <a href="#description" className="underline">Description</a>
         <a href="#details" className="underline">Product details</a>
         {content && <a href="#applications" className="underline">Applications & buying guidance</a>}
+        {(p.slug === 'lemongrass-essential-oil' || p.slug === 'lemongrass-hydrosol') && <a href="#lemongrass-buyer-checklist" className="underline">Bulk buyer checklist</a>}
         {faqs.length > 0 && <a href="#faqs" className="underline">FAQs</a>}
       </nav>
 
       <aside className="card p-6 sm:p-8 mt-10" aria-labelledby="product-farm-story"><p className="eyebrow">From our farm to your product</p><h2 id="product-farm-story" className="mt-2">Cultivation, Extraction &amp; Botanical Products</h2><p className="mt-3 leading-7">VG Naturals cultivates selected botanicals, including Lemongrass and Tulsi, and works with suitable extraction, distillation and natural product development. {p.status === "coming-soon" ? "This planned product is not available for purchase yet." : "For this product, please confirm the specific material origin, batch details, processing method and any required documents when enquiring."} Our farm story describes the business approach; it is not a claim that every product is made entirely from our own harvest.</p><Link href="/about" className="underline inline-block mt-4 text-green-900">See original farm photographs and our process</Link></aside>
       <LocalSourcing product={p} />
+      <LemongrassBuyerChecklist product={p} />
       {range && <p className="mt-6 leading-7">Explore the <Link className="underline text-green-900 font-semibold" href={'/botanicals/'+range.slug}>full {range.name} range and India-wide sourcing questions</Link>. Share your delivery PIN code to confirm feasibility and freight.</p>}
 
       <section id="description" aria-labelledby="description-heading" className="mt-12 scroll-mt-40 max-w-4xl">
