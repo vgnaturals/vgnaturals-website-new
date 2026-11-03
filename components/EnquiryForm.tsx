@@ -1,6 +1,7 @@
 "use client";
 import {useRef, useState, type FormEvent} from 'react';
 import Link from 'next/link';
+import { recordCrmLeadSaved } from '@/lib/lead-analytics';
 
 type Props = { initialProduct?: string; orderSummary?: string; subtotal?: number };
 export default function EnquiryForm({initialProduct='',orderSummary,subtotal}:Props) {
@@ -29,6 +30,7 @@ export default function EnquiryForm({initialProduct='',orderSummary,subtotal}:Pr
       const response=await fetch('https://vg-naturals-business.roundmars256.chatgpt.site/api/website-leads',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(25000),body:JSON.stringify({requestId:request.current.id,type:'enquiry',consent:true,honey,customer:form})});
       const result=await response.json();
       if(!response.ok||result.id!=='website-'+request.current.id)throw Error(result.error||'Could not save your enquiry. Please retry.');
+      recordCrmLeadSaved('enquiry',result.id);
       setSuccess('Thank you! Your enquiry has been received. Our team will contact you shortly. Reference: '+result.id);
     }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry; the same enquiry will not be duplicated.');}
     finally{busyRef.current=false;setBusy(false)}
