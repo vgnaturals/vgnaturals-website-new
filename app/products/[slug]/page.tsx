@@ -10,6 +10,7 @@ import LocalSourcing from '@/components/LocalSourcing';
 import LemongrassBuyerChecklist from '@/components/LemongrassBuyerChecklist';
 import ProductEvidencePanel from '@/components/ProductEvidencePanel';
 import { productPageStructuredData } from '@/lib/product-structured-data';
+import { productCategoryPath, productBreadcrumbStructuredData } from '@/lib/product-breadcrumbs';
 import { rangeForProduct } from '@/data/botanical-ranges';
 
 export function generateStaticParams() {
@@ -57,11 +58,13 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
     ['Supplier location', 'Lucknow, Uttar Pradesh, India'],
   ];
   const schema = productPageStructuredData(p, summary, content?.form);
+  const categoryUrl = productCategoryPath(p);
+  const breadcrumb = productBreadcrumbStructuredData(p);
 
   return (
     <section className="section container product-detail-page">
       <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:underline">Home</Link> / <Link href="/products" className="hover:underline">Products</Link> / <span>{p.name}</span>
+        <Link href="/" className="hover:underline">Home</Link> / <Link href="/products" className="hover:underline">Products</Link> / <Link href={categoryUrl} className="hover:underline">{p.category}</Link> / <span>{p.name}</span>
       </nav>
       <div className="grid md:grid-cols-2 gap-12">
         <div className="card self-start">
@@ -149,7 +152,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         <h2 id="related-heading" className="mb-6">Related Products</h2>
         <div className="grid-products">{related.map(x => <ProductCard key={x.slug} product={x} />)}</div>
       </section>}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://www.vgnaturals.com/'},{'@type':'ListItem',position:2,name:'Products',item:'https://www.vgnaturals.com/products'},{'@type':'ListItem',position:3,name:p.name,item:`https://www.vgnaturals.com/products/${p.slug}`}]}]).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]).replace(/</g, '\\u003c') }} />
     </section>
   );
 }
