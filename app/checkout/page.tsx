@@ -2,6 +2,7 @@
 import {useEffect,useRef,useState,type FormEvent} from 'react';
 import Link from 'next/link';
 import { recordCrmLeadSaved } from '@/lib/lead-analytics';
+import { classifyWebsiteLeadAcknowledgement } from '@/lib/website-lead-acknowledgement';
 import {useCart} from '@/components/CartProvider';
 import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,crmRequestIdFromOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
 
@@ -66,8 +67,10 @@ export default function Checkout(){
     body:JSON.stringify({requestId:crmRequestIdFromOrderId(reference!.id),type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:['Customer-facing Order ID: '+reference!.id,delivery.notes].filter(Boolean).join('\n')},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
    });
    const result=await response.json();
-   if(!response.ok||result.id!=='website-'+crmRequestIdFromOrderId(reference!.id))throw Error(result.error||'Could not save your order request. Please retry.');
-   recordCrmLeadSaved('order',result.id);
+   const acknowledgement=classifyWebsiteLeadAcknowledgement(response.ok,result,'website-'+crmRequestIdFromOrderId(reference!.id));
+   if(acknowledgement==='invalid')throw Error(result?.error||'Could not save your order request. Please retry.');
+   if(acknowledgement==='created')recordCrmLeadSaved('order',result.id);
+   // Both newly created and safely repeated acknowledgements share the same order confirmation.
    window.location.assign('/order-confirmation?order='+encodeURIComponent(reference!.id));
   }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry with the same Order ID; your request will not be duplicated.');busyRef.current=false;setBusy(false)}
  }
