@@ -80,8 +80,9 @@ test('analytics events are gated after CRM response acknowledgement',()=>{
   const enquiry=fs.readFileSync('components/EnquiryForm.tsx','utf8');
   const checkout=fs.readFileSync('app/checkout/page.tsx','utf8');
   for(const source of [enquiry,checkout]) {
-    const success=source.indexOf("if(!response.ok||result.id!==");
-    const record=source.indexOf("recordCrmLeadSaved(");
-    assert.ok(success>0 && record>success);
+    const acknowledgement=source.indexOf("classifyWebsiteLeadAcknowledgement(response.ok,result,");
+    const reject=source.indexOf("if(acknowledgement==='invalid')throw Error(");
+    const createdOnly=source.indexOf("if(acknowledgement==='created')recordCrmLeadSaved(");
+    assert.ok(acknowledgement>0 && reject>acknowledgement && createdOnly>reject);
   }
 });
