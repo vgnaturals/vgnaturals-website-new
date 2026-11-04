@@ -83,7 +83,7 @@ test('all industry buyer journeys link to existing catalogue or sourcing guidanc
   for(const href of industryTargets)assert.ok(cleanUrl(href),'Broken industry target: '+href);
   assert.ok(industryPage.includes('India-wide botanical ingredient buyer questions'));
   assert.ok(industryPage.includes('not guaranteed')||industryPage.includes('confirmed for each request'));
-  assert.ok(homePage.includes('accepts sourcing enquiries from businesses across India'));
+  assert.ok(homePage.includes('welcome sourcing enquiries from businesses across India'));
 });
 
 test('sitewide Organization identity remains one Lucknow business with real profiles and phone',()=>{
