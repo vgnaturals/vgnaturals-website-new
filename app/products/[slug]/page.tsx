@@ -8,6 +8,7 @@ import BuyOptions from '@/components/BuyOptions';
 import ProductCard from '@/components/ProductCard';
 import LocalSourcing from '@/components/LocalSourcing';
 import LemongrassBuyerChecklist from '@/components/LemongrassBuyerChecklist';
+import ProductEvidencePanel from '@/components/ProductEvidencePanel';
 import { productPageStructuredData } from '@/lib/product-structured-data';
 import { rangeForProduct } from '@/data/botanical-ranges';
 
@@ -89,7 +90,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
         {faqs.length > 0 && <a href="#faqs" className="underline">FAQs</a>}
       </nav>
 
-      <aside className="card p-6 sm:p-8 mt-10" aria-labelledby="product-farm-story"><p className="eyebrow">From our farm to your product</p><h2 id="product-farm-story" className="mt-2">Cultivation, Extraction &amp; Botanical Products</h2><p className="mt-3 leading-7">VG Naturals cultivates selected botanicals, including Lemongrass and Tulsi, and works with suitable extraction, distillation and natural product development. {p.status === "coming-soon" ? "This planned product is not available for purchase yet." : "For this product, please confirm the specific material origin, batch details, processing method and any required documents when enquiring."} Our farm story describes the business approach; it is not a claim that every product is made entirely from our own harvest.</p><Link href="/about" className="underline inline-block mt-4 text-green-900">See original farm photographs and our process</Link></aside>
+      <ProductEvidencePanel product={p} content={content} />
       <LocalSourcing product={p} />
       <LemongrassBuyerChecklist product={p} />
       {range && <p className="mt-6 leading-7">Explore the <Link className="underline text-green-900 font-semibold" href={'/botanicals/'+range.slug}>full {range.name} range and India-wide sourcing questions</Link>. Share your delivery PIN code to confirm feasibility and freight.</p>}
