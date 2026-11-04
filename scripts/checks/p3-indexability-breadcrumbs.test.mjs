@@ -100,7 +100,7 @@ test('cart and checkout remain noindex despite public navigation, while product 
 test('P3 does not alter existing returns, shipping, stock or certification statements',()=>{
   const product=source('app/products/[slug]/page.tsx');
   const breadcrumbs=source('lib/product-breadcrumbs.ts');
-  for(const risky of ['shippingRate','MerchantReturnPolicy','guaranteed delivery','certified organic','availability: 'https://schema.org/InStock'']){
+  for(const risky of ['shippingRate','MerchantReturnPolicy','guaranteed delivery','certified organic','https://schema.org/InStock']){
     assert.ok(!breadcrumbs.includes(risky));
   }
   assert.ok(!product.includes('shippingDetails:'));
