@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit",
-    "prebuild": "node --experimental-strip-types --test scripts/checks/checkout-crm-contract.test.mjs && node --experimental-strip-types --test scripts/checks/seo-redirects.test.mjs && node --test scripts/checks/lemongrass-buyer-seo.test.mjs && node --experimental-strip-types --test scripts/checks/product-schema-leads.test.mjs && node scripts/generate-catalogue.mjs",
+    "prebuild": "node --experimental-strip-types --test scripts/checks/checkout-crm-contract.test.mjs && node --experimental-strip-types --test scripts/checks/seo-redirects.test.mjs && node --test scripts/checks/lemongrass-buyer-seo.test.mjs && node --experimental-strip-types --test scripts/checks/product-schema-leads.test.mjs && node --experimental-strip-types --test scripts/checks/crm-acknowledgement-ga4.test.mjs && node scripts/generate-catalogue.mjs",
     "catalogue": "node scripts/generate-catalogue.mjs"
   },
   "dependencies": {
