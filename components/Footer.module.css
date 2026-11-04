@@ -18,6 +18,15 @@
 .grid h3{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#edcf87;line-height:1.6;margin:0 0 18px}
 .linkGroup ul{list-style:none;padding:0;margin:0}.linkGroup a{display:inline-flex;align-items:center;min-height:40px;font-size:13px;line-height:1.6;color:#d2ddd5}.linkGroup a:hover{color:#edcf87}
 .contactRow{display:flex;align-items:flex-start;gap:12px;font-size:13px;line-height:1.8;margin:0 0 18px;overflow-wrap:anywhere}.contactRow svg{flex-shrink:0;margin-top:5px;color:#edcf87}.contactRow span{min-width:0}.contactRow small{display:block;color:#aabeb0;font-size:10px;letter-spacing:.06em;margin-bottom:2px}.contactRow address{font-style:normal;color:#c3d1c7;font-size:12px;line-height:1.9}.contactRow:hover{color:#edcf87}
+.productIndex{border-top:1px solid #375345;margin-top:35px;padding-top:26px}
+.productIndex h3{font-size:13px;line-height:1.5;font-weight:700;letter-spacing:.03em;color:#edcf87;margin:0 0 10px}
+.productIndex p{max-width:1000px;color:#c3d1c7;font-size:12px;line-height:1.9;margin:0 0 14px}
+.productIndex ul{display:flex;flex-wrap:wrap;gap:3px 22px;list-style:none;padding:0;margin:0}
+.productIndex li{min-width:0}.productIndex a{display:inline-flex;align-items:center;min-height:36px;font-size:12px;line-height:1.6;color:#e4ebe5;text-underline-offset:3px}
+.productIndex a:hover,.productIndex a:focus-visible{color:#edcf87;text-decoration:underline}
+.productIndex .productIndexCta{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.productIndexCta a{text-decoration:underline;font-weight:600;color:#edcf87}
+@media(max-width:600px){.productIndex{margin-top:22px;padding-top:22px}.productIndex ul{gap:0 20px}.productIndex li{width:calc(50% - 10px)}.productIndex a{min-height:44px}.productIndex p{font-size:12px}}
 .bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #375345;margin-top:36px;padding-top:20px;font-size:11px;color:#bccdc1}.bottom p{margin:0;line-height:1.8}.bottom nav{display:flex;flex-wrap:wrap;gap:4px 20px}.bottom a{display:inline-flex;align-items:center;min-height:36px}.bottom a:hover{color:#edcf87}
 .note{font-size:10px;color:#aabeb0;line-height:1.8;margin:10px 0 0}.footer a:focus-visible{outline:2px solid #b18b3c;outline-offset:4px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.brand{grid-column:1/-1;display:grid;grid-template-columns:108px 1fr;column-gap:22px}.logo{grid-row:1/4;align-self:start;justify-self:start}.tagline{margin-top:0}.description{max-width:400px}.socials{grid-column:2;margin-top:12px}.contact{grid-column:1/-1;border-top:1px solid #375345;padding-top:28px}.enquiryInner{gap:32px}.bottom{align-items:flex-start;flex-direction:column;gap:8px}}
