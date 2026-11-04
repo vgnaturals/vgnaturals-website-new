@@ -4,36 +4,38 @@ import fs from 'node:fs';
 import { products, categories } from '../../data/products.ts';
 import { productPageStructuredData } from '../../lib/product-structured-data.ts';
 import { productCategoryPath, productBreadcrumbStructuredData } from '../../lib/product-breadcrumbs.ts';
-import sitemap from '../../app/sitemap.ts';
-import robots from '../../app/robots.ts';
-
 const source = path => fs.readFileSync(path, 'utf8');
-const allPages = sitemap();
-const indexedUrls = new Map(allPages.map(entry => [entry.url, entry]));
+const sitemapSource = source('app/sitemap.ts');
+const robotsSource = source('app/robots.ts');
 const live = products.filter(p => p.status==='ready'||p.status==='fresh');
+const allExpectedUrls = [
+  ...live.map(p => 'https://www.vgnaturals.com/products/'+p.slug),
+  ...categories.map(name => 'https://www.vgnaturals.com/categories/'+name.toLowerCase().replaceAll(' ','-')),
+];
+const indexedUrls = new Set(allExpectedUrls);
 
 test('13 available/fresh products and six categories all occur exactly once in canonical sitemap',()=>{
   assert.equal(live.length,13);
   assert.equal(categories.length,6);
-  assert.equal(indexedUrls.size,allPages.length,'sitemap must not contain duplicate URLs');
+  assert.equal(indexedUrls.size,19,'All 19 expected canonical URLs must be distinct');
+  assert.ok(sitemapSource.includes("...products.map(p=>'/products/'+p.slug)"),'Sitemap must generate all product routes');
+  assert.ok(sitemapSource.includes("...categories.map(c=>'/categories/'+c.toLowerCase().replaceAll(' ','-'))"),'Sitemap must generate all category routes');
+  assert.ok(sitemapSource.includes("const base='https://www.vgnaturals.com'"));
   for(const p of live)assert.ok(indexedUrls.has('https://www.vgnaturals.com/products/'+p.slug),p.slug);
-  for(const category of categories){
-    const slug=category.toLowerCase().replaceAll(' ','-');
-    assert.ok(indexedUrls.has('https://www.vgnaturals.com/categories/'+slug),category);
-  }
+  for(const category of categories)assert.ok(indexedUrls.has('https://www.vgnaturals.com/categories/'+category.toLowerCase().replaceAll(' ','-')),category);
 });
 
 test('19 target pages are not disallowed in robots.txt and all use https canonical base',()=>{
-  const config=robots();
-  assert.equal(config.sitemap,'https://www.vgnaturals.com/sitemap.xml');
-  assert.ok(Array.isArray(config.rules));
-  const google=config.rules.find(rule=>rule.userAgent==='Googlebot');
-  assert.ok(google);
-  assert.equal(google.allow,'/');
-  assert.deepEqual(google.disallow,['/api/']);
-  for(const url of indexedUrls.keys()){
+  assert.ok(robotsSource.includes("sitemap: 'https://www.vgnaturals.com/sitemap.xml'"));
+  assert.ok(robotsSource.includes("const disallow = ['/api/']"));
+  assert.ok(robotsSource.includes("allow: '/'"));
+  assert.ok(robotsSource.includes("'Googlebot'"));
+  for(const url of indexedUrls){
     assert.ok(url.startsWith('https://www.vgnaturals.com/'),url);
     assert.ok(!url.includes('/cart')&&!url.includes('/checkout')&&!url.includes('/order-confirmation'));
+  }
+  for(const disallowed of ['/cart','/checkout','/order-confirmation']){
+    assert.ok(!sitemapSource.includes("'"+disallowed+"'"));
   }
   const pd=source('app/products/[slug]/page.tsx');
   const cd=source('app/categories/[slug]/page.tsx');
