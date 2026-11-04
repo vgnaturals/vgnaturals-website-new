@@ -27,6 +27,16 @@ export default async function BotanicalRange({ params }: { params: Promise<{ slu
       <nav aria-label="Breadcrumb" className="text-sm mb-6"><Link href="/">Home</Link> / <Link href="/products">Products</Link> / <span>{r.name}</span></nav>
       <h2>{r.name}: botanical identity and product forms</h2><p className="mt-4 mb-8 max-w-4xl leading-7">{r.identity}</p>
       <div className="grid-products">{range.map(p=><ProductCard key={p.slug} product={p}/>)}</div>
+      {r.slug === 'lemongrass' && <aside className="card p-6 sm:p-8 mt-8" aria-labelledby="lemongrass-ingredient-choice">
+        <p className="eyebrow">Manufacturer and formulator sourcing</p>
+        <h2 id="lemongrass-ingredient-choice" className="mt-2 text-2xl">Select Lemongrass Essential Oil or Hydrosol by product form</h2>
+        <p className="mt-3 leading-7">VG Naturals lists both Lemongrass Essential Oil and water-based Lemongrass Hydrosol. These are different ingredients. Compare the product descriptions and listed sample packs first, then confirm the specification, batch information, packaging and quotation terms for your application.</p>
+        <div className="mt-5 flex flex-wrap gap-4">
+          <Link href="/products/lemongrass-essential-oil" className="underline font-semibold text-green-900">Lemongrass Essential Oil — packs and bulk enquiries</Link>
+          <Link href="/products/lemongrass-hydrosol" className="underline font-semibold text-green-900">Lemongrass Hydrosol — packs and bulk enquiries</Link>
+          <Link href="/blog/lemongrass-hydrosol-bulk-supply-cosmetic-formulators" className="underline font-semibold text-green-900">Hydrosol sourcing checklist for cosmetic formulators</Link>
+        </div>
+      </aside>}
       {r.slug === 'tulsi' && <TulsiBuyingDetails />}
       {r.slug === 'basil' && <aside className="card p-6 mt-8"><h2 className="text-2xl">Fresh Basil leaves for kitchens and bulk buyers</h2><p className="mt-3 leading-7">Looking for fresh sweet basil for pesto, pasta or pizza preparations? Compare the current leaf pack with our separate oil, hydrosol and tea listings. For restaurant or wholesale supply, share the required weight, delivery frequency and PIN code; harvest and delivery need confirmation.</p><Link className="inline-block mt-4 underline text-green-900" href="/blog/fresh-basil-leaves-buying-storage-guide">Fresh Basil leaves: uses, prices, storage and buying questions</Link></aside>}
       <section className="mt-12 card p-6 sm:p-8" aria-labelledby="india-enquiry">
