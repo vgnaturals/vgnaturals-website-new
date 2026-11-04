@@ -14,7 +14,9 @@ export const metadata:Metadata={
 const topicGroups=[
  {title:'Essential oil buying',description:'Compare botanical identities, evaluation samples, specification requests and bulk terms.',href:'/categories/essential-oils',guide:'/blog/essential-oil-bulk-buying',label:'Essential oil bulk buying checklist'},
  {title:'Hydrosols for formulators',description:'Understand water-based botanical products, preservation questions and batch information.',href:'/categories/hydrosols',guide:'/blog/lemongrass-hydrosol-bulk-supply-cosmetic-formulators',label:'Lemongrass hydrosol wholesale guide'},
- {title:'Fresh leaves & teas',description:'Select harvested Tulsi or Basil leaves versus finished herbal-tea packs and confirm availability.',href:'/categories/fresh-botanicals',guide:'/blog/fresh-tulsi-leaves-buying-guide',label:'Fresh Tulsi leaves buying guide'}
+ {title:'Fresh Tulsi and Basil leaves',description:'Compare two distinct harvested leaf crops; check harvest and destination feasibility before purchase.',href:'/categories/fresh-botanicals',guide:'/blog/fresh-tulsi-leaves-buying-guide',label:'Fresh Tulsi leaves buying guide'},
+ {title:'Herbal tea packs for trade buyers',description:'Compare Lemongrass, Tulsi and Basil tea pouch formats for retail, cafés and hospitality.',href:'/categories/herbal-teas',guide:'/blog/herbal-tea-wholesale-cafes-hotels-retailers-india',label:'Herbal tea wholesale checklist'},
+ {title:'Room fragrance and home care',description:'Understand the difference between essential oils, room fresheners and labelled air-care sprays.',href:'/categories/home-care',guide:'/blog/lemongrass-oil-hydrosol-tea-buying-guide',label:'Lemongrass product-format buying guide'}
 ];
 const quickAnswers=[
  {question:'What essential oils does VG Naturals list?',answer:'Lemongrass (Cymbopogon flexuosus), Tulsi (Ocimum sanctum) and Sweet Basil (Ocimum basilicum) essential oils. Each is a separate product; buyers should request the botanical identity and required specifications.'},

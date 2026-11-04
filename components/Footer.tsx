@@ -5,6 +5,18 @@ const explore = [['/products','All products'],['/categories','Categories'],['/ab
 const business = [['/bulk-supply','Bulk supply'],['/industries','Industries'],['/catalogue','Catalogue'],['/coming-soon','Coming soon'],['/contact','Contact us']];
 const policies = [['/privacy-policy','Privacy'],['/terms-and-conditions','Terms'],['/shipping-policy','Shipping'],['/refund-policy','Refunds'],['/cancellation-policy','Cancellation']];
 const whatsapp = 'https://wa.me/919044210088?text='+encodeURIComponent('Hello VG Naturals, I would like to discuss a product requirement.');
+const discover = [
+ ['/products/lemongrass-essential-oil','Lemongrass Essential Oil'],
+ ['/products/lemongrass-hydrosol','Lemongrass Hydrosol'],
+ ['/products/tulsi-essential-oil','Tulsi Essential Oil'],
+ ['/products/tulsi-hydrosol','Tulsi Hydrosol'],
+ ['/products/basil-essential-oil','Sweet Basil Essential Oil'],
+ ['/products/basil-hydrosol','Basil Hydrosol'],
+ ['/products/lemongrass-tea-bags','Lemongrass Tea Bags'],
+ ['/products/herbal-tulsi-tea-pouch','Tulsi Tea Pouch'],
+ ['/products/fresh-tulsi-leaves','Fresh Tulsi Leaves'],
+ ['/products/fresh-basil-leaves','Fresh Basil Leaves'],
+] as const;
 export default function Footer(){
  return <footer className={styles.footer}>
   <div className={styles.inner}><div className={styles.grid}>
@@ -25,6 +37,12 @@ export default function Footer(){
     <div className={styles.contactRow}><MapPin size={18} aria-hidden="true"/><address>1248 Royal City Phase 2, Aurangabad Jagir, B R A University, Lucknow – 226025, Uttar Pradesh, India</address></div>
    </div>
   </div>
+  <nav className={styles.productIndex} aria-label="Browse VG Naturals botanical products">
+    <h3>Find botanical ingredients and products</h3>
+    <p>Browse exact product forms before enquiring about manufacturing, wholesale or retail packs. VG Naturals is based in Lucknow and welcomes sourcing enquiries from businesses across India. Delivery feasibility, documentation, stock and final commercial terms are confirmed for each product and destination.</p>
+    <ul>{discover.map(([href,label])=><li key={href}><Link href={href}>{label}</Link></li>)}</ul>
+    <p className={styles.productIndexCta}><Link href="/sourcing-guide">Compare formats and buying terms</Link> · <Link href="/bulk-supply">Request a product-specific bulk quote</Link></p>
+  </nav>
   <div className={styles.bottom}><p>© {new Date().getFullYear()} VG Naturals Private Limited.</p><nav aria-label="Footer policies">{policies.map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</nav></div>
   <p className={styles.note}>Packaging and courier charges are not included. Product availability and commercial terms are subject to confirmation.</p>
   </div>
