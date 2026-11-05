@@ -45,10 +45,11 @@ test('every new link targets an existing product, buyer guide or botanical range
   assert.ok(botanicalRanges.some(r=>r.slug==='lemongrass'));
 });
 
-test('only truly updated URLs receive Nov 4 sitemap lastmod; canonical and Product schema remain intact',()=>{
-  for(const path of ['/categories/hydrosols','/categories/essential-oils','/botanicals/lemongrass']) {
+test('updated URLs retain accurate sitemap lastmod; canonical and Product schema remain intact',()=>{
+  for(const path of ['/categories/hydrosols','/categories/essential-oils']) {
     assert.ok(sitemap.includes("'"+path+"':'2026-11-04'"),path);
   }
+  assert.ok(sitemap.includes("'/botanicals/lemongrass':'2026-11-05'"));
   assert.ok(sitemap.includes("const base='https://www.vgnaturals.com'"));
   assert.ok(product.includes('alternates: { canonical: `/products/${p.slug}` }'));
   assert.ok(schema.includes("priceCurrency: 'INR'"));
