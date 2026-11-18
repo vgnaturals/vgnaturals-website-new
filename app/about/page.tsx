@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import QuoteStrip from '@/components/QuoteStrip';
 import type { Metadata } from 'next';
-export const metadata: Metadata = { alternates:{canonical:'/about'}, title: 'About Our Farm, Extraction & Botanical Products | VG Naturals', description: 'Discover VG Naturals in Lucknow: original farm photographs, Lemongrass and Tulsi cultivation, botanical extraction, essential oils, hydrosols and bulk buyer enquiries.' };
+export const metadata: Metadata = { alternates:{canonical:'/about'}, title: 'Our Farm & Botanical Processing', description: 'Explore VG Naturals in Lucknow: farm photographs, selected Lemongrass and Tulsi cultivation, steam distillation and B2B ingredient sourcing.' };
 const farmPhotos = [
   { image: 'botanical-farm-planting-rows.jpg', caption: 'Botanical planting rows' },
   { image: 'botanical-plant-leaves-close-up.jpg', caption: 'A closer look at our botanicals' },
