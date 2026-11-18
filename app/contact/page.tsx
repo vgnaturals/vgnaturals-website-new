@@ -3,8 +3,8 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 
 export const metadata:Metadata={
-  title:'Contact VG Naturals | Essential Oil & Hydrosol Supplier in Lucknow',
-  description:'Visit or contact farm-linked VG Naturals in Lucknow. Ask about our Lemongrass and Tulsi cultivation, botanical extraction, oils, hydrosols and bulk supply.',
+  title:'Contact Botanical Supplier in Lucknow',
+  description:'Contact VG Naturals Pvt Ltd in Lucknow for Lemongrass, Tulsi and Basil oils, hydrosols, sample requirements and bulk botanical ingredient quotations.',
   alternates:{canonical:'/contact'},
   openGraph:{title:'Contact VG Naturals — Lucknow | B2B Botanical Sourcing',description:'Reach VG Naturals for botanical ingredient samples, product information and bulk quotations from Lucknow.',url:'/contact',type:'website'}
 };
