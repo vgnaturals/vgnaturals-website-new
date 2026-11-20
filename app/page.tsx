@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {products} from '@/data/products';
 import ProductCollections from '@/components/ProductCollections';
-export const metadata:Metadata={title:'Essential Oils, Hydrosols & Botanical Supplier in India',description:'VG Naturals supplies Lemongrass, Tulsi and Basil essential oils, hydrosols, teas and fresh botanicals from Lucknow. Compare packs and request India-wide B2B sourcing quotes.',alternates:{canonical:'/'}};
+export const metadata:Metadata={title:'Essential Oils, Hydrosols & Botanical Supplier in India',description:'VG Naturals supplies Lemongrass, Tulsi and Basil essential oils and hydrosols from Lucknow, India. Request B2B botanical ingredient quotations.',alternates:{canonical:'/'}};
 const categories=[
  {name:'Essential Oils',slug:'essential-oils',image:'/catalogue-assets/lemongrass-essential-oil-bottles.jpg'},
  {name:'Hydrosols',slug:'hydrosols',image:'/catalogue-assets/lemongrass-hydrosol-spray-bottle.png'},
