@@ -49,6 +49,12 @@ test('does not report invalid CRM reference as a conversion',()=>{
   assert.equal(meta.length,0);
 });
 
+test('Pixel identity must be configured from the verified Vercel environment, never a hard-coded other-business ID',()=>{
+  const component=readFileSync(new URL('../../components/MetaPixel.tsx',import.meta.url),'utf8');
+  assert.match(component,/process\.env\.NEXT_PUBLIC_META_PIXEL_ID/);
+  assert.doesNotMatch(component,/fbq\('init','\d{10,20}'\)/);
+});
+
 test('pixel component is ID- and consent-gated and avoids double Meta initialization',()=>{
   const component=readFileSync(new URL('../../components/MetaPixel.tsx',import.meta.url),'utf8');
   assert.match(component,/^const validPixelId = \/\^\\d\{10,20\}\$\/\.test\(pixelId\);/m);
