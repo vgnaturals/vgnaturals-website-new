@@ -79,6 +79,14 @@ export const searchBuyerQuestions: Record<string, {question:string;answer:string
   ],
   "basil-essential-oil": [
     {
+      "question": "Where can businesses request bulk Sweet Basil essential oil in India?",
+      "answer": "VG Naturals in Lucknow accepts enquiries for Sweet Basil Essential Oil (Ocimum basilicum). Send the quantity and unit, intended application, packaging requirements and delivery PIN code. Sample options, batch specifications, documentation, MOQ and final bulk quotation must be confirmed for the proposed supply."
+    },
+    {
+      "question": "What should soap and candle makers check before buying Basil Essential Oil?",
+      "answer": "Identify the exact Ocimum basilicum oil, request available batch composition and safety or technical documents, and test compatibility and performance in the proposed finished formulation. A product listing is not proof of a particular candle-wax performance, cosmetic grade or finished-product safety."
+    },
+    {
       "question": "Is sweet basil essential oil the same as holy basil oil?",
       "answer": "No. VG Naturals lists Basil Essential Oil as Ocimum basilicum and Tulsi Essential Oil as Ocimum sanctum. Compare botanical identity and batch specifications rather than substituting one oil for the other."
     },
