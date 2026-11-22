@@ -5,11 +5,11 @@
  */
 export const categorySeo: Record<string, {title: string; description: string}> = {
   'essential-oils': {
-    title: 'Essential Oil Supplier India | Lemongrass, Tulsi & Basil',
+    title: 'Essential Oil Supplier India | VG Naturals',
     description: 'Compare Lemongrass, Tulsi and Sweet Basil essential oils in 50 ml and 100 ml packs. Ask VG Naturals, Lucknow, about specifications and bulk supply in India.',
   },
   'hydrosols': {
-    title: 'Hydrosol Supplier India | Lemongrass, Tulsi & Basil',
+    title: 'Hydrosol Supplier India | VG Naturals',
     description: 'Explore Lemongrass, Tulsi and Basil hydrosols for cosmetic and ingredient sourcing. Compare sample packs and request an India-wide B2B quotation from Lucknow.',
   },
   'fresh-botanicals': {
