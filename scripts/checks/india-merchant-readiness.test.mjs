@@ -9,7 +9,7 @@ const product = read('app/products/[slug]/page.tsx');
 const category = read('app/categories/[slug]/page.tsx');
 const blog = read('app/blog/page.tsx');
 const ops = read('ops/merchant-center-readiness.md');
-const draft = read('ops/merchant-center-draft.tsv').trim().split('\n');
+const draft = read('ops/merchant-center-draft.tsv').split('\n').filter(line=>line.length>0);
 
 test('distinct national sourcing titles for the three core essential oil products',()=>{
   for(const productName of ['Lemongrass','Tulsi','Basil']){
