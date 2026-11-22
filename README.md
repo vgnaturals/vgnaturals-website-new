@@ -1,47 +1,47 @@
-# VG Naturals Website
+# VG NATURALS PRIVATE LIMITED — Official Website
 
-Next.js + TypeScript + Tailwind website starter for VG NATURALS PRIVATE LIMITED, sourced from the supplied catalogue ZIP and approved retail product/price list.
+**VG Naturals** · Pure • Natural • Organic Care  
+**Official website:** https://www.vgnaturals.com/  
+**Business location:** Lucknow, Uttar Pradesh, India  
+**Business model:** Botanical ingredient manufacturing and supply; business-to-business sourcing first.
 
-## Quick start
+This is the source repository for the company's [Next.js website](https://www.vgnaturals.com/). The official brand website and its canonical product pages are on **www.vgnaturals.com**, not an alternate preview domain.
 
-```bash
-npm ci
-npm run dev
-npm run lint
-npm run build
-```
+## Botanical ingredient enquiries
 
-## GitHub and Vercel
+VG Naturals works with selected botanical cultivation and steam distillation for essential oils. The current core botanical ranges are:
 
-1. Use the GitHub repository `vgnaturals/vgnaturals-website-new` and its `main` branch.
-2. Keep application files and `package.json` at the repository root.
-3. Import the repository in Vercel with Framework Preset **Next.js**, Root Directory **the repository root**, Install Command **`npm ci`**, Build Command **`npm run build`**, and the default Output Directory. Commit `package-lock.json` when updating dependencies so deployments use the tested versions.
-4. Optionally set `NEXT_PUBLIC_GOOGLE_MAPS_URL` to the verified Google Maps/GBP URL. The current source uses the approved website URL and WhatsApp number directly; `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_WHATSAPP_NUMBER` are not read by the application.
-5. Preview the deployment, verify all pages, then connect `vgnaturals.com` only after validation. Keep the old website/repository until the replacement is tested.
-6. Submit `https://vgnaturals.com/sitemap.xml` in Google Search Console after deployment.
+| Botanical | Identity | Current product information |
+| --- | --- | --- |
+| Lemongrass | *Cymbopogon flexuosus* | [Lemongrass Essential Oil](https://www.vgnaturals.com/products/lemongrass-essential-oil) |
+| Tulsi / Holy Basil | *Ocimum sanctum* | [Tulsi Essential Oil](https://www.vgnaturals.com/products/tulsi-essential-oil) |
+| Sweet Basil | *Ocimum basilicum* | [Basil Essential Oil](https://www.vgnaturals.com/products/basil-essential-oil) |
 
-## Product data
+Explore [Essential Oils](https://www.vgnaturals.com/categories/essential-oils), [Hydrosols](https://www.vgnaturals.com/categories/hydrosols), the [Product Catalogue](https://www.vgnaturals.com/catalogue), and the [Bulk Sourcing Guide](https://www.vgnaturals.com/sourcing-guide).
 
-Edit `data/products.ts`. There are **13 confirmed products** and **24 confirmed retail price/pack entries** (11 products with two variants and 2 fresh products with one). Ready products can be added to a client-side cart. Fresh and Coming Soon items are enquiry-only.
+**B2B sourcing:** [Request product and bulk supply information](https://www.vgnaturals.com/bulk-supply). Buyers can specify required quantities, intended application, technical-document requirements, packaging preferences and delivery location. **Stock, applicable specifications, batch documents, MOQ, pricing and delivery feasibility are confirmed separately**. Product listings are not promises of a particular grade, purity percentage or certificate.
 
-The original catalogue includes unverified claims and additional future items. It is preserved under `source-catalogue/` and published for reference under `/catalogue-original.html`; review its content before making it publicly accessible. Images are under `public/catalogue-assets/`. **Verify each product image mapping against its product label before going live.**
+**Company contact:** vgnaturalspvtltd@gmail.com · +91 90442 10088 · [WhatsApp](https://wa.me/919044210088)
 
-## Ecommerce and payments — important limitation
+## Website development
 
-The cart works in the browser and persists locally. Checkout is **quotation-only** because payment gateway keys, shipping/tax rules, durable order storage, payment signature verification, and webhook handling are not configured. **No actual payments are collected.** Do not advertise the site as payment-ready until these are implemented and tested. No fake success screen is shown.
+- Next.js 15, TypeScript and React 19.
+- Install and run: `npm ci`, `npm run dev`, `npm run lint`, `npm run build`.
+- The GitHub `main` branch is connected to the VG Naturals Vercel website project. Release only reviewed, tested changes and verify production `READY` with the correct official-domain aliases.
+- Product data and pricing reside in `data/products.ts`. **Do not revise packs or prices without current written business verification.**
+- SEO metadata, sitemap, canonical URLs, product structured data and buyer-facing information are implemented in the website code. Rich results and rankings depend on search-engine review.
+- `ops/merchant-center-readiness.md` describes the **unsubmitted** Google Merchant Center planning feed and compliance gates.
 
-## Enquiries
+## Enquiry, CRM and checkout status
 
-The bulk form opens WhatsApp with prefilled fields. It does not store leads or send email automatically. Add a secure backend and email provider to persist leads when credentials are available.
+The website B2B enquiry and order-request flows send website-lead requests to the designated ChatGPT Sites intake endpoint. They use stable submission references and display a saved confirmation only after the intake responds successfully. **The separate live CRM/D1 read-back and Active-inbox visibility still require authenticated end-to-end verification.**
 
-## Missing verified data
+The cart and checkout currently submit **unpaid order requests**. This is not a completed online payment flow: product availability, shipping, taxes and final payable amount are subject to confirmation. Do not submit unverified product inventory to Google Merchant Center or claim online purchases are payment-enabled.
 
-- Official Google Maps/GBP URL (set `NEXT_PUBLIC_GOOGLE_MAPS_URL`)
-- Gateway merchant keys and webhook secret
-- Verified shipping rules, GST treatment, stock management and legal policies
-- Final validation of logo/product image mappings and source catalogue claims
-- Transactional email provider, durable database, admin authentication
+## Brand and claims
 
-## Design and SEO
-
-Mobile-friendly layout, product pages, category pages, blog articles, metadata, Product JSON-LD for ready products, sitemap and robots are included. Validate all metadata, assets and legal pages before publishing.
+- Use **VG NATURALS PRIVATE LIMITED**, never unrelated or legacy branding.
+- Use the original official logo and genuine product/farm photographs; avoid AI-generated depictions presented as real evidence.
+- No invented reviews, certifications, purity percentages, batch analysis, export approval, capacity, prices or inventory status.
+- Chamomile, Vetiver and Rosemary remain **future development**, not confirmed current supply.
+- This README is a public company/source reference, **not** proof of independent media coverage or a third-party editorial backlink.
