@@ -6,7 +6,7 @@ import {buyerGuides} from '@/data/buyer-guides';
 
 export const metadata:Metadata={
  title:'Essential Oil, Hydrosol & Botanical Buyer Guides',
- description:'Practical essential oil, hydrosol and fresh botanical sourcing guides for Indian manufacturers, cosmetic formulators, wholesalers and buyers in Lucknow. Compare products and request bulk quotes.',
+ description:'Explore essential oil and hydrosol sourcing guides for Indian cosmetic manufacturers, soap makers and bulk buyers. Compare botanicals and request quotations.',
  alternates:{canonical:'/blog'},
  openGraph:{title:'Essential Oil & Hydrosol Buyer Guides | VG Naturals',description:'Compare Lemongrass, Tulsi and Basil sourcing requirements, samples, documentation and B2B quotes from VG Naturals, Lucknow.',url:'/blog',type:'website'}
 };
