@@ -7,7 +7,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
  const {slug}=await params; const category=categories.find(c=>c.toLowerCase().replaceAll(' ','-')===slug); if(!category)notFound();
  const title=categorySeo[slug]?.title || `${category} | VG Naturals`;
  const description=categorySeo[slug]?.description || `Explore VG Naturals ${category.toLowerCase()} from Lucknow. Confirm availability and B2B sourcing requirements.`;
- return {title,description,alternates:{canonical:`/categories/${slug}`},openGraph:{title,description,url:`/categories/${slug}`,images:[{url:'/images/vg-naturals-banner.png',alt:'VG Naturals product range'}]}};
+ return {title:{absolute:title.endsWith(' | VG Naturals')?title:`${title} | VG Naturals`},description,alternates:{canonical:`/categories/${slug}`},openGraph:{title,description,url:`/categories/${slug}`,images:[{url:'/images/vg-naturals-banner.png',alt:'VG Naturals product range'}]}};
 }
 export function generateStaticParams(){return categories.map(c=>({slug:c.toLowerCase().replaceAll(' ','-')}))}
 export default async function Category({params}:{params:Promise<{slug:string}>}){const slug=(await params).slug;const cat=categories.find(c=>c.toLowerCase().replaceAll(' ','-')===slug);if(!cat)notFound();const guide=categoryGuides[slug];const filtered=products.filter(p=>p.category===cat);const url='https://www.vgnaturals.com/categories/'+slug;const schema=[
