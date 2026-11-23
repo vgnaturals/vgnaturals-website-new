@@ -15,6 +15,10 @@ const legacyPageRedirects = [
   { source: '/resources', destination: '/blog', permanent: true },
   { source: '/terms-conditions', destination: '/terms-and-conditions', permanent: true },
   { source: '/choosing-lemongrass-ingredients-for-b2b-products', destination: '/blog/lemongrass-oil-hydrosol-tea-buying-guide', permanent: true },
+  // Recover URLs from older CRM Server Action redirects that doubled the basePath.
+  // Temporary 307 redirects are intentionally narrow and do not affect other website routes.
+  { source: '/crm/crm', destination: '/crm', permanent: false },
+  { source: '/crm/crm/:path*', destination: '/crm/:path*', permanent: false },
 ];
 
 const nextConfig: NextConfig = {
