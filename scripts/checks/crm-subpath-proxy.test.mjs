@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import nextConfig from '../../next.config.ts';
+
+test('CRM root and all nested requests proxy to independent CRM (no public routing change)',async()=>{
+ const config=await nextConfig.rewrites();
+ const before=config.beforeFiles||[];
+ assert.deepEqual(before.filter(x=>x.source.startsWith('/crm')),[
+  {source:'/crm',destination:'https://vg-naturals-crm.vercel.app/crm'},
+  {source:'/crm/:path*',destination:'https://vg-naturals-crm.vercel.app/crm/:path*'}
+ ]);
+ assert.ok(before.every(x=>x.source.startsWith('/crm')));
+});
+test('the public site no longer redirects /crm to retired ChatGPT Sites',()=>{
+ const code=fs.readFileSync('app/crm/page.tsx','utf8');
+ assert.ok(!code.includes("crm.vgnaturals.com"));
+ assert.match(code,/notFound\(/);
+});
+test('website forms stay on old endpoint until new CRM E2E is proven',()=>{
+ for(const name of ['components/EnquiryForm.tsx','app/checkout/page.tsx']){
+  const s=fs.readFileSync(name,'utf8');
+  assert.match(s,/NEXT_PUBLIC_CRM_LEADS_ENDPOINT/);
+  assert.match(s,/vg-naturals-business\.roundmars256\.chatgpt\.site/);
+ }
+});
