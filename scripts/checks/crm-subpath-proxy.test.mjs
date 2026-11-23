@@ -24,3 +24,11 @@ test('website forms stay on old endpoint until new CRM E2E is proven',()=>{
   assert.match(s,/vg-naturals-business\.roundmars256\.chatgpt\.site/);
  }
 });
+test('legacy duplicated CRM URLs redirect once to canonical routes',async()=>{
+ const routes=await nextConfig.redirects();
+ const doubleRoot=routes.find(x=>x.source==='/crm/crm');
+ const doubleNested=routes.find(x=>x.source==='/crm/crm/:path*');
+ assert.deepEqual(doubleRoot,{source:'/crm/crm',destination:'/crm',permanent:false});
+ assert.deepEqual(doubleNested,{source:'/crm/crm/:path*',destination:'/crm/:path*',permanent:false});
+ assert.ok(routes.every(x=>!x.source.startsWith('/products/')||x.destination?.startsWith('/')));
+});
