@@ -2,6 +2,7 @@
 import {useRef, useState, type FormEvent} from 'react';
 import Link from 'next/link';
 import { recordCrmLeadSaved } from '@/lib/lead-analytics';
+import {selectCrmIntakeEndpoint} from '@/lib/crm-intake-routing';
 import { classifyWebsiteLeadAcknowledgement } from '@/lib/website-lead-acknowledgement';
 
 type Props = { initialProduct?: string; orderSummary?: string; subtotal?: number };
@@ -28,7 +29,7 @@ export default function EnquiryForm({initialProduct='',orderSummary,subtotal}:Pr
     if(!request.current||request.current.snapshot!==snapshot)request.current={snapshot,id:crypto.randomUUID()};
     busyRef.current=true;setBusy(true);setError('');setSuccess('');
     try{
-      const response=await fetch((process.env.NEXT_PUBLIC_CRM_LEADS_ENDPOINT||'https://vg-naturals-business.roundmars256.chatgpt.site/api/website-leads'),{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(25000),body:JSON.stringify({requestId:request.current.id,type:'enquiry',consent:true,honey,customer:form})});
+      const response=await fetch(selectCrmIntakeEndpoint(window.location.search),{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(25000),body:JSON.stringify({requestId:request.current.id,type:'enquiry',consent:true,honey,customer:form})});
       const result=await response.json();
       const acknowledgement=classifyWebsiteLeadAcknowledgement(response.ok,result,'website-'+request.current.id);
       if(acknowledgement==='invalid')throw Error(result?.error||'Could not save your enquiry. Please retry.');
