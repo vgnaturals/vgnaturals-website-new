@@ -12,3 +12,13 @@ export function selectCrmIntakeEndpoint(search:string):string {
  if(params.get('crmCanary')==='supabase')return supabaseIntakeUrl;
  return process.env.NEXT_PUBLIC_CRM_LEADS_ENDPOINT||currentIntakeFallback;
 }
+
+/**
+ * Checkout is a high-intent transactional request. The former ChatGPT Sites
+ * fallback is not a reliable order receiver (browser network failure).
+ * Only checkout moves to the verified VG Naturals Supabase intake; enquiries
+ * retain their independently gated existing/canary routing.
+ */
+export function selectCheckoutCrmIntakeEndpoint():string{
+ return supabaseIntakeUrl;
+}

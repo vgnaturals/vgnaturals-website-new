@@ -17,15 +17,16 @@ test('the public site no longer redirects /crm to retired ChatGPT Sites',()=>{
  assert.ok(!code.includes("crm.vgnaturals.com"));
  assert.match(code,/notFound\(/);
 });
-test('normal website forms retain fallback and only canary uses new intake',()=>{
+test('enquiry retains fallback and checkout uses Supabase backend',()=>{
  const selector=fs.readFileSync('lib/crm-intake-routing.ts','utf8');
  assert.match(selector,/NEXT_PUBLIC_CRM_LEADS_ENDPOINT/);
  assert.match(selector,/vg-naturals-business\.roundmars256\.chatgpt\.site/);
  assert.match(selector,/params\.get\('crmCanary'\)==='supabase'/);
- for(const name of ['components/EnquiryForm.tsx','app/checkout/page.tsx']){
-  const s=fs.readFileSync(name,'utf8');
-  assert.match(s,/selectCrmIntakeEndpoint\(window\.location\.search\)/);
- }
+ const enquiry=fs.readFileSync('components/EnquiryForm.tsx','utf8');
+ assert.match(enquiry,/selectCrmIntakeEndpoint\(window\.location\.search\)/);
+ const checkout=fs.readFileSync('app/checkout/page.tsx','utf8');
+ assert.match(checkout,/selectCheckoutCrmIntakeEndpoint\(\)/);
+ assert.match(selector,/return supabaseIntakeUrl/);
 });
 test('legacy duplicated CRM URLs redirect once to canonical routes',async()=>{
  const routes=await nextConfig.redirects();

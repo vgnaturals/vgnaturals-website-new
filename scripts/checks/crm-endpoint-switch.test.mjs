@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {selectCrmIntakeEndpoint,supabaseIntakeUrl,currentIntakeFallback} from '../../lib/crm-intake-routing.ts';
+import {selectCrmIntakeEndpoint,selectCheckoutCrmIntakeEndpoint,supabaseIntakeUrl,currentIntakeFallback} from '../../lib/crm-intake-routing.ts';
 
 test('P0 default production intake remains unchanged until live Supabase E2E acceptance',()=>{
  // The production environment may override to another approved endpoint:
@@ -16,7 +16,7 @@ test('explicit canary uses actual VG Naturals Supabase intake (no secret tokens)
  assert.equal(selectCrmIntakeEndpoint('?ref=b2b&crmCanary=supabase'),supabaseIntakeUrl);
  assert.notEqual(selectCrmIntakeEndpoint('?crmCanary=legacy'),supabaseIntakeUrl);
 });
-for(const path of ['components/EnquiryForm.tsx','app/checkout/page.tsx']){
+for(const path of ['components/EnquiryForm.tsx']){
  test(path+' preserves consent, UUID/idempotency and new/replay conversion semantics',()=>{
   const src=fs.readFileSync(path,'utf8');
   assert.match(src,/selectCrmIntakeEndpoint\(window\.location\.search\)/);
@@ -31,4 +31,19 @@ test('canary cannot silently switch normal public forms to the new backend',()=>
  const src=fs.readFileSync('lib/crm-intake-routing.ts','utf8');
  assert.ok(src.includes("params.get('crmCanary')==='supabase'"));
  assert.ok(src.includes("process.env.NEXT_PUBLIC_CRM_LEADS_ENDPOINT||currentIntakeFallback"));
+});
+
+test('checkout uses active Supabase intake while normal enquiry routing is unchanged',()=>{
+ assert.equal(selectCheckoutCrmIntakeEndpoint(),supabaseIntakeUrl);
+ assert.equal(selectCrmIntakeEndpoint(''),process.env.NEXT_PUBLIC_CRM_LEADS_ENDPOINT||currentIntakeFallback);
+ const checkout=fs.readFileSync('app/checkout/page.tsx','utf8');
+ assert.match(checkout,/fetch\(selectCheckoutCrmIntakeEndpoint\(\)/);
+ assert.match(checkout,/requestId:crmRequestIdFromOrderId\(reference!\.id\)/);
+ assert.match(checkout,/classifyWebsiteLeadAcknowledgement\(response\.ok,result,/);
+ assert.match(checkout,/acknowledgement==='created'\)recordCrmLeadSaved/);
+ assert.match(checkout,/consent:true/);
+ assert.match(checkout,/orderMessage\(reference!\.id,delivery,items\)/);
+ assert.match(checkout,/Send the same Order ID via WhatsApp instead/);
+ assert.match(checkout,/request is not confirmed/);
+ assert.doesNotMatch(checkout,/fetch\(selectCrmIntakeEndpoint/);
 });

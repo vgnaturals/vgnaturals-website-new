@@ -2,10 +2,10 @@
 import {useEffect,useRef,useState,type FormEvent} from 'react';
 import Link from 'next/link';
 import { recordCrmLeadSaved } from '@/lib/lead-analytics';
-import {selectCrmIntakeEndpoint} from '@/lib/crm-intake-routing';
+import {selectCheckoutCrmIntakeEndpoint} from '@/lib/crm-intake-routing';
 import { classifyWebsiteLeadAcknowledgement } from '@/lib/website-lead-acknowledgement';
 import {useCart} from '@/components/CartProvider';
-import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,crmRequestIdFromOrderId,reusableReference,type Reference,type Delivery} from '@/lib/checkout';
+import {emptyDelivery,normalizeDelivery,validateDelivery,validItems,orderContent,newOrderId,crmRequestIdFromOrderId,reusableReference,orderMessage,type Reference,type Delivery} from '@/lib/checkout';
 
 const money=(n:number)=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
 const fields:{key:keyof Delivery;label:string;autoComplete:string;type?:string;wide?:boolean;placeholder?:string}[]=[
@@ -63,7 +63,7 @@ export default function Checkout(){
   event.preventDefault();if(!canSend||busyRef.current)return;
   busyRef.current=true;setBusy(true);setError('');
   try{
-   const response=await fetch(selectCrmIntakeEndpoint(window.location.search),{
+   const response=await fetch(selectCheckoutCrmIntakeEndpoint(),{
     method:'POST',headers:{'Content-Type':'application/json'},credentials:'omit',signal:AbortSignal.timeout(25000),
     body:JSON.stringify({requestId:crmRequestIdFromOrderId(reference!.id),type:'order',consent:true,honey:new FormData(event.currentTarget).get('_honey')||'',customer:{...delivery,message:['Customer-facing Order ID: '+reference!.id,delivery.notes].filter(Boolean).join('\n')},items:items.map(({slug,variant,qty})=>({slug,variant,qty}))})
    });
@@ -73,7 +73,15 @@ export default function Checkout(){
    if(acknowledgement==='created')recordCrmLeadSaved('order',result.id);
    // Both newly created and safely repeated acknowledgements share the same order confirmation.
    window.location.assign('/order-confirmation?order='+encodeURIComponent(reference!.id));
-  }catch(e){setError(e instanceof Error&&e.name!=='TimeoutError'?e.message:'Connection interrupted. Please retry with the same Order ID; your request will not be duplicated.');busyRef.current=false;setBusy(false)}
+  }catch(e){
+   // Keep the same Order ID on retries to allow the server-side deduplication
+   // contract to handle an uncertain network response without a second order.
+   const interrupted=e instanceof TypeError||e instanceof Error&&['TimeoutError','AbortError'].includes(e.name);
+   setError(interrupted
+    ?'Unable to connect to our order system. Your request is not confirmed. Retry with this same Order ID, or choose Send via WhatsApp below. No payment was taken.'
+    :e instanceof Error?e.message:'Order submission failed. Please retry with the same Order ID.');
+   busyRef.current=false;setBusy(false);
+  }
  }
  async function copyId(){
   if(!reference)return;
@@ -115,6 +123,12 @@ export default function Checkout(){
       <form onSubmit={submitOrder} className="mt-4">
        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true"/>
        {error&&<p role="alert" className="mb-4 text-sm text-red-700">{error}</p>}
+       {error&&<button type="button" className="btn btn-outline w-full mb-3" onClick={()=>{
+        // This only opens WhatsApp with a prefilled draft on explicit customer action;
+        // the customer must still tap Send. It does not save an order in CRM.
+        const message=orderMessage(reference!.id,delivery,items);
+        window.location.assign('https://wa.me/919044210088?text='+encodeURIComponent(message));
+       }}>Send the same Order ID via WhatsApp instead</button>}
        <button className="btn w-full" type="submit" disabled={busy}>{busy?'Saving your order request…':'Submit order request →'}</button>
        <p className="mt-2 text-xs leading-5 text-[#53604e]">Your request will be saved with VG Naturals. Our team will call you to confirm your order and delivery details.</p>
       </form>
