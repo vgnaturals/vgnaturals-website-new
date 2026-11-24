@@ -17,11 +17,14 @@ test('the public site no longer redirects /crm to retired ChatGPT Sites',()=>{
  assert.ok(!code.includes("crm.vgnaturals.com"));
  assert.match(code,/notFound\(/);
 });
-test('website forms stay on old endpoint until new CRM E2E is proven',()=>{
+test('normal website forms retain fallback and only canary uses new intake',()=>{
+ const selector=fs.readFileSync('lib/crm-intake-routing.ts','utf8');
+ assert.match(selector,/NEXT_PUBLIC_CRM_LEADS_ENDPOINT/);
+ assert.match(selector,/vg-naturals-business\.roundmars256\.chatgpt\.site/);
+ assert.match(selector,/params\.get\('crmCanary'\)==='supabase'/);
  for(const name of ['components/EnquiryForm.tsx','app/checkout/page.tsx']){
   const s=fs.readFileSync(name,'utf8');
-  assert.match(s,/NEXT_PUBLIC_CRM_LEADS_ENDPOINT/);
-  assert.match(s,/vg-naturals-business\.roundmars256\.chatgpt\.site/);
+  assert.match(s,/selectCrmIntakeEndpoint\(window\.location\.search\)/);
  }
 });
 test('legacy duplicated CRM URLs redirect once to canonical routes',async()=>{
