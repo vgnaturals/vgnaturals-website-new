@@ -34,7 +34,7 @@ test('buyer guide description and merchant readiness are explicit, avoiding prem
   assert.ok(ops.includes('not a complete online purchase/payment checkout'));
   assert.ok(ops.includes('not confirmed in-stock inventory'));
   assert.ok(ops.includes('Only then generate the published feed'));
-  assert.equal(products.filter(p=>p.status==='ready').length,11);
+  assert.equal(products.filter(p=>p.status==='ready').length,16); // Existing 22 planning rows remain unchanged; new items are not in the feed.
   assert.equal(draft.length,23); // header + 22 unverified planning rows
   assert.ok(draft.slice(1).every(row=>row.split('\t').length===8 && row.endsWith('\t')));
   assert.equal(fs.existsSync('public/merchant-feed.xml'),false);

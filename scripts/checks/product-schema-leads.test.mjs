@@ -25,12 +25,12 @@ test('all priced products preserve accurate per-variant INR Offers', () => {
     });
     count++;
   }
-  assert.equal(count,13);
+  assert.equal(count,18);
 });
 
-test('seven Coming Soon pages do not emit Product schema without verifiable offers', () => {
+test('two Coming Soon pages do not emit Product schema without verifiable offers', () => {
   const upcoming=products.filter(p=>p.status==='coming-soon');
-  assert.equal(upcoming.length,7);
+  assert.equal(upcoming.length,2);
   for(const p of upcoming) {
     const data=productPageStructuredData(p,'Coming soon');
     assert.equal(data['@type'],'WebPage',p.slug);

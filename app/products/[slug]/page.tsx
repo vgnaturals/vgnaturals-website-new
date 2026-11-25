@@ -46,7 +46,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const range = rangeForProduct(p.slug);
   const farmExpansion = ["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug);
   const related = farmExpansion ? products.filter(x => x.slug !== p.slug && (p.slug.includes('chamomile') ? x.slug.includes('chamomile') : x.slug.startsWith('vetiver'))).slice(0,3) : products.filter(x => x.category === p.category && x.slug !== p.slug).slice(0, 3);
-  const availability = p.status === 'ready' ? 'Retail packs listed' : p.status === 'fresh' ? 'Fresh — availability confirmation required' : 'Coming Soon — enquiries only';
+  const availability = p.status === 'ready' ? 'Available · Pack prices listed' : p.status === 'fresh' ? 'Fresh — availability confirmation required' : 'Coming Soon — enquiries only';
   const quoteUrl = `/bulk-supply?product=${encodeURIComponent(p.name)}`;
   const details = [
     ['Product', p.name],
@@ -70,7 +70,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       </nav>
       <div className="grid md:grid-cols-2 gap-12">
         <div className="card self-start">
-          {p.image ? <img src={p.image} alt={`${p.name} — VG Naturals product catalogue image`} className="w-full max-h-[550px] object-contain bg-[#f4f6ef] p-8" /> : <div className="p-20">Product image available on enquiry</div>}
+          {p.image ? <img src={p.image} alt={`${p.name} — VG Naturals product catalogue image`} className="w-full max-h-[550px] object-contain bg-[#f4f6ef] p-8" /> : <div className="p-20 bg-[#f4f6ef] text-center text-green-900" aria-label={p.name}><span className="text-sm uppercase tracking-widest">VG Naturals</span><p className="mt-3 text-xl font-semibold">{p.name}</p></div>}
         </div>
         <div>
           <p className="eyebrow">{availability}</p>
