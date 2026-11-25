@@ -39,8 +39,8 @@ export const categoryGuides:Record<string,{title:string;intro:string;questions:{
  {question:'Can retailers or hospitality businesses request quantities for multiple locations?',answer:'Share the product name, quantity, pack requirements and destination PIN codes. Bulk pricing, available stock, freight and dispatch are confirmed in the quotation; a listed item does not guarantee delivery everywhere.'}],
  guide:'/blog/lemongrass-oil-hydrosol-tea-buying-guide'},
  agriculture:{
- title:'Botanical Cultivation and Future Planting-Material Enquiries',
- intro:'VG Naturals cultivates selected crops, including Lemongrass and Tulsi, in the Lucknow region. This category currently has no ready-to-order agricultural products listed. Businesses interested in future planting material or cultivation discussions may contact the team; do not assume that rooted slips, seedlings or commercial farm services are in stock.',
+ title:'Agriculture, Chamomile Cultivation and Farming Enquiries',
+ intro:'VG Naturals cultivates selected crops, including Lemongrass and Tulsi, in the Lucknow region. Chamomile cultivation has started on our own land; chamomile flowers are open for future enquiries. This category currently has no ready-to-order agricultural products listed. Businesses interested in future planting material or cultivation discussions may contact the team; do not assume that rooted slips, seedlings or commercial farm services are in stock.',
  questions:[
  {question:'Can I buy lemongrass slips or seedlings on this page?',answer:'No agricultural item is currently listed for direct checkout here. Ask our team whether suitable planting material can be arranged for your requirement before planning any purchase.'},
  {question:'Does VG Naturals cultivate the same crops as all products in the catalogue?',answer:'The business cultivates selected botanicals such as Lemongrass and Tulsi. Individual finished products may involve additional sourced material or processing. Confirm crop and batch origin for the specific item you need.'},

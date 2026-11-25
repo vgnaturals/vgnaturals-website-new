@@ -266,23 +266,23 @@ export const products: Product[] = [
   {
     "slug": "vetiver-oil",
     "name": "Vetiver (Khus) Essential Oil",
-    "botanicalName": "",
+    "botanicalName": "Chrysopogon zizanioides (syn. Vetiveria zizanioides)",
     "category": "Essential Oils",
     "image": "",
     "status": "coming-soon",
     "variants": [],
-    "description": "Vetiver (Khus) Essential Oil is planned for the VG Naturals portfolio. Enquire to register your interest.",
+    "description": "Vetiver essential oil, also known as khus oil, is obtained from aromatic vetiver roots and is valued for its earthy, woody fragrance. VG Naturals is developing its vetiver product range; batch origin and commercial availability are not yet confirmed. B2B enquiries are welcome from Lucknow and across India; availability and price are subject to confirmation.",
     "b2bAvailable": true
   },
   {
     "slug": "german-chamomile-oil",
     "name": "German Chamomile Essential Oil",
-    "botanicalName": "",
+    "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
     "category": "Essential Oils",
     "image": "",
     "status": "coming-soon",
     "variants": [],
-    "description": "German Chamomile Essential Oil is planned for the VG Naturals portfolio. Enquire to register your interest.",
+    "description": "German chamomile essential oil is a concentrated aromatic ingredient derived from the flowers of German chamomile. Its aroma and chemical profile differ from Roman chamomile oil. VG Naturals has started chamomile cultivation on its own land; commercial oil batches are in development. B2B enquiries are welcome from Lucknow and across India; availability and price are subject to confirmation.",
     "b2bAvailable": true
   },
   {
@@ -294,6 +294,39 @@ export const products: Product[] = [
     "status": "coming-soon",
     "variants": [],
     "description": "Rosemary Scalp Mist is planned for the VG Naturals portfolio. Enquire to register your interest.",
+    "b2bAvailable": true
+  },
+  {
+    "slug": "chamomile-hydrosol",
+    "name": "Chamomile Hydrosol",
+    "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
+    "category": "Hydrosols",
+    "image": "",
+    "status": "coming-soon",
+    "variants": [],
+    "description": "Chamomile hydrosol, sometimes called chamomile floral water, is the aqueous aromatic fraction obtained during flower distillation. VG Naturals is developing this format alongside its own-land chamomile cultivation. B2B enquiries are welcome from Lucknow and across India; availability and price are subject to confirmation.",
+    "b2bAvailable": true
+  },
+  {
+    "slug": "chamomile-flowers",
+    "name": "Chamomile Flowers",
+    "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
+    "category": "Agriculture",
+    "image": "",
+    "status": "coming-soon",
+    "variants": [],
+    "description": "Chamomile flowers are an agricultural raw material for extraction and ingredient processing. VG Naturals has begun cultivating chamomile on its own land. The harvest window, fresh or dried format and grade will be confirmed before supply. B2B enquiries are welcome from Lucknow and across India; availability and price are subject to confirmation.",
+    "b2bAvailable": true
+  },
+  {
+    "slug": "vetiver-hydrosol",
+    "name": "Vetiver (Khus) Hydrosol",
+    "botanicalName": "Chrysopogon zizanioides (syn. Vetiveria zizanioides)",
+    "category": "Hydrosols",
+    "image": "",
+    "status": "coming-soon",
+    "variants": [],
+    "description": "Vetiver hydrosol, also called khus water or vetiver floral water in trade, is a water-based aromatic distillate associated with vetiver root processing. VG Naturals is developing this product; specifications and stock are not yet confirmed. B2B enquiries are welcome from Lucknow and across India; availability and price are subject to confirmation.",
     "b2bAvailable": true
   }
 ] as Product[];
