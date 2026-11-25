@@ -14,10 +14,10 @@ const allExpectedUrls = [
 ];
 const indexedUrls = new Set(allExpectedUrls);
 
-test('13 available/fresh products and six categories all occur exactly once in canonical sitemap',()=>{
-  assert.equal(live.length,13);
+test('18 available/fresh products and six categories all occur exactly once in canonical sitemap',()=>{
+  assert.equal(live.length,18);
   assert.equal(categories.length,6);
-  assert.equal(indexedUrls.size,19,'All 19 expected canonical URLs must be distinct');
+  assert.equal(indexedUrls.size,24,'All 24 expected canonical URLs must be distinct');
   assert.ok(sitemapSource.includes("...products.map(p=>'/products/'+p.slug)"),'Sitemap must generate all product routes');
   assert.ok(sitemapSource.includes("...categories.map(c=>'/categories/'+c.toLowerCase().replaceAll(' ','-'))"),'Sitemap must generate all category routes');
   assert.ok(sitemapSource.includes("const base='https://www.vgnaturals.com'"));
@@ -25,7 +25,7 @@ test('13 available/fresh products and six categories all occur exactly once in c
   for(const category of categories)assert.ok(indexedUrls.has('https://www.vgnaturals.com/categories/'+category.toLowerCase().replaceAll(' ','-')),category);
 });
 
-test('19 target pages are not disallowed in robots.txt and all use https canonical base',()=>{
+test('24 target pages are not disallowed in robots.txt and all use https canonical base',()=>{
   assert.ok(robotsSource.includes("sitemap: 'https://www.vgnaturals.com/sitemap.xml'"));
   assert.ok(robotsSource.includes("const disallow = ['/api/']"));
   assert.ok(robotsSource.includes("allow: '/'"));
@@ -43,7 +43,7 @@ test('19 target pages are not disallowed in robots.txt and all use https canonic
   assert.ok(cd.includes('alternates:{canonical:`/categories/${slug}`}'));
 });
 
-test('category trails match actual category paths for all 17 product variants',()=>{
+test('category trails match actual category paths for all 20 products',()=>{
   for(const product of products) {
     const categoryPath=productCategoryPath(product);
     assert.ok(categories.includes(product.category));

@@ -20,7 +20,7 @@ const groups=[
  {key:"tulsi",label:"The Tulsi Collection",species:"Ocimum sanctum",photo:"catalogue-assets/tulsi-essential-oil-ocimum-sanctum.jpg",out:"tulsi-ocimum-sanctum-products-price-catalogue.svg"},
  {key:"basil",label:"The Sweet Basil Collection",species:"Ocimum basilicum",photo:"catalogue-assets/basil-essential-oil-ocimum-basilicum.jpg",out:"basil-ocimum-basilicum-products-price-catalogue.svg"}
 ];
-const included=products.filter(p=>p.status==="ready"||p.status==="fresh");
+const included=products.filter(p=>(p.status==="ready"||p.status==="fresh") && !["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug)); // Core illustrated brochure; new crop products are shown in the live catalogue pending approved photos.
 const byKey=k=>included.filter(p=>p.slug.startsWith(k+"-")||(k==="tulsi"&&["herbal-tulsi-tea-pouch","fresh-tulsi-leaves"].includes(p.slug))||(k==="basil"&&p.slug==="fresh-basil-leaves"));
 const expected=groups.reduce((sum,g)=>sum+byKey(g.key).length,0);
 if(expected!==13||included.length!==13)throw Error("Expected 13 product catalogue items; found "+expected+" of "+included.length);

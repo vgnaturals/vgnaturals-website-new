@@ -47,8 +47,8 @@ test('all categories have genuine buying answers and valid internal guide target
     assert.ok(guide.questions.every(q=>q.question.trim().length>=15 && q.answer.trim().length>=70));
     assert.ok(cleanUrl(guide.guide),'Broken category guide: '+guide.guide);
   }
-  assert.ok(!products.some(p=>p.category==='Agriculture'&&p.status==='ready'));
-  assert.ok(categoryGuides.agriculture.intro.includes('no ready-to-order agricultural products'));
+  assert.ok(products.some(p=>p.slug==='chamomile-flowers'&&p.category==='Agriculture'&&p.status==='ready'));
+  assert.ok(categoryGuides.agriculture.intro.includes('listed with pack pricing'));
   assert.ok(categoryGuides['fresh-botanicals'].intro.includes('harvest'));
 });
 
@@ -103,19 +103,21 @@ test('product titles/descriptions use verified catalogue content while retaining
   assert.ok(productPage.includes('content?.summary'));
   assert.ok(productPage.includes('productPageStructuredData(p, summary, content?.form)'));
   assert.ok(productPage.includes('alternates: { canonical: `/products/${p.slug}` }'));
-  assert.equal(products.filter(p=>p.status==='ready').length,11);
+  assert.equal(products.filter(p=>p.status==='ready').length,16);
   assert.equal(products.filter(p=>p.status==='fresh').length,2);
-  assert.equal(products.filter(p=>p.status==='coming-soon').length,7);
-  assert.ok(products.filter(p=>p.status==='ready'&&['Essential Oils','Hydrosols'].includes(p.category)).every(p=>p.variants[0].price===150 && p.variants[1].price===225));
+  assert.equal(products.filter(p=>p.status==='coming-soon').length,2);
+  assert.ok(products.filter(p=>p.status==='ready'&&['Essential Oils','Hydrosols'].includes(p.category)&&/^(lemongrass|tulsi|basil)-/.test(p.slug)).every(p=>p.variants[0].price===150 && p.variants[1].price===225));
   assert.ok(!productPage.includes('guaranteed delivery to all Indian cities'));
 });
 
 test('sitemap modification dates reflect edited substantive hub pages only',()=>{
   for(const href of ["''","'/products'","'/industries'","'/blog'","'/categories/fresh-botanicals'","'/categories/herbal-teas'","'/categories/home-care'","'/categories/agriculture'"]) {
-    assert.ok(sitemap.includes(href+":'2026-11-04'"), 'Missing Nov 4 lastmod: '+href);
+    assert.ok(sitemap.includes(href+":'2026-11-04'")||sitemap.includes(href+":'2026-11-25'"), 'Missing verified lastmod: '+href);
   }
   assert.ok(sitemap.includes("const base='https://www.vgnaturals.com'"));
   assert.ok(!sitemap.includes("'/checkout'"));
   assert.ok(!sitemap.includes("'/cart'"));
   assert.ok(blogPage.includes('/categories/herbal-teas')&&blogPage.includes('/categories/home-care'));
 });
+
+test('five newly priced products have exact catalogue packs',()=>{const expected={"german-chamomile-oil":{"label":"50 g","price":2998},"chamomile-hydrosol":{"label":"100 ml","price":360},"chamomile-flowers":{"label":"100 g","price":798},"vetiver-oil":{"label":"10 ml","price":660},"vetiver-hydrosol":{"label":"100 ml","price":440}};for(const [slug,variant] of Object.entries(expected)){const p=products.find(p=>p.slug===slug);assert.equal(p.status,'ready');assert.deepEqual(p.variants,[variant]);assert.ok(p.b2bAvailable);}});

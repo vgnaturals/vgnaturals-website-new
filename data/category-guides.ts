@@ -1,18 +1,18 @@
 export const categoryGuides:Record<string,{title:string;intro:string;questions:{question:string;answer:string}[];guide:string}>={
  'essential-oils':{
- title:'Lemongrass, Tulsi and Basil Essential Oil Supply from Lucknow',
+ title:'Essential Oils for Indian Buyers from Lucknow',
  intro:'VG Naturals supplies essential oils for sample evaluation and B2B sourcing discussions with formulators, manufacturers, distributors and wholesalers. Compare the botanical identity as well as the product name before selecting an oil for your application.',
  questions:[
- {question:'Which essential oils can I enquire about?',answer:'Our ready range includes Lemongrass Essential Oil (Cymbopogon flexuosus), Tulsi Essential Oil (Ocimum sanctum) and Basil Essential Oil (Ocimum basilicum). Tulsi and Basil are listed separately; specify the botanical name in your purchase requirement.'},
- {question:'How are sample prices and bulk quotations different?',answer:'Listed evaluation packs are 50 ml at ₹150 and 100 ml at ₹225. Bulk rates are quoted separately. Send the product, quantity, application, preferred packaging and delivery city or PIN code; MOQ and commercial terms are confirmed on enquiry.'},
+ {question:'Which essential oils can I enquire about?',answer:'Our range includes Lemongrass, Tulsi, Sweet Basil, German Chamomile and Vetiver essential oils. Tulsi and Basil are listed separately; specify the botanical name in your purchase requirement.'},
+ {question:'How are sample prices and bulk quotations different?',answer:'Lemongrass, Tulsi and Basil have listed 50 ml and 100 ml evaluation packs; Chamomile and Vetiver have their own pack prices on the product pages. Bulk rates are quoted separately. Send the product, quantity, application, preferred packaging and delivery city or PIN code; MOQ and commercial terms are confirmed on enquiry.'},
  {question:'What should a manufacturer confirm before procurement?',answer:'Discuss the required specification, intended formulation, packaging, storage guidance and available batch information with our team. If your procurement process requires a particular analysis or document, name it in your enquiry so availability can be confirmed. Evaluate suitability before using the ingredient in production.'}],
  guide:'/blog/essential-oil-bulk-buying'},
  hydrosols:{
- title:'Lemongrass, Tulsi and Basil Hydrosols for B2B Enquiries',
- intro:'Compare the three hydrosols in the VG Naturals range from Lucknow. Manufacturers, skincare formulators and ingredient distributors can discuss evaluation packs and larger sourcing requirements. Product suitability depends on the intended application and the specification agreed before purchase.',
+ title:'Hydrosol Supply for Indian Formulators',
+ intro:'Compare Lemongrass, Tulsi, Sweet Basil, Chamomile and Vetiver hydrosols from Lucknow. Manufacturers, skincare formulators and ingredient distributors can discuss evaluation packs and larger sourcing requirements. Product suitability depends on the intended application and the specification agreed before purchase.',
  questions:[
- {question:'Which hydrosol should I request?',answer:'Choose Lemongrass Hydrosol, Tulsi Hydrosol (Ocimum sanctum) or Basil Hydrosol (Ocimum basilicum). Include the exact product name in your enquiry. A hydrosol and the corresponding essential oil are different product forms and should not be substituted without formulation evaluation.'},
- {question:'Can I compare the available sample packs?',answer:'Each listed hydrosol has 50 ml and 100 ml evaluation packs priced at ₹150 and ₹225 respectively. These are small-pack prices; a bulk quotation is discussed separately after reviewing quantity, packaging and delivery requirements.'},
+ {question:'Which hydrosol should I request?',answer:'Choose Lemongrass, Tulsi, Sweet Basil, Chamomile or Vetiver hydrosol according to the required plant identity. Include the exact product name in your enquiry. A hydrosol and the corresponding essential oil are different product forms and should not be substituted without formulation evaluation.'},
+ {question:'Can I compare the available sample packs?',answer:'Lemongrass, Tulsi and Basil hydrosols have 50 ml and 100 ml packs; Chamomile and Vetiver hydrosols have separate 100 ml pack prices. These are small-pack prices; a bulk quotation is discussed separately after reviewing quantity, packaging and delivery requirements.'},
  {question:'What information matters for a hydrosol formulation?',answer:'Ask about product-specific ingredients, preservation status, storage instructions, shelf life and available technical information before purchasing. Confirm compatibility and the preservation of your finished formulation through your own evaluation. No universal shelf life or preservation claim applies to all hydrosols.'}],
  guide:'/blog/what-is-a-hydrosol'},
  'herbal-teas':{
@@ -40,9 +40,9 @@ export const categoryGuides:Record<string,{title:string;intro:string;questions:{
  guide:'/blog/lemongrass-oil-hydrosol-tea-buying-guide'},
  agriculture:{
  title:'Agriculture, Chamomile Cultivation and Farming Enquiries',
- intro:'VG Naturals cultivates selected crops, including Lemongrass and Tulsi, in the Lucknow region. Chamomile cultivation has started on our own land; chamomile flowers are open for future enquiries. This category currently has no ready-to-order agricultural products listed. Businesses interested in future planting material or cultivation discussions may contact the team; do not assume that rooted slips, seedlings or commercial farm services are in stock.',
+ intro:'VG Naturals cultivates selected crops, including Lemongrass and Tulsi, in the Lucknow region. Chamomile cultivation has started on our own land. Chamomile flowers are listed with pack pricing for agricultural ingredient buyers. Businesses interested in future planting material or cultivation discussions may contact the team; do not assume that rooted slips, seedlings or commercial farm services are in stock.',
  questions:[
- {question:'Can I buy lemongrass slips or seedlings on this page?',answer:'No agricultural item is currently listed for direct checkout here. Ask our team whether suitable planting material can be arranged for your requirement before planning any purchase.'},
+ {question:'Can I buy lemongrass slips or seedlings on this page?',answer:'Chamomile flowers have a listed pack price. Planting material such as lemongrass slips and seedlings is a separate enquiry; confirm suitability and availability before purchase.'},
  {question:'Does VG Naturals cultivate the same crops as all products in the catalogue?',answer:'The business cultivates selected botanicals such as Lemongrass and Tulsi. Individual finished products may involve additional sourced material or processing. Confirm crop and batch origin for the specific item you need.'},
  {question:'What details help with a future cultivation enquiry?',answer:'Share the crop or botanical name, type of planting material, quantity, intended use, delivery location and target season. Availability, agricultural advice, price and dispatch are not guaranteed and must be separately confirmed.'}],
  guide:'/about'}

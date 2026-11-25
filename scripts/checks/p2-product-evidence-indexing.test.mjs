@@ -10,15 +10,15 @@ const sitemap = fs.readFileSync('app/sitemap.ts','utf8');
 const evidence = fs.readFileSync('components/ProductEvidencePanel.tsx','utf8');
 const readyFresh = products.filter(p=>p.status==='ready'||p.status==='fresh');
 
-test('all 13 ready/fresh product URLs are canonical, product-image backed and in the sitemap',()=>{
-  assert.equal(readyFresh.length,13);
+test('all 18 listed product URLs are canonical and in the sitemap; legacy image evidence preserved',()=>{
+  assert.equal(readyFresh.length,18);
   assert.ok(page.includes('alternates: { canonical: `/products/${p.slug}` }'));
   assert.ok(page.includes("products.map(p => ({ slug: p.slug }))"));
   for(const p of readyFresh){
-    assert.equal(p.variants.length,p.status==='fresh'?1:2,p.slug);
-    assert.ok(p.image.startsWith('/'),p.slug);
-    assert.ok(fs.existsSync('public'+p.image),'Missing product image: '+p.slug+' '+p.image);
-    assert.ok(sitemap.includes("'/products/"+p.slug+"':'2026-11-04'"),p.slug+' expected substantive sitemap modification date');
+    const expansion=["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug);
+    assert.equal(p.variants.length,expansion||p.status==='fresh'?1:2,p.slug);
+    if(!expansion||p.image){assert.ok(p.image.startsWith('/'),p.slug);assert.ok(fs.existsSync('public'+p.image),'Missing product image: '+p.slug+' '+p.image);}
+    assert.ok(sitemap.includes("'/products/"+p.slug+"':'"+(expansion?'2026-11-25':'2026-11-04')+"'"),p.slug+' expected sitemap modification date');
   }
 });
 
@@ -34,7 +34,7 @@ test('six real categories retain canonical, crawlable, collection-not-product sc
   }
 });
 
-test('13 priced products carry factual Offers while four Coming Soon listings have informational WebPage schema',()=>{
+test('18 priced products carry factual Offers while two Coming Soon listings have informational WebPage schema',()=>{
   for(const p of products) {
     const schema=productPageStructuredData(p,'Published information','Listed product form');
     assert.equal(schema.url,'https://www.vgnaturals.com/products/'+p.slug);
@@ -53,7 +53,7 @@ test('13 priced products carry factual Offers while four Coming Soon listings ha
         assert.ok(!Object.hasOwn(o,'shippingDetails'),'No unapproved freight/policy assertion');
         assert.ok(!Object.hasOwn(o,'hasMerchantReturnPolicy'),'No unapproved returns');
       });
-      assert.ok(schema.image && fs.existsSync('public'+p.image));
+      if(p.image)assert.ok(schema.image && fs.existsSync('public'+p.image));else {assert.ok(["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug));assert.equal(schema.image,undefined);}
     }
   }
 });

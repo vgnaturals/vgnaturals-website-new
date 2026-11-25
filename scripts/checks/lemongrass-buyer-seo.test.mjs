@@ -53,7 +53,7 @@ test('Product offers still derive from actual variants; unknown inventory and po
 });
 
 test('updated URLs have appropriate sitemap modification dates', () => {
-  assert.ok(sitemap.includes("''" + ":'2026-11-04'"), 'homepage edited today');
+  assert.ok(sitemap.includes("''" + ":'2026-11-25'"), 'homepage lastmod');
   for (const path of ["'/products/lemongrass-essential-oil'", "'/products/lemongrass-hydrosol'"]) {
     assert.ok(sitemap.includes(path + ":'2026-11-04'"), 'updated product evidence should modify the page date: ' + path);
   }

@@ -5,8 +5,8 @@ import QuoteStrip from '@/components/QuoteStrip';
 import {buyerGuides} from '@/data/buyer-guides';
 
 export const metadata:Metadata={
- title:'Essential Oil, Hydrosol & Botanical Buyer Guides',
- description:'Explore essential oil and hydrosol sourcing guides for Indian cosmetic manufacturers, soap makers and bulk buyers. Compare botanicals and request quotations.',
+ title:"Essential Oil, Hydrosol & Agricultural Buying Guides",
+ description:"Explore essential oil and hydrosol sourcing guides for Indian cosmetic manufacturers, soap makers and bulk buyers. Learn crop identity and procurement checks.",
  alternates:{canonical:'/blog'},
  openGraph:{title:'Essential Oil & Hydrosol Buyer Guides | VG Naturals',description:'Compare Lemongrass, Tulsi and Basil sourcing requirements, samples, documentation and B2B quotes from VG Naturals, Lucknow.',url:'/blog',type:'website'}
 };

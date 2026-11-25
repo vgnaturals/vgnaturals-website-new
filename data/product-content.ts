@@ -15,155 +15,155 @@ export type ProductContent = {
 // Prices and availability always come from products.ts, not the reference copy.
 export const productContent: Record<string, ProductContent> = {
   'german-chamomile-oil': {
-  "summary": "German Chamomile Essential Oil from VG Naturals, Lucknow. Own-land chamomile cultivation underway. B2B enquiries across India; supply on confirmation.",
-  "seoTitle": "German Chamomile Essential Oil | Bulk Enquiries India",
+  "summary": "Explore German chamomile essential oil (Matricaria chamomilla) in a 50 g pack. Request a bulk quote from VG Naturals, Lucknow, for fragrance or cosmetics.",
+  "seoTitle": "German Chamomile Essential Oil | Price & Bulk India",
   "form": "Concentrated flower-derived essential oil",
   "description": [
-    "German chamomile essential oil is a concentrated aromatic ingredient derived from the flowers of German chamomile. Its aroma and chemical profile differ from Roman chamomile oil. VG Naturals has started chamomile cultivation on its own land; commercial oil batches are in development.",
-    "VG Naturals Private Limited is an agriculture-led business based in Lucknow, Uttar Pradesh. We cultivate selected crops on our own land and connect farming with processing and product development. Our chamomile plantation is underway; it does not establish that finished batches are ready. Buyers across India may share expected quantity, intended application, technical requirements and delivery PIN code.",
-    "Ask about extraction method, batch-specific GC-MS profile, chamazulene and bisabolol-related constituents, sample size and handling information. Colour and composition vary; no specific composition is guaranteed."
+    "German chamomile essential oil is a concentrated aromatic ingredient derived from the flowers of Matricaria chamomilla. Its aromatic and chemical profile differs from Roman chamomile oil.",
+    "German Chamomile Essential Oil is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Chamomile cultivation has started on our own land. Contact us for origin and batch details.",
+    "Confirm flower origin, extraction method, composition, available batch analysis and handling requirements before formulation."
   ],
   "applications": [
-    "Fragrance",
+    "Perfumery and fragrance",
     "Cosmetic formulation",
     "Soap development",
     "Ingredient distribution"
   ],
-  "buyingNote": "Ask about extraction method, batch-specific GC-MS profile, chamazulene and bisabolol-related constituents, sample size and handling information. Colour and composition vary; no specific composition is guaranteed. Prices, stock, MOQ and dispatch dates are not yet confirmed.",
+  "buyingNote": "Confirm flower origin, extraction method, composition, available batch analysis and handling requirements before formulation. For wholesale requirements, share quantity, intended use, packaging and delivery PIN code.",
   "faqs": [
     {
-      "question": "What is German chamomile oil used for?",
-      "answer": "It is used as an aromatic ingredient in fragrance and personal-care formulations. The formulator must evaluate the actual batch and safe inclusion level."
-    },
-    {
       "question": "Is German chamomile oil the same as Roman chamomile oil?",
-      "answer": "No. They come from different species and have different aromatic and chemical profiles. Confirm species and batch composition before procurement."
+      "answer": "No. German and Roman chamomile come from different plant species and differ in composition and aroma. Specify the species when sourcing."
     },
     {
-      "question": "Does VG Naturals grow chamomile on its own land?",
-      "answer": "VG Naturals has started chamomile cultivation on its own land. Finished-product origin and batch details will be confirmed when offered."
+      "question": "What pack size is listed for German Chamomile Essential Oil?",
+      "answer": "The listed pack is 50 g. For larger volumes, request a separate quotation from VG Naturals."
+    },
+    {
+      "question": "What should I share for a bulk quotation?",
+      "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
     }
   ]
 },
   'chamomile-hydrosol': {
-  "summary": "Chamomile Hydrosol from VG Naturals, Lucknow. Own-land chamomile cultivation underway. B2B enquiries across India; supply on confirmation.",
-  "seoTitle": "Chamomile Hydrosol | Bulk Enquiries India",
+  "summary": "Explore Chamomile Hydrosol in a 100 ml pack or request bulk floral water supply from VG Naturals, Lucknow, for cosmetic and water-based formulations.",
+  "seoTitle": "Chamomile Hydrosol & Floral Water Supplier India",
   "form": "Water-based flower distillate",
   "description": [
-    "Chamomile hydrosol, sometimes called chamomile floral water, is the aqueous aromatic fraction obtained during flower distillation. VG Naturals is developing this format alongside its own-land chamomile cultivation.",
-    "VG Naturals Private Limited is an agriculture-led business based in Lucknow, Uttar Pradesh. We cultivate selected crops on our own land and connect farming with processing and product development. Our chamomile plantation is underway; it does not establish that finished batches are ready. Buyers across India may share expected quantity, intended application, technical requirements and delivery PIN code.",
-    "Ask about preservation, ingredients, microbial quality, pH, packaging and storage. A hydrosol is not interchangeable with concentrated essential oil."
+    "Chamomile hydrosol is the water-based aromatic fraction of chamomile flower distillation, sometimes called chamomile floral water. It differs from concentrated essential oil.",
+    "Chamomile Hydrosol is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Chamomile cultivation has started on our own land. Contact us for origin and batch details.",
+    "Confirm preservation, ingredients, microbial specifications, pH and storage before using a hydrosol in a formulation."
   ],
   "applications": [
     "Personal-care formulation",
     "Water-based cosmetic development",
-    "Ingredient distribution"
+    "Fragrance ingredient sourcing"
   ],
-  "buyingNote": "Ask about preservation, ingredients, microbial quality, pH, packaging and storage. A hydrosol is not interchangeable with concentrated essential oil. Prices, stock, MOQ and dispatch dates are not yet confirmed.",
+  "buyingNote": "Confirm preservation, ingredients, microbial specifications, pH and storage before using a hydrosol in a formulation. For wholesale requirements, share quantity, intended use, packaging and delivery PIN code.",
   "faqs": [
     {
-      "question": "What is chamomile hydrosol?",
-      "answer": "It is the water-based aromatic distillate of chamomile flowers, distinct from essential oil and from water with fragrance added."
+      "question": "How is chamomile hydrosol different from chamomile essential oil?",
+      "answer": "Hydrosol is an aqueous distillate; essential oil is the concentrated oil fraction. Their composition, handling and formulation requirements differ."
     },
     {
-      "question": "Can chamomile hydrosol be used in cosmetics?",
-      "answer": "It can be evaluated for water-based cosmetic formulations; suitability, preservation and microbial specifications must be confirmed for the actual material."
+      "question": "What pack size is listed for Chamomile Hydrosol?",
+      "answer": "The listed pack is 100 ml. For larger volumes, request a separate quotation from VG Naturals."
     },
     {
-      "question": "Does VG Naturals grow chamomile on its own land?",
-      "answer": "VG Naturals has started chamomile cultivation on its own land. Finished-product origin and batch details will be confirmed when offered."
+      "question": "What should I share for a bulk quotation?",
+      "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
     }
   ]
 },
   'chamomile-flowers': {
-  "summary": "Chamomile Flowers from VG Naturals, Lucknow. Own-land chamomile cultivation underway. B2B enquiries across India; supply on confirmation.",
-  "seoTitle": "Chamomile Flowers | Bulk Enquiries India",
-  "form": "Flower raw material; fresh or dried form on enquiry",
+  "summary": "Explore dried chamomile flowers in a 100 g pack from VG Naturals, Lucknow. Enquire for agricultural raw material, extraction and bulk ingredient sourcing.",
+  "seoTitle": "Dried Chamomile Flowers Supplier India | 100 g",
+  "form": "Dried flower raw material",
   "description": [
-    "Chamomile flowers are an agricultural raw material for extraction and ingredient processing. VG Naturals has begun cultivating chamomile on its own land. The harvest window, fresh or dried format and grade will be confirmed before supply.",
-    "VG Naturals Private Limited is an agriculture-led business based in Lucknow, Uttar Pradesh. We cultivate selected crops on our own land and connect farming with processing and product development. Our chamomile plantation is underway; it does not establish that finished batches are ready. Buyers across India may share expected quantity, intended application, technical requirements and delivery PIN code.",
-    "Specify fresh or dried flowers, required moisture and cleanliness, grade, residue requirements, packaging and harvest schedule. Food-grade suitability is not confirmed."
+    "Chamomile flowers are an aromatic agricultural raw material used in extraction and ingredient processing. VG Naturals has started chamomile cultivation on its own land.",
+    "Chamomile Flowers is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Chamomile cultivation has started on our own land. Contact us for origin and batch details.",
+    "Confirm the flower grade, moisture, cleanliness, residue requirements, intended use and harvest or drying details. Food-grade suitability must be confirmed separately."
   ],
   "applications": [
-    "Flower raw material sourcing",
+    "Agricultural raw material sourcing",
     "Extraction",
     "Herbal ingredient processing",
     "Cosmetic ingredient development"
   ],
-  "buyingNote": "Specify fresh or dried flowers, required moisture and cleanliness, grade, residue requirements, packaging and harvest schedule. Food-grade suitability is not confirmed. Prices, stock, MOQ and dispatch dates are not yet confirmed.",
+  "buyingNote": "Confirm the flower grade, moisture, cleanliness, residue requirements, intended use and harvest or drying details. Food-grade suitability must be confirmed separately. For wholesale requirements, share quantity, intended use, packaging and delivery PIN code.",
   "faqs": [
     {
-      "question": "Are chamomile flowers available fresh or dried?",
-      "answer": "Both formats can be discussed as future requirements. The actual harvest, drying capability, grade and availability must be confirmed before an order."
+      "question": "Can chamomile flowers be sourced in bulk?",
+      "answer": "Share the required weight, flower grade, intended application, packaging and delivery destination for a bulk quotation. Food-grade suitability is assessed separately."
     },
     {
-      "question": "Can I buy these flowers for herbal tea?",
-      "answer": "Food-grade suitability and applicable food-safety documentation have not been confirmed. Please specify intended use; no edible or therapeutic claim is made here."
+      "question": "What pack size is listed for Chamomile Flowers?",
+      "answer": "The listed pack is 100 g. For larger volumes, request a separate quotation from VG Naturals."
     },
     {
-      "question": "Does VG Naturals grow chamomile on its own land?",
-      "answer": "VG Naturals has started chamomile cultivation on its own land. Finished-product origin and batch details will be confirmed when offered."
+      "question": "What should I share for a bulk quotation?",
+      "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
     }
   ]
 },
   'vetiver-oil': {
-  "summary": "Vetiver (Khus) Essential Oil from VG Naturals, Lucknow. Vetiver product development underway. B2B enquiries across India; supply on confirmation.",
-  "seoTitle": "Vetiver (Khus) Essential Oil | Bulk Enquiries India",
+  "summary": "Explore Vetiver (Khus) Essential Oil in a 10 ml pack. Request bulk quotes from VG Naturals, Lucknow, for perfumery, fragrance and cosmetic formulation.",
+  "seoTitle": "Vetiver (Khus) Essential Oil Supplier India | 10 ml",
   "form": "Concentrated root-derived essential oil",
   "description": [
-    "Vetiver essential oil, also known as khus oil, is obtained from aromatic vetiver roots and is valued for its earthy, woody fragrance. VG Naturals is developing its vetiver product range; batch origin and commercial availability are not yet confirmed.",
-    "VG Naturals Private Limited is an agriculture-led business based in Lucknow, Uttar Pradesh. We cultivate selected crops on our own land and connect farming with processing and product development. Vetiver is a planned expansion; we do not claim an established vetiver plantation or own-land batch origin. Buyers across India may share expected quantity, intended application, technical requirements and delivery PIN code.",
-    "Request the root origin, extraction method, odour profile, batch-specific GC-MS and handling information. Confirm MOQ, packaging and freight before procurement."
+    "Vetiver essential oil, also known as khus oil, is obtained from aromatic vetiver roots. Its earthy, woody character makes it valuable for fragrance development.",
+    "Vetiver (Khus) Essential Oil is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Contact us for the root origin and batch details of the material you need.",
+    "Confirm root origin, distillation approach, odour profile, available batch analysis and handling information."
   ],
   "applications": [
-    "Perfumery",
-    "Fragrance blending",
-    "Soap",
-    "Cosmetic manufacturing enquiries"
+    "Perfumery and fragrance blending",
+    "Soap development",
+    "Cosmetic formulation",
+    "Ingredient distribution"
   ],
-  "buyingNote": "Request the root origin, extraction method, odour profile, batch-specific GC-MS and handling information. Confirm MOQ, packaging and freight before procurement. Prices, stock, MOQ and dispatch dates are not yet confirmed.",
+  "buyingNote": "Confirm root origin, distillation approach, odour profile, available batch analysis and handling information. For wholesale requirements, share quantity, intended use, packaging and delivery PIN code.",
   "faqs": [
     {
       "question": "Why is vetiver oil used in perfumery?",
-      "answer": "Its characteristic earthy, woody aroma makes it useful as a fragrance base note and fixative ingredient in perfumery. Evaluate the offered batch in your formulation."
+      "answer": "Its characteristic earthy, woody aroma is useful as a fragrance base note and fixative ingredient. Evaluate the offered batch for the intended formula."
     },
     {
-      "question": "Is khus oil extracted from the leaves or roots?",
-      "answer": "Commercial vetiver essential oil is typically distilled from the roots. Confirm the processing method and origin for the proposed batch."
+      "question": "What pack size is listed for Vetiver (Khus) Essential Oil?",
+      "answer": "The listed pack is 10 ml. For larger volumes, request a separate quotation from VG Naturals."
     },
     {
-      "question": "Does VG Naturals grow vetiver on its own land?",
-      "answer": "VG Naturals cultivates selected crops on its own land. Vetiver product development is planned; vetiver-specific cultivation and batch origin are not yet confirmed."
+      "question": "What should I share for a bulk quotation?",
+      "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
     }
   ]
 },
   'vetiver-hydrosol': {
-  "summary": "Vetiver (Khus) Hydrosol from VG Naturals, Lucknow. Vetiver product development underway. B2B enquiries across India; supply on confirmation.",
-  "seoTitle": "Vetiver (Khus) Hydrosol | Bulk Enquiries India",
+  "summary": "Explore Vetiver (Khus) Hydrosol in a 100 ml pack. Request bulk root-distillate sourcing from VG Naturals, Lucknow, for fragrance and cosmetic formulations.",
+  "seoTitle": "Vetiver (Khus) Hydrosol Supplier India | 100 ml",
   "form": "Water-based root distillate",
   "description": [
-    "Vetiver hydrosol, also called khus water or vetiver floral water in trade, is a water-based aromatic distillate associated with vetiver root processing. VG Naturals is developing this product; specifications and stock are not yet confirmed.",
-    "VG Naturals Private Limited is an agriculture-led business based in Lucknow, Uttar Pradesh. We cultivate selected crops on our own land and connect farming with processing and product development. Vetiver is a planned expansion; we do not claim an established vetiver plantation or own-land batch origin. Buyers across India may share expected quantity, intended application, technical requirements and delivery PIN code.",
-    "Ask about root identity, distillation, preservation, pH, microbial specifications, storage and bulk packaging. Do not assume beverage or food-grade suitability."
+    "Vetiver hydrosol, commonly called khus floral water, is a water-based aromatic distillate associated with vetiver root processing.",
+    "Vetiver (Khus) Hydrosol is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Contact us for the root origin and batch details of the material you need.",
+    "Confirm root identity, preservation, pH, microbial specifications, storage and packaging. Food or beverage suitability must be assessed separately."
   ],
   "applications": [
     "Water-based fragrance",
     "Personal-care formulation",
-    "Ingredient sourcing enquiries"
+    "Ingredient distribution"
   ],
-  "buyingNote": "Ask about root identity, distillation, preservation, pH, microbial specifications, storage and bulk packaging. Do not assume beverage or food-grade suitability. Prices, stock, MOQ and dispatch dates are not yet confirmed.",
+  "buyingNote": "Confirm root identity, preservation, pH, microbial specifications, storage and packaging. Food or beverage suitability must be assessed separately. For wholesale requirements, share quantity, intended use, packaging and delivery PIN code.",
   "faqs": [
     {
-      "question": "What is the difference between vetiver oil and vetiver hydrosol?",
-      "answer": "Vetiver oil is the concentrated oil fraction; hydrosol is the aqueous aromatic fraction. They differ in concentration and composition and require separate formulation evaluation."
+      "question": "Is vetiver hydrosol the same as khus oil?",
+      "answer": "No. Vetiver hydrosol is water-based; khus essential oil is concentrated oil. Each requires separate formulation evaluation."
     },
     {
-      "question": "Is khus hydrosol a food-grade product?",
-      "answer": "Food-grade suitability is not confirmed. Discuss your intended application and required documentation before any procurement."
+      "question": "What pack size is listed for Vetiver (Khus) Hydrosol?",
+      "answer": "The listed pack is 100 ml. For larger volumes, request a separate quotation from VG Naturals."
     },
     {
-      "question": "Does VG Naturals grow vetiver on its own land?",
-      "answer": "VG Naturals cultivates selected crops on its own land. Vetiver product development is planned; vetiver-specific cultivation and batch origin are not yet confirmed."
+      "question": "What should I share for a bulk quotation?",
+      "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
     }
   ]
 },

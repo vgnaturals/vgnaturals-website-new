@@ -111,7 +111,7 @@ export default function BuyOptions({ p }: { p: Product }) {
             router.push("/checkout");
           }}
         >
-          Buy Now
+          Request Order
         </button>
         <Link
           href={"/bulk-supply?product=" + encodeURIComponent(p.name)}
