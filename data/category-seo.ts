@@ -6,11 +6,11 @@
 export const categorySeo: Record<string, {title: string; description: string}> = {
   'essential-oils': {
     title: 'Essential Oil Supplier India | VG Naturals',
-    description: 'Compare Lemongrass, Tulsi and Sweet Basil essential oils in 50 ml and 100 ml packs. Ask VG Naturals, Lucknow, about specifications and bulk supply in India.',
+    description: 'Compare Lemongrass, Tulsi, Basil, Chamomile and Vetiver essential oils. View pack prices and request bulk sourcing from VG Naturals, Lucknow.',
   },
   'hydrosols': {
     title: 'Hydrosol Supplier India | VG Naturals',
-    description: 'Explore Lemongrass, Tulsi and Basil hydrosols for cosmetic and ingredient sourcing. Compare sample packs and request an India-wide B2B quotation from Lucknow.',
+    description: 'Explore Lemongrass, Tulsi, Basil, Chamomile and Vetiver hydrosols for cosmetic formulation. Compare pack prices and request a bulk quotation from Lucknow.',
   },
   'fresh-botanicals': {
     title: 'Fresh Tulsi & Basil Leaves | Harvest Enquiries in India',
@@ -26,6 +26,6 @@ export const categorySeo: Record<string, {title: string; description: string}> =
   },
   'agriculture': {
     title: 'Agriculture & Chamomile Cultivation | VG Naturals',
-    description: 'Explore VG Naturals own-land cultivation, upcoming chamomile flower sourcing and agriculture enquiries from Lucknow, Uttar Pradesh. No direct checkout.',
+    description: 'Explore chamomile flowers, own-land crop cultivation and agricultural sourcing from VG Naturals, Lucknow. Discuss bulk requirements and contract farming.',
   },
 };

@@ -5,10 +5,10 @@ import { products } from '@/data/products';
 
 const url = 'https://www.vgnaturals.com/sourcing-guide';
 export const metadata: Metadata = {
-  title: 'Essential Oils, Hydrosols & Herbal Products: B2B Buying Guide',
-  description: 'Source lemongrass, Tulsi and Basil products from VG Naturals, Lucknow. Compare formats, sample checks, bulk quote requirements and delivery enquiries across India.',
+  title: "B2B Essential Oil & Hydrosol Procurement Guide India",
+  description: "Learn how to source essential oils, hydrosols and agricultural ingredients from VG Naturals. Compare pack formats, batch checks and bulk quote requirements.",
   alternates: { canonical: '/sourcing-guide' },
-  openGraph: { title: 'VG Naturals Botanical Product Buying Guide', description: 'Listed packs, product availability and a practical checklist for B2B enquiries.', url, type: 'website' },
+  openGraph: { title: 'VG Naturals Agricultural Ingredient Buying Guide', description: 'Listed packs, product availability and a practical checklist for B2B enquiries.', url, type: 'website' },
 };
 const formats = [
   { name: 'Essential oils', href: '/categories/essential-oils', description: 'Concentrated aromatic ingredients for buyers evaluating a formulation.', check: 'Confirm botanical identity, batch composition, intended application and available technical information before sample evaluation.' },
@@ -33,7 +33,7 @@ const questions = [
 export default function SourcingGuide() {
   const schema = {
     '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': url + '#page',
-    url, name: 'VG Naturals Botanical Product Buying Guide', dateModified: '2026-11-05',
+    url, name: 'VG Naturals Agricultural Ingredient Buying Guide', dateModified: '2026-11-05',
     about: { '@id': 'https://www.vgnaturals.com/#organization' },
     mainEntity: { '@type': 'ItemList', itemListElement: products.map((p, i) => ({
       '@type': 'ListItem', position: i + 1, name: p.name, url: 'https://www.vgnaturals.com/products/' + p.slug,

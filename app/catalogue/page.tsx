@@ -5,8 +5,8 @@ import PageHero from '@/components/PageHero';
 import QuoteStrip from '@/components/QuoteStrip';
 
 export const metadata:Metadata={
-  title:'VG Naturals Product Catalogue | Current Prices & Bulk Supply',
-  description:'Browse our updated five-page VG Naturals catalogue. Current Lemongrass, Tulsi and Sweet Basil oils, hydrosols, teas and fresh botanicals with prices from the live product list.',
+  title:"Product Catalogue | Pack Prices & Bulk Supply",
+  description:"Browse live pack prices for Lemongrass, Tulsi, Basil, Chamomile and Vetiver. Download the existing core product brochure or request a wholesale quotation.",
   alternates:{canonical:'/catalogue'}
 };
 
@@ -21,10 +21,12 @@ const pages=[
 const groupNames=[
   {title:'Lemongrass',id:'lemongrass',botanical:'Cymbopogon flexuosus'},
   {title:'Tulsi',id:'tulsi',botanical:'Ocimum sanctum'},
-  {title:'Sweet Basil',id:'basil',botanical:'Ocimum basilicum'}
+  {title:'Sweet Basil',id:'basil',botanical:'Ocimum basilicum'},
+  {title:'Chamomile',id:'chamomile',botanical:'Matricaria chamomilla'},
+  {title:'Vetiver',id:'vetiver',botanical:'Chrysopogon zizanioides'}
 ];
 const groups=groupNames.map(g=>({...g,items:products.filter(p=>(p.status==='ready'||p.status==='fresh')&&(
- p.slug.startsWith(g.id+'-')||(g.id==='tulsi'&&['herbal-tulsi-tea-pouch','fresh-tulsi-leaves'].includes(p.slug))||(g.id==='basil'&&p.slug==='fresh-basil-leaves')
+ p.slug.startsWith(g.id+'-')||(g.id==='chamomile'&&p.slug==='german-chamomile-oil')||(g.id==='tulsi'&&['herbal-tulsi-tea-pouch','fresh-tulsi-leaves'].includes(p.slug))||(g.id==='basil'&&p.slug==='fresh-basil-leaves')
 ))}));
 const inr=(price:number)=>'₹'+price.toLocaleString('en-IN');
 
@@ -34,8 +36,8 @@ export default function Catalogue(){
   <section className="section container">
    <div className="card p-5 sm:p-8 mb-8">
     <p className="eyebrow">Current product prices</p>
-    <h2 className="mt-2">Catalogue pricing matches our product pages</h2>
-    <p className="mt-3 leading-7 max-w-4xl">Prices in the catalogue PDF and page images are generated from the same product records used throughout this website. Fresh botanicals require harvest and delivery confirmation; coming-soon products are excluded from the ready-to-share catalogue. Packaging and courier charges are additional. Applicable taxes and bulk pricing are confirmed on enquiry.</p>
+    <h2 className="mt-2">Live Product Prices &amp; Core Catalogue</h2>
+    <p className="mt-3 leading-7 max-w-4xl">The five-page PDF covers the Lemongrass, Tulsi and Sweet Basil collections. The live price tables below also include Chamomile and Vetiver. Fresh botanicals require harvest and delivery confirmation; coming-soon products are excluded from the ready-to-share catalogue. Packaging and courier charges are additional. Applicable taxes and bulk pricing are confirmed on enquiry.</p>
     <div className="flex flex-wrap gap-3 mt-5"><a href={pdf} className="btn" target="_blank" rel="noopener noreferrer">View Updated Catalogue (PDF)</a><a href={pdf} download="VG_Naturals_Product_Catalogue_Updated.pdf" className="btn btn-outline">Download Latest PDF</a><Link href="/bulk-supply" className="btn btn-outline">Request Bulk Quote</Link></div>
     <p className="mt-4 text-sm text-gray-600">Last synchronized: 2 November 2026. If an earlier PDF was saved or shared, please replace it with this edition.</p>
    </div>
@@ -49,8 +51,8 @@ export default function Catalogue(){
    <div className="grid md:grid-cols-2 gap-8">{pages.map((p,i)=><figure className="card" key={p.title}><a href={p.image} target="_blank" rel="noopener noreferrer" aria-label={'Open full image: '+p.title}><img src={p.image} alt={'VG Naturals catalogue page '+(i+1)+': '+p.title} width="1055" height="1491" loading="lazy" className="block w-full h-auto"/></a><figcaption className="p-5 text-sm font-semibold">{String(i+1).padStart(2,'0')} · {p.title}</figcaption></figure>)}</div>
   </section>
   <section className="section container" aria-labelledby="catalogue-live-prices">
-   <div className="section-heading"><p className="eyebrow">Exact listed prices</p><h2 id="catalogue-live-prices">Prices by Botanical Collection</h2><p>Live prices shown directly from VG Naturals product records, separate from quotations for bulk quantities.</p></div>
-   {groups.map(g=><section key={g.id} className="mb-10"><h3 className="text-2xl mb-2">{g.title} <span className="font-normal italic text-gray-500">({g.botanical})</span></h3><div className="overflow-x-auto"><table className="w-full text-left"><thead><tr className="bg-green-50"><th scope="col" className="p-3">Product</th><th scope="col" className="p-3">Pack / Current price</th><th scope="col" className="p-3">Availability</th></tr></thead><tbody>{g.items.map(p=><tr key={p.slug} className="border-b"><td className="p-3"><Link className="underline text-green-900" href={'/products/'+p.slug}>{p.name}</Link></td><td className="p-3">{p.variants.map(v=>v.label+' — '+inr(v.price)).join(' / ')}</td><td className="p-3">{p.status==='fresh'?'Check harvest availability':'Ready product'}</td></tr>)}</tbody></table></div></section>)}
+   <div className="section-heading"><p className="eyebrow">Exact listed prices</p><h2 id="catalogue-live-prices">Prices by Crop Collection</h2><p>Live prices shown directly from VG Naturals product records, separate from quotations for bulk quantities.</p></div>
+   {groups.map(g=><section key={g.id} className="mb-10"><h3 className="text-2xl mb-2">{g.title} <span className="font-normal italic text-gray-500">({g.botanical})</span></h3><div className="overflow-x-auto"><table className="w-full text-left"><thead><tr className="bg-green-50"><th scope="col" className="p-3">Product</th><th scope="col" className="p-3">Pack / Current price</th><th scope="col" className="p-3">Availability</th></tr></thead><tbody>{g.items.map(p=><tr key={p.slug} className="border-b"><td className="p-3"><Link className="underline text-green-900" href={'/products/'+p.slug}>{p.name}</Link></td><td className="p-3">{p.variants.map(v=>v.label+' — '+inr(v.price)).join(' / ')}</td><td className="p-3">{p.status==='fresh'?'Check harvest availability':'Available · Confirm quantity'}</td></tr>)}</tbody></table></div></section>)}
   </section>
   <QuoteStrip/>
  </>;

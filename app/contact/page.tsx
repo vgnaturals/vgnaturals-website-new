@@ -3,10 +3,10 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 
 export const metadata:Metadata={
-  title:'Contact Botanical Supplier in Lucknow',
-  description:'Contact VG Naturals Pvt Ltd in Lucknow for Lemongrass, Tulsi and Basil oils, hydrosols, sample requirements and bulk botanical ingredient quotations.',
+  title:"Contact Us | Bulk Orders & Farming Lucknow",
+  description:"Contact VG Naturals Private Limited in Lucknow for essential oils, hydrosols, chamomile, vetiver, bulk quotations and contract farming enquiries.",
   alternates:{canonical:'/contact'},
-  openGraph:{title:'Contact VG Naturals — Lucknow | B2B Botanical Sourcing',description:'Reach VG Naturals for botanical ingredient samples, product information and bulk quotations from Lucknow.',url:'/contact',type:'website'}
+  openGraph:{title:'Contact VG Naturals | Bulk Orders & Farming',description:'Reach VG Naturals for agricultural ingredient samples, pack prices, bulk quotations and farming enquiries from Lucknow.',url:'/contact',type:'website'}
 };
 
 const businessAddress='1248 Royal City Phase 2, Aurangabad Jagir, B R A University, Lucknow – 226025, Uttar Pradesh, India';
