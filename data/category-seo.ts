@@ -25,7 +25,7 @@ export const categorySeo: Record<string, {title: string; description: string}> =
     description: 'Compare Lemongrass Natural Room Freshener and Tulsi Air Sanitizing Spray packs. Request home-care, hospitality or reseller quotations; confirm product labels.',
   },
   'agriculture': {
-    title: 'Botanical Cultivation & Planting Enquiries | VG Naturals',
-    description: 'Learn about VG Naturals Lemongrass and Tulsi cultivation near Lucknow. No planting material is currently listed for checkout; register future enquiries.',
+    title: 'Agriculture & Chamomile Cultivation | VG Naturals',
+    description: 'Explore VG Naturals own-land cultivation, upcoming chamomile flower sourcing and agriculture enquiries from Lucknow, Uttar Pradesh. No direct checkout.',
   },
 };

@@ -98,14 +98,14 @@ test('sitewide Organization identity remains one Lucknow business with real prof
 });
 
 test('product titles/descriptions use verified catalogue content while retaining price and status contract',()=>{
-  assert.equal(products.length,17);
+  assert.equal(products.length,20);
   assert.ok(productPage.includes('content?.seoTitle'));
   assert.ok(productPage.includes('content?.summary'));
   assert.ok(productPage.includes('productPageStructuredData(p, summary, content?.form)'));
   assert.ok(productPage.includes('alternates: { canonical: `/products/${p.slug}` }'));
   assert.equal(products.filter(p=>p.status==='ready').length,11);
   assert.equal(products.filter(p=>p.status==='fresh').length,2);
-  assert.equal(products.filter(p=>p.status==='coming-soon').length,4);
+  assert.equal(products.filter(p=>p.status==='coming-soon').length,7);
   assert.ok(products.filter(p=>p.status==='ready'&&['Essential Oils','Hydrosols'].includes(p.category)).every(p=>p.variants[0].price===150 && p.variants[1].price===225));
   assert.ok(!productPage.includes('guaranteed delivery to all Indian cities'));
 });
