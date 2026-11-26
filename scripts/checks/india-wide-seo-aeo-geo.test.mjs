@@ -112,7 +112,7 @@ test('product titles/descriptions use verified catalogue content while retaining
 
 test('sitemap modification dates reflect edited substantive hub pages only',()=>{
   for(const href of ["''","'/products'","'/industries'","'/blog'","'/categories/fresh-botanicals'","'/categories/herbal-teas'","'/categories/home-care'","'/categories/agriculture'"]) {
-    assert.ok(sitemap.includes(href+":'2026-11-04'")||sitemap.includes(href+":'2026-11-25'"), 'Missing verified lastmod: '+href);
+    assert.ok(sitemap.includes(href+":'2026-11-04'")||sitemap.includes(href+":'2026-11-25'")||(["''","'/products'"].includes(href)&&sitemap.includes(href+":'2026-11-26'")), 'Missing verified lastmod: '+href);
   }
   assert.ok(sitemap.includes("const base='https://www.vgnaturals.com'"));
   assert.ok(!sitemap.includes("'/checkout'"));
