@@ -175,6 +175,10 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should I share for a bulk quotation?",
       "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
+    },
+    {
+      "question": "What should a perfumer compare before choosing khus oil?",
+      "answer": "Compare botanical identity, root origin, aroma and available batch specifications. Evaluate a sample for the intended fragrance before finalizing bulk supply."
     }
   ]
 },
@@ -205,6 +209,10 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should I share for a bulk quotation?",
       "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
+    },
+    {
+      "question": "Is vetiver hydrosol suitable for water-based cosmetic formulations?",
+      "answer": "It is a water-based aromatic root distillate considered for formulation evaluation. Confirm preservation, pH, microbial limits, storage and compatibility before use."
     }
   ]
 },
