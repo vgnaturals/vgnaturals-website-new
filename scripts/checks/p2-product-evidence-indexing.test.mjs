@@ -18,7 +18,7 @@ test('all 18 listed product URLs are canonical and in the sitemap; legacy image 
     const expansion=["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug);
     assert.equal(p.variants.length,expansion||p.status==='fresh'?1:2,p.slug);
     if(!expansion||p.image){assert.ok(p.image.startsWith('/'),p.slug);assert.ok(fs.existsSync('public'+p.image),'Missing product image: '+p.slug+' '+p.image);}
-    assert.ok(sitemap.includes("'/products/"+p.slug+"':'"+(expansion?'2026-11-25':'2026-11-04')+"'"),p.slug+' expected sitemap modification date');
+    assert.ok(sitemap.includes("'/products/"+p.slug+"':'"+(expansion?'2026-11-26':'2026-11-04')+"'"),p.slug+' expected sitemap modification date');
   }
 });
 
