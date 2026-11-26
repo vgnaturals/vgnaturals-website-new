@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {Facebook, Instagram, Mail, MapPin, MessageCircle, Phone} from 'lucide-react';
 import styles from './Footer.module.css';
-const explore = [['/products','All products'],['/categories','Categories'],['/about','About us'],['/blog','Blog']];
+const explore = [['/products','All products'],['/categories','Categories'],['/botanicals/chamomile','Chamomile range'],['/botanicals/vetiver','Vetiver range'],['/about','About us'],['/blog','Blog']];
 const business = [['/bulk-supply','Bulk supply'],['/contract-farming','Contract farming'],['/industries','Industries'],['/catalogue','Catalogue'],['/coming-soon','Coming soon'],['/contact','Contact us']];
 const policies = [['/privacy-policy','Privacy'],['/terms-and-conditions','Terms'],['/shipping-policy','Shipping'],['/refund-policy','Refunds'],['/cancellation-policy','Cancellation']];
 const whatsapp = 'https://wa.me/919044210088?text='+encodeURIComponent('Hello VG Naturals, I would like to discuss a product requirement.');

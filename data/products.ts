@@ -284,7 +284,7 @@ export const products: Product[] = [
     "name": "German Chamomile Essential Oil",
     "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
     "category": "Essential Oils",
-    "image": "",
+    "image": "/images/products/chamomile-essential-oil-vg-naturals.webp",
     "status": "ready",
     "variants": [
       {
@@ -311,7 +311,7 @@ export const products: Product[] = [
     "name": "Chamomile Hydrosol",
     "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
     "category": "Hydrosols",
-    "image": "",
+    "image": "/images/products/chamomile-hydrosol-vg-naturals.webp",
     "status": "ready",
     "variants": [
       {
@@ -327,7 +327,7 @@ export const products: Product[] = [
     "name": "Chamomile Flowers",
     "botanicalName": "Matricaria chamomilla (syn. Matricaria recutita)",
     "category": "Agriculture",
-    "image": "",
+    "image": "/images/products/chamomile-flowers-vg-naturals.webp",
     "status": "ready",
     "variants": [
       {

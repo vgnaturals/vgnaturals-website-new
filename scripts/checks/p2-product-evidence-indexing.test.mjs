@@ -83,3 +83,14 @@ test('no invented certificates, cures, guaranteed origin, or claims are introduc
     assert.ok(!evidence.includes(phrase),phrase);
   assert.ok(!evidence.includes("'@type':'AggregateRating'"));
 });
+
+
+test('all three Chamomile product images are real WebP repository assets with public product schema URLs',()=>{
+ const paths={"german-chamomile-oil":"/images/products/chamomile-essential-oil-vg-naturals.webp","chamomile-flowers":"/images/products/chamomile-flowers-vg-naturals.webp","chamomile-hydrosol":"/images/products/chamomile-hydrosol-vg-naturals.webp"};
+ for(const [slug,path] of Object.entries(paths)){
+  const p=products.find(p=>p.slug===slug); assert.equal(p.image,path);
+  const bytes=fs.readFileSync('public'+path);assert.ok(bytes.length>30000);assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WEBP');
+  assert.equal(productPageStructuredData(p,'Published information').image,'https://www.vgnaturals.com'+path);
+ }
+ for(const slug of ['vetiver-oil','vetiver-hydrosol'])assert.equal(products.find(p=>p.slug===slug).image,'','No unapproved Vetiver photography');
+});

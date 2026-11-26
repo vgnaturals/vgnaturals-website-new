@@ -70,7 +70,8 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       </nav>
       <div className="grid md:grid-cols-2 gap-12">
         <div className="card self-start">
-          {p.image ? <img src={p.image} alt={`${p.name} — VG Naturals product catalogue image`} className="w-full max-h-[550px] object-contain bg-[#f4f6ef] p-8" /> : <div className="p-20 bg-[#f4f6ef] text-center text-green-900" aria-label={p.name}><span className="text-sm uppercase tracking-widest">VG Naturals</span><p className="mt-3 text-xl font-semibold">{p.name}</p></div>}
+          {p.image ? <img src={p.image} alt={`${p.name} — VG Naturals product catalogue image`} className="w-full max-h-[550px] object-contain bg-[#f4f6ef] p-8" fetchPriority="high" /> : <div className="p-20 bg-[#f4f6ef] text-center text-green-900" aria-label={p.name}><span className="text-sm uppercase tracking-widest">VG Naturals</span><p className="mt-3 text-xl font-semibold">{p.name}</p>{p.slug.startsWith("vetiver-") && <p className="mt-2 text-sm text-gray-600">Product photography pending</p>}</div>}
+          {p.image && p.slug.includes("chamomile") && <p className="px-5 py-3 text-center text-xs text-gray-600">Product illustration · Confirm actual packaging, label and batch specifications before ordering.</p>}
         </div>
         <div>
           <p className="eyebrow">{availability}</p>

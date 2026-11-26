@@ -9,6 +9,7 @@ const categories=[
  {name:'Herbal Teas',slug:'herbal-teas',image:'/images/basil-tea-bags.png'},
  {name:'Home Care',slug:'home-care',image:'/images/lemongrass-natural-room-freshener.png'},
  {name:'Fresh Botanicals',slug:'fresh-botanicals',image:'/catalogue-assets/botanical-plant-leaves-close-up.jpg'},
+ {name:'Agriculture',slug:'agriculture',image:products.find(p=>p.slug==='chamomile-flowers')?.image||'/catalogue-assets/botanical-farm-field-landscape.jpg'},
 ];
 const plants=[
  {name:'Lemongrass',identity:'Essential oil, hydrosol, natural room freshener & tea bags',image:'/catalogue-assets/lemongrass-hydrosol-spray-bottle.png',search:'lemongrass'},

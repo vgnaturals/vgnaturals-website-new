@@ -11,8 +11,9 @@ export function generateStaticParams() { return botanicalRanges.map(r => ({ slug
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const r = getBotanicalRange((await params).slug); if (!r) notFound();
   const title = r.slug === 'chamomile' ? 'Chamomile Oil, Hydrosol & Dried Flowers | Bulk India' : r.slug === 'vetiver' ? 'Vetiver (Khus) Oil & Hydrosol | Bulk India' : r.slug === 'tulsi' ? 'Tulsi (Ocimum sanctum) | Oil, Tea & Leaves in India' : r.slug === 'basil' ? 'Basil (Ocimum basilicum) | Oil, Hydrosol, Tea & Leaves' : 'Lemongrass Oil, Hydrosol & Tea | Packs & Bulk Enquiries';
+  const heroImage = r.slug === 'chamomile' ? products.find(p=>p.slug==='chamomile-flowers')?.image : undefined;
   const description = `${r.name} (${r.botanical}) products from VG Naturals, Lucknow. Compare listed packs and enquire about bulk supply and delivery to your Indian PIN code.`;
-  return { title, description, alternates: { canonical: `/botanicals/${r.slug}` }, openGraph: { title, description, url: `/botanicals/${r.slug}`, type: 'website' } };
+  return { title, description, alternates: { canonical: `/botanicals/${r.slug}` }, openGraph: { title, description, url: `/botanicals/${r.slug}`, type: 'website', ...(heroImage ? {images:[{url:heroImage,alt:'VG Naturals dried chamomile flowers product illustration'}]} : {}) } };
 }
 export default async function BotanicalRange({ params }: { params: Promise<{ slug: string }> }) {
   const r = getBotanicalRange((await params).slug); if (!r) notFound();
