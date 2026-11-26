@@ -16,12 +16,13 @@ export type ProductContent = {
 export const productContent: Record<string, ProductContent> = {
   'german-chamomile-oil': {
   "summary": "Explore German chamomile essential oil (Matricaria chamomilla) in a 50 g pack. Request a bulk quote from VG Naturals, Lucknow, for fragrance or cosmetics.",
-  "seoTitle": "German Chamomile Essential Oil | Price & Bulk India",
+  "seoTitle": "German Chamomile Essential Oil Supplier | Bulk India",
   "form": "Concentrated flower-derived essential oil",
   "description": [
     "German chamomile essential oil is a concentrated aromatic ingredient derived from the flowers of Matricaria chamomilla. Its aromatic and chemical profile differs from Roman chamomile oil.",
     "German Chamomile Essential Oil is listed by VG Naturals Private Limited in Lucknow, Uttar Pradesh, for retail pack orders and B2B sourcing across India. Chamomile cultivation has started on our own land. Contact us for origin and batch details.",
-    "Confirm flower origin, extraction method, composition, available batch analysis and handling requirements before formulation."
+    "Confirm flower origin, extraction method, composition, available batch analysis and handling requirements before formulation.",
+    "For price per kilogram, request a bulk quotation rather than multiplying the listed evaluation pack price. For health-related background, consult the National Center for Complementary and Integrative Health; evidence is limited and this ingredient is not marketed as a treatment."
   ],
   "applications": [
     "Perfumery and fragrance",
@@ -42,12 +43,28 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should I share for a bulk quotation?",
       "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
+    },
+    {
+      "question": "What is the price of chamomile oil per kg?",
+      "answer": "The 50 g catalogue pack has its own listed price. For kilogram quantities, request a separate wholesale quote with grade, packaging and delivery PIN code."
+    },
+    {
+      "question": "Can chamomile oil be applied directly to skin?",
+      "answer": "Do not use concentrated essential oil undiluted or ingest it. For cosmetic formulation, ask for handling information and have a qualified formulator assess a safe inclusion level."
+    },
+    {
+      "question": "What is the difference between German and Roman chamomile?",
+      "answer": "German chamomile and Roman chamomile are different species. German chamomile is listed here as Matricaria chamomilla. Confirm species and batch profile before purchase."
+    },
+    {
+      "question": "Is chamomile oil proven to treat anxiety or sleep problems?",
+      "answer": "Clinical evidence is insufficient to establish chamomile for most health conditions. This product is listed for ingredient sourcing, not as a treatment."
     }
   ]
 },
   'chamomile-hydrosol': {
   "summary": "Explore Chamomile Hydrosol in a 100 ml pack or request bulk floral water supply from VG Naturals, Lucknow, for cosmetic and water-based formulations.",
-  "seoTitle": "Chamomile Hydrosol & Floral Water Supplier India",
+  "seoTitle": "Chamomile Hydrosol (Floral Water) | Bulk India",
   "form": "Water-based flower distillate",
   "description": [
     "Chamomile hydrosol is the water-based aromatic fraction of chamomile flower distillation, sometimes called chamomile floral water. It differs from concentrated essential oil.",
@@ -72,12 +89,20 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should I share for a bulk quotation?",
       "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
+    },
+    {
+      "question": "What is chamomile floral water used for?",
+      "answer": "Chamomile hydrosol is a water-based aromatic ingredient considered for facial mist, personal-care and other aqueous formulations. Check product-specific suitability, preservation and microbial requirements."
+    },
+    {
+      "question": "Can chamomile hydrosol be consumed?",
+      "answer": "This product is labelled for external use. Do not ingest it."
     }
   ]
 },
   'chamomile-flowers': {
   "summary": "Explore dried chamomile flowers in a 100 g pack from VG Naturals, Lucknow. Enquire for agricultural raw material, extraction and bulk ingredient sourcing.",
-  "seoTitle": "Dried Chamomile Flowers Supplier India | 100 g",
+  "seoTitle": "Dried Chamomile Flowers | Price & Bulk Supply India",
   "form": "Dried flower raw material",
   "description": [
     "Chamomile flowers are an aromatic agricultural raw material used in extraction and ingredient processing. VG Naturals has started chamomile cultivation on its own land.",
@@ -103,6 +128,22 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should I share for a bulk quotation?",
       "answer": "Share product identity, quantity, intended application, technical specifications, packaging and delivery city or PIN code. Confirm availability and commercial terms before ordering."
+    },
+    {
+      "question": "What do dried chamomile flowers look like?",
+      "answer": "Chamomile flower heads typically have yellow centres and white ray florets; drying changes their appearance. Confirm botanical identity and grade rather than relying on appearance alone."
+    },
+    {
+      "question": "Where can I buy dried chamomile flowers in India?",
+      "answer": "VG Naturals in Lucknow lists a 100 g pack and welcomes bulk enquiries. Confirm stock, grade, intended application and delivery PIN code."
+    },
+    {
+      "question": "What is the botanical name of chamomile?",
+      "answer": "German chamomile is Matricaria chamomilla (syn. Matricaria recutita). Roman chamomile is a different species."
+    },
+    {
+      "question": "Are these chamomile flowers suitable for tea?",
+      "answer": "Food-grade suitability has not been established for this listing. Ask for intended-use confirmation and appropriate documentation before any food or beverage application. Do not consume an externally labelled product."
     }
   ]
 },
