@@ -42,6 +42,72 @@ export const botanicalRanges = [
       ['Can I buy fresh Basil leaves in bulk?', 'You can enquire about bulk fresh Basil leaves by sharing your required quantity, date and delivery PIN code. Supply depends on harvest availability and suitable delivery arrangements; confirm these before ordering.'],
     ],
   },
+{
+  "slug": "chamomile",
+  "name": "Chamomile",
+  "botanical": "Matricaria chamomilla (syn. Matricaria recutita)",
+  "introduction": "Compare German chamomile essential oil, chamomile hydrosol and dried chamomile flowers from VG Naturals, Lucknow. Explore listed packs and request wholesale or bulk sourcing terms for cosmetic, fragrance and agricultural ingredient applications.",
+  "identity": "German chamomile is distinct from Roman chamomile. VG Naturals lists Matricaria chamomilla (syn. Matricaria recutita). The flowers, concentrated oil and water-based hydrosol are separate ingredient formats; confirm batch identity and intended use before ordering.",
+  "questions": [
+    [
+      "What is chamomile called in India?",
+      "Chamomile is commonly called chamomile or कैमोमाइल in India. The English name does not establish the species; ask for the botanical identity when sourcing."
+    ],
+    [
+      "What is the difference between chamomile flowers, oil and hydrosol?",
+      "Dried flowers are agricultural raw material, essential oil is the concentrated aromatic fraction and hydrosol is the water-based distillate. They are not interchangeable."
+    ],
+    [
+      "Are chamomile and camomile the same?",
+      "Chamomile and camomile are alternative spellings. German and Roman chamomile, however, refer to different plant species."
+    ],
+    [
+      "How can I enquire about chamomile oil price per kg?",
+      "The current catalogue shows a 50 g pack. Request a separate per-kilogram quotation with your required quantity, grade, packaging, application and delivery PIN code."
+    ],
+    [
+      "Can dried chamomile flowers be used for tea?",
+      "Some chamomile flowers are used for herbal infusions. Our listing is agricultural raw material; food-grade status and intended use must be confirmed separately. Do not consume an externally labelled product."
+    ],
+    [
+      "What are chamomile oil uses and benefits?",
+      "Chamomile oil is considered for fragrance and cosmetic formulations. Evidence for treatment of health conditions is limited; do not ingest essential oil or apply it undiluted. Confirm product-specific handling and formulation suitability."
+    ],
+    [
+      "Can I request bulk chamomile flowers, oil and hydrosol together?",
+      "Yes. Specify the quantity, grade and intended application of each item. Our Lucknow team confirms stock, available documents, quotation and delivery feasibility individually."
+    ]
+  ]
+},
+{
+  "slug": "vetiver",
+  "name": "Vetiver (Khus)",
+  "botanical": "Chrysopogon zizanioides (syn. Vetiveria zizanioides)",
+  "introduction": "Explore Vetiver (Khus) Essential Oil and Vetiver Hydrosol listed by VG Naturals, Lucknow. Compare pack sizes and request B2B quotations for fragrance and formulation ingredient sourcing across India.",
+  "identity": "Vetiver essential oil is associated with the aromatic roots of Chrysopogon zizanioides. Vetiver hydrosol is a water-based root distillate, not concentrated khus oil. Confirm batch origin, specifications and intended use.",
+  "questions": [
+    [
+      "Is khus oil the same as vetiver oil?",
+      "Khus is a common name for vetiver. Specify the botanical name and product form when comparing quotations."
+    ],
+    [
+      "What is the difference between vetiver oil and hydrosol?",
+      "The essential oil is concentrated and typically considered for fragrance blending; the hydrosol is water-based. Each requires separate formulation and storage evaluation."
+    ],
+    [
+      "How do I request a bulk vetiver oil quotation?",
+      "Share quantity, intended application, odour profile requirements, packaging and delivery PIN code. Retail packs are not bulk prices."
+    ],
+    [
+      "Can I enquire about vetiver hydrosol in bulk?",
+      "Yes. Discuss preservation, pH, microbial specifications, storage, requested quantity and delivery destination before confirming supply."
+    ],
+    [
+      "Does VG Naturals cultivate vetiver on its own farm?",
+      "Vetiver products are listed. Vetiver-specific own-land cultivation is not confirmed; ask about the proposed batch origin."
+    ]
+  ]
+}
 ];
 export function getBotanicalRange(slug: string) { return botanicalRanges.find(r => r.slug === slug); }
 export function rangeForProduct(slug: string) { return botanicalRanges.find(r => slug.includes(r.slug)); }
