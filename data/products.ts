@@ -268,7 +268,7 @@ export const products: Product[] = [
     "name": "Vetiver (Khus) Essential Oil",
     "botanicalName": "Chrysopogon zizanioides (syn. Vetiveria zizanioides)",
     "category": "Essential Oils",
-    "image": "",
+    "image": "/images/products/vetiver-oil-vg-naturals.webp",
     "status": "ready",
     "variants": [
       {
@@ -343,7 +343,7 @@ export const products: Product[] = [
     "name": "Vetiver (Khus) Hydrosol",
     "botanicalName": "Chrysopogon zizanioides (syn. Vetiveria zizanioides)",
     "category": "Hydrosols",
-    "image": "",
+    "image": "/images/products/vetiver-hydrosol-vg-naturals.webp",
     "status": "ready",
     "variants": [
       {

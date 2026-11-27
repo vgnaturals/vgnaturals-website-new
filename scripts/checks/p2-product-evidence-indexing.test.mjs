@@ -18,7 +18,7 @@ test('all 18 listed product URLs are canonical and in the sitemap; legacy image 
     const expansion=["german-chamomile-oil","chamomile-hydrosol","chamomile-flowers","vetiver-oil","vetiver-hydrosol"].includes(p.slug);
     assert.equal(p.variants.length,expansion||p.status==='fresh'?1:2,p.slug);
     if(!expansion||p.image){assert.ok(p.image.startsWith('/'),p.slug);assert.ok(fs.existsSync('public'+p.image),'Missing product image: '+p.slug+' '+p.image);}
-    assert.ok(sitemap.includes("'/products/"+p.slug+"':'"+(expansion?'2026-11-26':'2026-11-04')+"'"),p.slug+' expected sitemap modification date');
+    assert.ok(sitemap.includes("'/products/"+p.slug+"':'"+(p.slug.startsWith('vetiver-')?'2026-11-27':expansion?'2026-11-26':'2026-11-04')+"'"),p.slug+' expected sitemap modification date');
   }
 });
 
@@ -85,12 +85,20 @@ test('no invented certificates, cures, guaranteed origin, or claims are introduc
 });
 
 
-test('all three Chamomile product images are real WebP repository assets with public product schema URLs',()=>{
- const paths={"german-chamomile-oil":"/images/products/chamomile-essential-oil-vg-naturals.webp","chamomile-flowers":"/images/products/chamomile-flowers-vg-naturals.webp","chamomile-hydrosol":"/images/products/chamomile-hydrosol-vg-naturals.webp"};
+test('all five Chamomile and Vetiver product images are real WebP repository assets with public product schema URLs',()=>{
+ const paths={"german-chamomile-oil":"/images/products/chamomile-essential-oil-vg-naturals.webp","chamomile-flowers":"/images/products/chamomile-flowers-vg-naturals.webp","chamomile-hydrosol":"/images/products/chamomile-hydrosol-vg-naturals.webp","vetiver-oil":"/images/products/vetiver-oil-vg-naturals.webp","vetiver-hydrosol":"/images/products/vetiver-hydrosol-vg-naturals.webp"};
  for(const [slug,path] of Object.entries(paths)){
   const p=products.find(p=>p.slug===slug); assert.equal(p.image,path);
   const bytes=fs.readFileSync('public'+path);assert.ok(bytes.length>30000);assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WEBP');
   assert.equal(productPageStructuredData(p,'Published information').image,'https://www.vgnaturals.com'+path);
  }
- for(const slug of ['vetiver-oil','vetiver-hydrosol'])assert.equal(products.find(p=>p.slug===slug).image,'','No unapproved Vetiver photography');
+
+});
+
+
+test('city navigation provides 20 distinct reference PINs and non-indexed buyer routes',()=>{
+ const city=fs.readFileSync('data/cities.ts','utf8');const cards=fs.readFileSync('components/CityCards.tsx','utf8');
+ assert.equal([...city.matchAll(/"pin": "\d{6}"/g)].length,20);assert.ok(city.includes('https://www.google.com/maps/search/?api=1&query='));assert.ok(cards.includes('cityPath(c,p?.slug)'));assert.ok(cards.includes('pinMap(c)'));
+ for(const path of ['app/india/[city]/page.tsx','app/india/[city]/[product]/page.tsx']){const route=fs.readFileSync(path,'utf8');assert.ok(route.includes('robots:{index:false,follow:true}'));assert.ok(route.includes('quotePath(c'));}
+ assert.ok(!sitemap.includes('/india/'));assert.ok(fs.readFileSync('app/layout.tsx','utf8').includes('<CityCards/><Footer/>'));
 });

@@ -11,16 +11,16 @@ export function generateStaticParams() { return botanicalRanges.map(r => ({ slug
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const r = getBotanicalRange((await params).slug); if (!r) notFound();
   const title = r.slug === 'chamomile' ? 'Chamomile Oil, Hydrosol & Dried Flowers | Bulk India' : r.slug === 'vetiver' ? 'Vetiver (Khus) Oil & Hydrosol | Bulk India' : r.slug === 'tulsi' ? 'Tulsi (Ocimum sanctum) | Oil, Tea & Leaves in India' : r.slug === 'basil' ? 'Basil (Ocimum basilicum) | Oil, Hydrosol, Tea & Leaves' : 'Lemongrass Oil, Hydrosol & Tea | Packs & Bulk Enquiries';
-  const heroImage = r.slug === 'chamomile' ? products.find(p=>p.slug==='chamomile-flowers')?.image : undefined;
+  const heroImage = r.slug === 'chamomile' ? products.find(p=>p.slug==='chamomile-flowers')?.image : r.slug === 'vetiver' ? products.find(p=>p.slug==='vetiver-oil')?.image : undefined;
   const description = `${r.name} (${r.botanical}) products from VG Naturals, Lucknow. Compare listed packs and enquire about bulk supply and delivery to your Indian PIN code.`;
-  return { title, description, alternates: { canonical: `/botanicals/${r.slug}` }, openGraph: { title, description, url: `/botanicals/${r.slug}`, type: 'website', ...(heroImage ? {images:[{url:heroImage,alt:'VG Naturals dried chamomile flowers product illustration'}]} : {}) } };
+  return { title, description, alternates: { canonical: `/botanicals/${r.slug}` }, openGraph: { title, description, url: `/botanicals/${r.slug}`, type: 'website', ...(heroImage ? {images:[{url:heroImage,alt:'VG Naturals '+r.name+' product illustration'}]} : {}) } };
 }
 export default async function BotanicalRange({ params }: { params: Promise<{ slug: string }> }) {
   const r = getBotanicalRange((await params).slug); if (!r) notFound();
   const range = products.filter(p => p.slug.includes(r.slug));
   const url = `https://www.vgnaturals.com/botanicals/${r.slug}`;
   const schema = [
-    { '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': url+'#collection', url, name: `${r.name} products from VG Naturals`, description: r.introduction, dateModified: ['chamomile','vetiver'].includes(r.slug) ? '2026-11-26' : '2026-11-05', publisher: { '@id': 'https://www.vgnaturals.com/#organization' }, mainEntity: { '@type': 'ItemList', itemListElement: range.map((p,i) => ({ '@type': 'ListItem', position: i+1, name: p.name, url: `https://www.vgnaturals.com/products/${p.slug}` })) } },
+    { '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': url+'#collection', url, name: `${r.name} products from VG Naturals`, description: r.introduction, dateModified: r.slug==='vetiver' ? '2026-11-27' : r.slug==='chamomile' ? '2026-11-26' : '2026-11-05', publisher: { '@id': 'https://www.vgnaturals.com/#organization' }, mainEntity: { '@type': 'ItemList', itemListElement: range.map((p,i) => ({ '@type': 'ListItem', position: i+1, name: p.name, url: `https://www.vgnaturals.com/products/${p.slug}` })) } },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.vgnaturals.com/' }, { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.vgnaturals.com/products' }, { '@type': 'ListItem', position: 3, name: r.name, item: url } ] },
   ];
   return <><PageHero eyebrow="Botanical range · India enquiries" title={`${r.name} products for retail and bulk sourcing`} description={r.introduction}/>
@@ -60,7 +60,7 @@ export default async function BotanicalRange({ params }: { params: Promise<{ slu
         <div className="mt-5 flex flex-wrap gap-4"><Link className="btn" href={'/bulk-supply?product='+encodeURIComponent(r.name+' products')}>Request {r.name} bulk quote</Link><Link className="btn btn-outline" href="/sourcing-guide">Compare packs and buying terms</Link></div>
       </section>
       <section className="mt-12" aria-labelledby="range-questions"><h2 id="range-questions">{r.name} buyer questions</h2><div className="mt-6 space-y-6">{r.questions.map(([q,a])=><section key={q}><h3 className="text-xl font-semibold">{q}</h3><p className="mt-2 max-w-4xl leading-7">{a}</p></section>)}</div></section>
-      <p className="mt-8 text-sm text-slate-600">Buying guidance updated <time dateTime={['chamomile','vetiver'].includes(r.slug) ? '2026-11-26' : '2026-11-05'}>{['chamomile','vetiver'].includes(r.slug) ? '26 November 2026' : '5 November 2026'}</time>. Confirm stock, specifications and commercial terms before ordering.</p>
+      <p className="mt-8 text-sm text-slate-600">Buying guidance updated <time dateTime={r.slug==='vetiver' ? '2026-11-27' : r.slug==='chamomile' ? '2026-11-26' : '2026-11-05'}>{r.slug==='vetiver' ? '27 November 2026' : r.slug==='chamomile' ? '26 November 2026' : '5 November 2026'}</time>. Confirm stock, specifications and commercial terms before ordering.</p>
       <nav aria-label="Other botanical ranges" className="mt-10 flex flex-wrap gap-5">{botanicalRanges.filter(x=>x.slug!==r.slug).map(x=><Link className="underline text-green-900" key={x.slug} href={'/botanicals/'+x.slug}>{x.name} products — {x.botanical}</Link>)}<Link className="underline" href="/contact">Contact our Lucknow team</Link></nav>
     </section><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>
   </>;

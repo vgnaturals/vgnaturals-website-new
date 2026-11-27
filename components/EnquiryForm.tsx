@@ -5,14 +5,14 @@ import { recordCrmLeadSaved } from '@/lib/lead-analytics';
 import {selectCrmIntakeEndpoint} from '@/lib/crm-intake-routing';
 import { classifyWebsiteLeadAcknowledgement } from '@/lib/website-lead-acknowledgement';
 
-type Props = { initialProduct?: string; orderSummary?: string; subtotal?: number };
-export default function EnquiryForm({initialProduct='',orderSummary,subtotal}:Props) {
+type Props = { initialProduct?: string; initialLocation?: string; orderSummary?: string; subtotal?: number };
+export default function EnquiryForm({initialProduct='',initialLocation='',orderSummary,subtotal}:Props) {
   const [busy,setBusy]=useState(false); const busyRef=useRef(false);
   const [error,setError]=useState(''); const [success,setSuccess]=useState('');
   const request=useRef<{snapshot:string;id:string}|null>(null);
   const isOrder = orderSummary !== undefined;
   const ref = useRef<HTMLFormElement>(null);
-  const [form,setForm] = useState({name:'',company:'',email:'',phone:'',product:initialProduct,quantity:'',application:'',address:'',city:'',state:'',pin:'',location:'',message:''});
+  const [form,setForm] = useState({name:'',company:'',email:'',phone:'',product:initialProduct,quantity:'',application:'',address:'',city:'',state:'',pin:'',location:initialLocation,message:''});
   const labels: Record<string,string> = {name:'Customer name',company:'Company (optional)',email:'Email',phone:'Phone / WhatsApp',product:'Product',quantity:'Required quantity',application:'Intended application (optional)',address:'Delivery address',city:'City',state:'State',pin:'PIN / postal code',location:'Delivery location',message:'Additional requirements (optional)'};
   const fields = isOrder ? ['name','phone','email','company','address','city','state','pin','message'] : ['name','company','email','phone','product','quantity','application','location','message'];
   const required = isOrder ? ['name','phone','email','address','city','state','pin'] : ['name','phone','email','product','quantity','location'];

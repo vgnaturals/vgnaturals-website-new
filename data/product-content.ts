@@ -148,8 +148,8 @@ export const productContent: Record<string, ProductContent> = {
   ]
 },
   'vetiver-oil': {
-  "summary": "Explore Vetiver (Khus) Essential Oil in a 10 ml pack. Request bulk quotes from VG Naturals, Lucknow, for perfumery, fragrance and cosmetic formulation.",
-  "seoTitle": "Vetiver (Khus) Essential Oil Supplier India | 10 ml",
+  "summary": "Vetiver (Khus) essential oil from VG Naturals, Lucknow. Explore the 10 ml pack, earthy aroma, perfumery uses and bulk price enquiries in India.",
+  "seoTitle": "Vetiver (Khus) Essential Oil | Price & Bulk Supply India",
   "form": "Concentrated root-derived essential oil",
   "description": [
     "Vetiver essential oil, also known as khus oil, is obtained from aromatic vetiver roots. Its earthy, woody character makes it valuable for fragrance development.",
@@ -179,12 +179,36 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "What should a perfumer compare before choosing khus oil?",
       "answer": "Compare botanical identity, root origin, aroma and available batch specifications. Evaluate a sample for the intended fragrance before finalizing bulk supply."
+    },
+    {
+      "question": "What is vetiver called in India?",
+      "answer": "Vetiver is commonly called khus or ushira. The botanical identity listed here is Chrysopogon zizanioides; it is distinct from lemongrass."
+    },
+    {
+      "question": "What does vetiver essential oil smell like?",
+      "answer": "Vetiver oil is valued for a persistent earthy, woody, root-like aroma. Batch origin and composition can change the scent; evaluate a sample for perfumery."
+    },
+    {
+      "question": "What is vetiver essential oil used for?",
+      "answer": "It is commonly considered for perfume base notes, fragrance blends, soaps and cosmetic formulation. Assess the formulation and safe inclusion level before use."
+    },
+    {
+      "question": "What is the vetiver oil price per kg?",
+      "answer": "The 10 ml retail pack has a listed price of ₹660. Kilogram quantities require a separate quotation specifying quantity, batch requirements, packaging and delivery PIN."
+    },
+    {
+      "question": "Can I apply vetiver oil directly to skin?",
+      "answer": "Do not apply concentrated essential oil undiluted or ingest it. Follow the supplied label and seek qualified formulation guidance; irritation and sensitisation are possible."
+    },
+    {
+      "question": "Is vetiver the same as sandalwood or lemongrass?",
+      "answer": "No. Vetiver is a root-derived grass oil, lemongrass is a different aromatic grass and sandalwood is a wood-derived fragrance ingredient."
     }
   ]
 },
   'vetiver-hydrosol': {
   "summary": "Explore Vetiver (Khus) Hydrosol in a 100 ml pack. Request bulk root-distillate sourcing from VG Naturals, Lucknow, for fragrance and cosmetic formulations.",
-  "seoTitle": "Vetiver (Khus) Hydrosol Supplier India | 100 ml",
+  "seoTitle": "Vetiver Hydrosol (Khus Water) | Packs & Bulk India",
   "form": "Water-based root distillate",
   "description": [
     "Vetiver hydrosol, commonly called khus floral water, is a water-based aromatic distillate associated with vetiver root processing.",
@@ -213,6 +237,18 @@ export const productContent: Record<string, ProductContent> = {
     {
       "question": "Is vetiver hydrosol suitable for water-based cosmetic formulations?",
       "answer": "It is a water-based aromatic root distillate considered for formulation evaluation. Confirm preservation, pH, microbial limits, storage and compatibility before use."
+    },
+    {
+      "question": "What is vetiver hydrosol or khus water?",
+      "answer": "Vetiver hydrosol is a water-based aromatic root distillate, distinct from concentrated vetiver essential oil. This listing is for external use; do not drink it."
+    },
+    {
+      "question": "What does vetiver hydrosol smell like?",
+      "answer": "Its aroma is generally earthy and root-like but lighter than concentrated essential oil. Evaluate the actual batch for your intended product."
+    },
+    {
+      "question": "What can vetiver hydrosol be used for?",
+      "answer": "It can be considered for water-based fragrance, personal-care or mist formulation. Confirm preservation, microbial quality and compatibility rather than assuming finished-product performance."
     }
   ]
 },

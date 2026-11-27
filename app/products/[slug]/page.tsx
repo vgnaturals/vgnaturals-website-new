@@ -71,7 +71,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       <div className="grid md:grid-cols-2 gap-12">
         <div className="card self-start">
           {p.image ? <img src={p.image} alt={`${p.name} — VG Naturals product catalogue image`} className="w-full max-h-[550px] object-contain bg-[#f4f6ef] p-8" fetchPriority="high" /> : <div className="p-20 bg-[#f4f6ef] text-center text-green-900" aria-label={p.name}><span className="text-sm uppercase tracking-widest">VG Naturals</span><p className="mt-3 text-xl font-semibold">{p.name}</p>{p.slug.startsWith("vetiver-") && <p className="mt-2 text-sm text-gray-600">Product photography pending</p>}</div>}
-          {p.image && p.slug.includes("chamomile") && <p className="px-5 py-3 text-center text-xs text-gray-600">Product illustration · Confirm actual packaging, label and batch specifications before ordering.</p>}
+          {p.image && (p.slug.includes("chamomile")||p.slug.startsWith("vetiver-")) && <p className="px-5 py-3 text-center text-xs text-gray-600">Product illustration · Confirm actual packaging, label and batch specifications before ordering.</p>}
         </div>
         <div>
           <p className="eyebrow">{availability}</p>
@@ -100,6 +100,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
       <ProductEvidencePanel product={p} content={content} />
       <LocalSourcing product={p} />
       <LemongrassBuyerChecklist product={p} />
+      {p.slug.startsWith("vetiver-") && <p className="mt-4 text-sm">Botanical background: <a className="underline" href="https://bioinfo.cimap.res.in/aromadb/web_plant_detail.php?id=CRPLT9" target="_blank" rel="noopener noreferrer">CSIR-CIMAP Aroma Database — Vetiver</a>. This reference describes the plant, not a certificate or batch analysis of VG Naturals products.</p>}
       {range && <p className="mt-6 leading-7">Explore the <Link className="underline text-green-900 font-semibold" href={'/botanicals/'+range.slug}>full {range.name} range and India-wide sourcing questions</Link>. Share your delivery PIN code to confirm feasibility and freight.</p>}
 
       <section id="description" aria-labelledby="description-heading" className="mt-12 scroll-mt-40 max-w-4xl">
