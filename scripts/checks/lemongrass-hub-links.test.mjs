@@ -47,7 +47,7 @@ test('every new link targets an existing product, buyer guide or botanical range
 
 test('updated URLs retain accurate sitemap lastmod; canonical and Product schema remain intact',()=>{
   for(const path of ['/categories/hydrosols','/categories/essential-oils']) {
-    assert.ok(sitemap.includes("'"+path+"':'2026-11-04'")||sitemap.includes("'"+path+"':'2026-11-25'"),path);
+    assert.ok(sitemap.includes("'"+path+"':'2026-11-27'"),path);
   }
   assert.ok(sitemap.includes("'/botanicals/lemongrass':'2026-11-05'"));
   assert.ok(sitemap.includes("const base='https://www.vgnaturals.com'"));
